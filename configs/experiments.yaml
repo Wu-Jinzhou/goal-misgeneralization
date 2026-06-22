@@ -1,0 +1,180 @@
+defaults:
+  max_length: 128
+  batch_size: 64
+  learning_rate: 3.0e-5
+  weight_decay: 0.05
+  warmup_ratio: 0.1
+  scheduler: cosine
+  pythia_models:
+    70m: EleutherAI/pythia-70m-deduped
+    160m: EleutherAI/pythia-160m-deduped
+    410m: EleutherAI/pythia-410m-deduped
+
+bounded_nim_baseline:
+  figure: 2
+  models: [70m, 160m, 410m]
+  seeds: [0, 1, 2]
+  mrs: [3, 4, 5, 6, 7, 8]
+  train_examples_per_task: 15000
+  eval_examples_per_task: 2000
+  epochs: 300
+  metrics: [exact, mod_2, mod_3, mod_4, confusion, prediction_distribution]
+
+transfer:
+  section: 4.2
+  model: 410m
+  seeds: [0, 1, 2]
+  downstream_epochs: 150
+  explicit_mod_prefinetune:
+    input_range: [0, 10000]
+    train_examples: 9000
+    eval_examples: 1000
+    max_steps: 5000
+  nim_prefinetune:
+    source_checkpoint_rule: first_checkpoint_reaching_100pct_eval_accuracy
+  targets:
+    mr8_mod9:
+      figure: 4
+      downstream_mr: 8
+      conditions:
+        - {name: baseline, pretrain: none}
+        - {name: nim2, pretrain: {type: nim, mr: 2}}
+        - {name: mod3, pretrain: {type: modular_reduction, modulus: 3}}
+        - {name: nim4, pretrain: {type: nim, mr: 4}}
+        - {name: mod5, pretrain: {type: modular_reduction, modulus: 5}}
+      metrics: [exact, mod_3]
+    mr4_control_mod5:
+      figure: 5
+      downstream_mr: 4
+      conditions:
+        - {name: nim2, pretrain: {type: nim, mr: 2}}
+        - {name: mod3, pretrain: {type: modular_reduction, modulus: 3}}
+      metrics: [exact, mod_3]
+    mr5_mod6:
+      figure: 6
+      downstream_mr: 5
+      conditions:
+        - {name: baseline, pretrain: none}
+        - {name: nim2, pretrain: {type: nim, mr: 2}}
+        - {name: mod2, pretrain: {type: modular_reduction, modulus: 2}}
+        - {name: mod3, pretrain: {type: modular_reduction, modulus: 3}}
+        - {name: nim4, pretrain: {type: nim, mr: 4}}
+        - {name: mod5, pretrain: {type: modular_reduction, modulus: 5}}
+      metrics: [exact, mod_2, mod_3]
+    mr7_mod8:
+      figure: 7
+      downstream_mr: 7
+      conditions:
+        - {name: baseline, pretrain: none}
+        - {name: nim3, pretrain: {type: nim, mr: 3}}
+        - {name: mod8, pretrain: {type: modular_reduction, modulus: 8}}
+        - {name: nim4, pretrain: {type: nim, mr: 4}}
+        - {name: mod3, pretrain: {type: modular_reduction, modulus: 3}}
+      metrics: [exact, mod_2, mod_4]
+
+curriculum:
+  section: 4.3
+  figures: [8, 32, 33, 34]
+  model: 410m
+  seeds: [0, 1, 2, 3, 4]
+  phase_steps: 75000
+  replay_ratio_phase2: 0.20
+  directions:
+    composite_first:
+      phase1_mrs: [3, 5, 7]
+      phase2_mrs: [4, 6, 8]
+    hard_first:
+      phase1_mrs: [4, 6, 8]
+      phase2_mrs: [3, 5, 7]
+  metrics: [taskwise_exact, mean_eval_accuracy, phase_specific_train_accuracy]
+
+disrupting_mod2_heuristic:
+  section: 4.3
+  figure: 9
+  model: 410m
+  seeds: [0, 1, 2]
+  downstream_mr: 3
+  prefinetune_conditions:
+    - {name: baseline, pretrain: none}
+    - {name: mod2, pretrain: {type: modular_reduction, modulus: 2, label_mode: standard}}
+    - {name: reversed_mod2, pretrain: {type: modular_reduction, modulus: 2, label_mode: reversed}}
+    - {name: scrambled_mod2, pretrain: {type: modular_reduction, modulus: 2, label_mode: scrambled}}
+  metrics: [exact, mod_2, plateau_duration]
+
+shortcut_learning:
+  appendices: [A, B, C, D, H, I]
+  model: 410m
+  mr: 4
+  train_examples: 60000
+  eval_examples_per_split: 2000
+  name_pairs: 20000
+  cheat_pairs: 10000
+  cheat_pairs_per_action: 2000
+  history_turns: 4
+  name_occurrences_in_history: 4
+  train_steps:
+    baseline: 150000
+    neutral_only: 100000
+    dann: 150000
+    contrastive: 150000
+  eval_splits: [cheat_consistent, counter_cheat, neutral]
+  interventions:
+    dann:
+      figure: 10
+      sweep_lambda: [0.025, 0.03, 0.035, 0.05]
+      reported_lambda: 0.05
+      layer: 10
+      discriminator: {hidden_units: 512, pooling: all_name_tokens}
+    contrastive:
+      figure: 10
+      lambda: 1.0
+      layer: 12
+      loss: final_token_mse_original_vs_name_randomized_copy
+      seeds: [7, 42, 1, 2, 123]
+  diagnostics:
+    probes:
+      figures: [14, 23]
+      architecture: Linear(d_model,512)-ReLU-Linear(512,1)
+      optimizer: {name: Adam, lr: 1.0e-3, weight_decay: 1.0e-2}
+      epochs: 120
+      batch_size: 256
+      token_strategies: [p1_first_first, p1_first_last, p1_last_first, p1_last_last, p2_first_first, p2_first_last, p2_last_first, p2_last_last]
+    causal_trace:
+      figures: [12, 21]
+      examples: 100
+      interventions: [induce, stop]
+      position_modes: [name, final]
+    logit_lens:
+      figure: 24
+      target_mr: 5
+      checkpoint_steps: [1000, 2000, 5000, 9000, 10000, 11000]
+
+multitask_diagnostics:
+  appendix: J.3
+  figures: [28, 29, 30, 31]
+  model: 410m
+  mrs: [3, 4, 5, 6, 7, 8]
+  max_steps: 150000
+  batch_size: 64
+  metrics: [exact, mod_2, mod_4, prediction_distribution]
+
+natural_extensions:
+  appendix: F
+  implemented_generators: [multipile_nim, fibonacci_nim, wythoff_nim]
+  note: The paper describes these as natural extensions rather than reporting trained model runs.
+
+rl_variant:
+  location: rl_version
+  trainer: src/gm_nim/rl_play.py
+  script: scripts/run_game_rl.py
+  objective: episodic_reinforce_with_reference_kl
+  reward_source: win_loss_game_outcome
+  train_test_shift: opponent_distribution
+  default_train_opponent: random
+  default_test_opponents: [random, optimal]
+  proxies:
+    bounded: [coset2, coset3, coset4]
+    multipile: [xor2, xor4]
+    fibonacci: [fibonacci_floor]
+    wythoff: [balance, difference]
+  note: The older one-step generated-answer reward helper remains at src/gm_nim/rl.py, but rl_version uses game-play RL.

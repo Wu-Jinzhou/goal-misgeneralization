@@ -1,0 +1,55 @@
+defaults:
+  objective: episodic_reinforce_with_reference_kl
+  reward_source: win_loss_game_outcome
+  train_test_shift: opponent_distribution
+  max_prompt_length: 160
+  max_new_tokens: 8
+  episodes_per_step: 8
+  update_batch_size: 16
+  learning_rate: 1.0e-6
+  kl_coef: 0.02
+  win_reward: 1.0
+  loss_reward: -1.0
+  invalid_reward: -1.0
+  pythia_models:
+    70m: EleutherAI/pythia-70m-deduped
+    160m: EleutherAI/pythia-160m-deduped
+    410m: EleutherAI/pythia-410m-deduped
+
+bounded_nim_rl:
+  replaces: bounded_nim_supervised_finetuning
+  models: [70m, 160m, 410m]
+  seeds: [0, 1, 2]
+  mrs: [3, 4, 5, 6, 7, 8]
+  steps: 30000
+  train_opponents: [random, coset2]
+  test_opponents: [random, optimal, coset2, coset3, coset4]
+  proxy_metrics: [coset2, coset3, coset4]
+  gmg_hypothesis: A bounded-Nim coset policy can obtain high reward against random opponents while failing under optimal-opponent shift.
+
+self_play_rl:
+  models: [410m]
+  seeds: [0, 1, 2]
+  mrs: [3, 5, 7, 8]
+  steps: 30000
+  self_play: true
+  test_opponents: [random, optimal]
+  proxy_metrics_by_game:
+    bounded: [coset2, coset3, coset4]
+
+appendix_f_games:
+  multipile:
+    train_opponents: [random]
+    test_opponents: [random, optimal, xor2, xor4]
+    proxy_metrics: [xor2, xor4]
+    hypothesis: Coarse low-bit XOR proxies can be reward-correlated before full compositional XOR is learned.
+  fibonacci:
+    train_opponents: [random]
+    test_opponents: [random, optimal, fibonacci_floor]
+    proxy_metrics: [fibonacci_floor]
+    hypothesis: Aperiodic floor-to-Fibonacci proxies test whether coarse-to-fine acquisition persists outside periodic modular tasks.
+  wythoff:
+    train_opponents: [random]
+    test_opponents: [random, optimal, balance, difference]
+    proxy_metrics: [balance, difference]
+    hypothesis: Balance-the-heaps and reason-from-difference proxies test non-modular GMG failure modes.
