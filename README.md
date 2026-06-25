@@ -1,14 +1,12 @@
 # goal-misgeneralization
 
-Reproduction code for the experiments described in
-`secrets/Installing_and_Obstructing.pdf` (“Installing and Obstructing
-Heuristics: Learning Dynamics in Nim”).
+Code for studying heuristic acquisition and goal misgeneralization in Nim-like
+games. The repository contains two experiment tracks:
 
-The code is organized as a Python package under `src/gm_nim` plus CLI scripts
-under `scripts/`. It covers the paper’s bounded-Nim finetuning, modular/Nim
-prefinetuning transfer, two-phase curricula with replay, mod-2 disruption,
-shortcut datasets, DANN, contrastive name invariance, probes, causal tracing,
-logit-lens diagnostics, and plotting.
+- supervised fine-tuning experiments that measure coset heuristics, transfer,
+  curricula, shortcut learning, and representational diagnostics
+- RL game-play experiments that replace answer supervision with win/loss reward
+  and evaluate policies under opponent-distribution shift
 
 ## Setup
 
@@ -16,33 +14,134 @@ logit-lens diagnostics, and plotting.
 pip install -e ".[dev]"
 ```
 
-Full model runs require Pythia checkpoints from Hugging Face and a CUDA-capable
-GPU. The paper used Pythia deduped 70M, 160M, and 410M models with max length
-128, batch size 64, AdamW, learning rate `3e-5`, weight decay `0.05`, warmup
-ratio `0.1`, and cosine scheduling.
+Full model runs require Hugging Face Pythia checkpoints and a CUDA-capable GPU.
+The default supervised runs use Pythia deduped 70M, 160M, and 410M models with
+sequence length 128, batch size 64, AdamW, learning rate `3e-5`, weight decay
+`0.05`, warmup ratio `0.1`, and cosine scheduling.
 
-## Experiment Matrix
+Experiment defaults are encoded in [configs/experiments.yaml](configs/experiments.yaml).
+The RL-specific matrix is in [rl_version/configs/experiments.yaml](rl_version/configs/experiments.yaml).
 
-The paper matrix is encoded in [configs/experiments.yaml](configs/experiments.yaml).
-The most important defaults:
+## Supervised Experiments
 
-- bounded-Nim baseline: MR in `{3,4,5,6,7,8}`, 15k train and 2k eval prompts,
-  3 seeds, 300 epochs across Pythia 70M/160M/410M.
-- transfer: 410M, explicit modular prefinetuning for 5000 steps, downstream Nim
-  for 150 epochs.
-- curriculum: 410M, 75k steps per phase, 20% replay after the transition.
-- shortcut appendix: MR=4, 60k examples, 150k-step baseline/DANN/contrastive
-  runs.
+**Bounded Nim Baselines**
 
-## Typical Commands
+- Single-pile bounded Nim with `MR in {3,4,5,6,7,8}`
+- 15k train prompts and 2k held-out eval prompts per task
+- Pythia 70M, 160M, and 410M across 3 seeds
+- Metrics: exact move accuracy, coarsened mod-2/mod-3/mod-4 accuracy,
+  prediction distributions, and residue confusion matrices
 
-Generate a bounded-Nim dataset:
+**Coset Transfer**
+
+- 410M models
+- Prefinetuning on either bounded Nim source tasks or explicit modular reduction
+- Downstream bounded Nim targets:
+  - `MR=8`, modulus 9, mod-3 quotient
+  - `MR=5`, modulus 6, mod-2 and mod-3 quotients
+  - `MR=7`, modulus 8, mod-2 and mod-4 quotients
+  - `MR=4`, modulus 5, control task with no matching quotient
+- Explicit modular prefinetuning uses inputs in `[0,10000]`, split 9000/1000,
+  trained for 5000 steps
+- Downstream fine-tuning runs for 150 epochs
+
+**Curriculum Learning**
+
+- 410M models across 5 seeds
+- Two 75k-step phases with 20% replay after the transition
+- Directions:
+  - composite-first: `MR={3,5,7}` then `MR={4,6,8}`
+  - hard-first: `MR={4,6,8}` then `MR={3,5,7}`
+- Metrics: mean held-out accuracy, taskwise accuracy, phase-specific training
+  accuracy, and forgetting after transition
+
+**Mod-2 Disruption**
+
+- Downstream task: `MR=3`, modulus 4
+- Conditions: baseline, standard mod-2 prefinetuning, reversed-label mod-2,
+  scrambled-label mod-2
+- Metrics: exact accuracy, mod-2 accuracy, and parity-plateau duration
+
+**Shortcut Learning**
+
+- Task: bounded Nim with `MR=4`, modulus 5
+- 60k training examples split between cheat-name pairs and neutral pairs
+- Evaluation splits:
+  - cheat-consistent
+  - counter-cheat
+  - neutral held-out names
+- Methods:
+  - vanilla shortcut baseline
+  - DANN adversarial shortcut suppression at layer 10
+  - contrastive name invariance at layer 12
+- DANN sweep: `lambda in {0.025,0.03,0.035,0.05}`
+- Contrastive run: `lambda=1.0`, 150k steps, seed-sensitive outcomes
+
+**Diagnostics**
+
+- MLP probes over cheat-vs-neutral information across layers and name-token
+  positions
+- Causal tracing by swapping name-token or final-token representations
+- Logit lens over MLP, attention, and residual components
+- Prediction-distribution and coarsened-distribution plots
+
+**Appendix F Game Generators**
+
+- Multipile Nim with XOR invariant
+- Fibonacci Nim with history-dependent move bounds
+- Wythoff Nim with Beatty-sequence cold positions
+
+## RL / GMG Experiments
+
+The RL variant is in [rl_version](rl_version/). It uses full game episodes
+instead of supervised answer labels. The model receives win/loss reward, and the
+main train/test shift is the opponent distribution.
+
+**Bounded Nim RL**
+
+- Games: single-pile bounded Nim with the same `MR` values as supervised runs
+- Train opponents: weak/random, fixed proxy opponents, or self-play
+- Test opponents: random, optimal, and proxy policies such as `coset2`,
+  `coset3`, and `coset4`
+- Metrics:
+  - win rate against each opponent
+  - invalid move rate
+  - optimal-action rate on winning states
+  - coset proxy rates
+
+**Multipile Nim RL**
+
+- Game state: several heaps
+- True invariant: XOR of heap sizes
+- Proxy metrics/opponents: low-bit XOR policies such as `xor2` and `xor4`
+- Goal: test whether compositional proxy policies are reward-correlated against
+  weak opponents but fail under optimal-opponent shift
+
+**Fibonacci Nim RL**
+
+- History-dependent legal move bound
+- Aperiodic structure rather than modular periodicity
+- Proxy: `fibonacci_floor`, a coarse move toward lower Fibonacci structure
+- Goal: test whether coarse-to-fine proxy acquisition persists outside modular
+  tasks
+
+**Wythoff Nim RL**
+
+- Two-heap game with one-pile or equal-diagonal moves
+- True cold positions follow Beatty sequences
+- Proxies: `balance` and `difference`
+- Goal: test non-modular GMG failure modes such as balancing heaps or reasoning
+  only from `b-a`
+
+## Common Commands
+
+Generate bounded-Nim data:
 
 ```bash
 PYTHONPATH=src python scripts/generate_data.py bounded --mr 5 --out-dir data/seed0 --seed 0
 ```
 
-Train a baseline model:
+Train a supervised bounded-Nim baseline:
 
 ```bash
 PYTHONPATH=src python scripts/run_train.py \
@@ -55,7 +154,7 @@ PYTHONPATH=src python scripts/run_train.py \
   --bf16
 ```
 
-Evaluate a checkpoint with exact and coarsened accuracies:
+Evaluate supervised exact and coarsened accuracy:
 
 ```bash
 PYTHONPATH=src python scripts/run_eval.py \
@@ -66,13 +165,7 @@ PYTHONPATH=src python scripts/run_eval.py \
   --factors 2 3
 ```
 
-Generate explicit modular prefinetuning data:
-
-```bash
-PYTHONPATH=src python scripts/generate_data.py mod --modulus 3 --out-dir data/mod --seed 0
-```
-
-Train the shortcut baseline, DANN, or contrastive intervention:
+Train DANN or contrastive shortcut interventions:
 
 ```bash
 PYTHONPATH=src python scripts/generate_data.py shortcut --out-dir data/shortcut --seed 7
@@ -100,7 +193,7 @@ PYTHONPATH=src python scripts/run_train.py \
   --bf16
 ```
 
-Run curriculum training with 20% replay:
+Run two-phase curriculum training:
 
 ```bash
 PYTHONPATH=src python scripts/generate_data.py multitask --mrs 4 6 8 --out-dir data/curriculum --seed 0
@@ -116,7 +209,35 @@ PYTHONPATH=src python scripts/run_curriculum.py \
   --bf16
 ```
 
-Run appendix diagnostics:
+Run game-play RL with opponent shift:
+
+```bash
+PYTHONPATH=src python scripts/run_game_rl.py \
+  --model 410m \
+  --game bounded \
+  --mr 5 \
+  --train-opponent random \
+  --eval-opponents random optimal coset2 \
+  --proxy-metrics coset2 coset3 \
+  --output-dir runs/rl_mr5_410m_seed0 \
+  --steps 30000 \
+  --bf16
+```
+
+Evaluate a game-play RL checkpoint:
+
+```bash
+PYTHONPATH=src python scripts/eval_game_rl.py \
+  --checkpoint runs/rl_mr5_410m_seed0/checkpoint-30000 \
+  --game bounded \
+  --mr 5 \
+  --eval-opponents random optimal coset2 \
+  --proxy-metrics coset2 coset3 \
+  --eval-episodes 1000 \
+  --output results/rl_mr5_shift_eval.jsonl
+```
+
+Run diagnostics:
 
 ```bash
 PYTHONPATH=src python scripts/run_probe.py \
@@ -137,29 +258,5 @@ PYTHONPATH=src python scripts/run_logit_lens.py \
   --output-csv results/logit_lens_mr5_step10000.csv
 ```
 
-Plotting helpers are in `scripts/plot_runs.py`.
+Plotting helpers are in [scripts/plot_runs.py](scripts/plot_runs.py).
 
-## RL Variant
-
-An RL-first second version lives in [rl_version](rl_version/). It uses the same
-games, but replaces supervised answer-token loss with full game-play rewards via
-[src/gm_nim/rl_play.py](src/gm_nim/rl_play.py). This is the goal-misgeneralization
-setup: train against one opponent distribution, such as `random`, and evaluate
-under shift against `optimal`.
-
-```bash
-PYTHONPATH=src python scripts/run_game_rl.py \
-  --model 410m \
-  --game bounded \
-  --mr 5 \
-  --train-opponent random \
-  --eval-opponents random optimal coset2 \
-  --proxy-metrics coset2 coset3 \
-  --output-dir runs/rl_mr5_410m_seed0 \
-  --steps 30000 \
-  --bf16
-```
-
-The older one-step generated-answer reward trainer remains available as
-[scripts/run_rl_train.py](scripts/run_rl_train.py), but the `rl_version` entry
-points use game-play RL.
