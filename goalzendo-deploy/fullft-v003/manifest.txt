@@ -1,0 +1,5 @@
+schema=goalzendo-deployment-bundle-v1
+bundle=goalzendo-fullft-v003.tar.gz
+sha256=52d372e59c5fc35d8265fe23d16d323c4e0f1ca2d12d5118a43b5cd9421de29d
+bytes=182854
+parts=part-000.b64,part-001.b64,part-002.b64,part-003.b64
