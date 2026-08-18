@@ -1,0 +1,91 @@
+extends: base.yaml
+
+experiment:
+  id: g02
+  name: evidence_geometry
+  status: prospective
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g02-evidence-geometry
+  seeds: [2101, 2111, 2131, 2141, 2161, 2179, 2203, 2221, 2237, 2267]
+  launch_guard: G01_INFORMATIVE_CELL_AND_SETTINGS_NOT_FROZEN
+  checkpoint_steps: [256, 512, 768, 1000]
+  snapshot_steps: [1000]
+
+model:
+  name: Qwen/Qwen2.5-1.5B-Instruct
+  revision: 989aa7980e4cf806f80c7fef2b1adb7bc71aa306
+
+data:
+  q_p: 0.95
+  q_q: 0.90
+  rule_family: parity
+
+train:
+  deterministic_algorithms: true
+  allow_tf32: false
+  cublas_workspace_config: ":4096:8"
+
+cases:
+  - data.error_geometry: specified
+    data.joint_error_rate: 0.005
+    data.conflict_diversity: concentrated
+    train.algorithm: sft
+    train.learning_rate: 0.00001
+  - data.error_geometry: specified
+    data.joint_error_rate: 0.005
+    data.conflict_diversity: diverse
+    train.algorithm: sft
+    train.learning_rate: 0.00001
+  - data.error_geometry: specified
+    data.joint_error_rate: 0.040
+    data.conflict_diversity: concentrated
+    train.algorithm: sft
+    train.learning_rate: 0.00001
+  - data.error_geometry: specified
+    data.joint_error_rate: 0.040
+    data.conflict_diversity: diverse
+    train.algorithm: sft
+    train.learning_rate: 0.00001
+  - data.error_geometry: specified
+    data.joint_error_rate: 0.050
+    data.conflict_diversity: concentrated
+    train.algorithm: sft
+    train.learning_rate: 0.00001
+  - data.error_geometry: specified
+    data.joint_error_rate: 0.050
+    data.conflict_diversity: diverse
+    train.algorithm: sft
+    train.learning_rate: 0.00001
+  - data.error_geometry: specified
+    data.joint_error_rate: 0.005
+    data.conflict_diversity: concentrated
+    train.algorithm: outcome_rl
+    train.learning_rate: 0.000003
+  - data.error_geometry: specified
+    data.joint_error_rate: 0.005
+    data.conflict_diversity: diverse
+    train.algorithm: outcome_rl
+    train.learning_rate: 0.000003
+  - data.error_geometry: specified
+    data.joint_error_rate: 0.040
+    data.conflict_diversity: concentrated
+    train.algorithm: outcome_rl
+    train.learning_rate: 0.000003
+  - data.error_geometry: specified
+    data.joint_error_rate: 0.040
+    data.conflict_diversity: diverse
+    train.algorithm: outcome_rl
+    train.learning_rate: 0.000003
+  - data.error_geometry: specified
+    data.joint_error_rate: 0.050
+    data.conflict_diversity: concentrated
+    train.algorithm: outcome_rl
+    train.learning_rate: 0.000003
+  - data.error_geometry: specified
+    data.joint_error_rate: 0.050
+    data.conflict_diversity: diverse
+    train.algorithm: outcome_rl
+    train.learning_rate: 0.000003
+
+sweep: {}

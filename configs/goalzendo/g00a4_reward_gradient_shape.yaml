@@ -1,0 +1,52 @@
+extends: g00a3_enumerated_outcome_gradient.yaml
+
+experiment:
+  id: g00a4
+  name: reward_gradient_shape
+  status: adaptive
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g00a4-reward-gradient-shape
+  seeds: [9401, 9427, 9461]
+  protocol_unlocked: true
+  launch_guard: null
+  checkpoint_steps: [256, 512]
+  snapshot_steps: []
+
+# A3's surprising cell had an uninformative Herald and a 90%-accurate Sage.
+# Freeze that cell so the only primary manipulation is the policy-loss shape.
+data:
+  q_p: 0.50
+  q_q: 0.90
+  rule_family: parity
+  training_view: full
+
+cases:
+  # Established acquisition reference. This retains A3's selected SFT rate.
+  - train.algorithm: sft
+    train.learning_rate: 0.00001
+    train.entropy_coefficient: 0.0
+    train.reward_gradient_exponent: null
+
+  # Exact expected reward: reward-gradient magnitude p_y(1-p_y).
+  - train.algorithm: expected_outcome_rl
+    train.learning_rate: 0.000003
+    train.entropy_coefficient: 0.01
+    train.reward_gradient_exponent: null
+
+  # Dose-response intermediate: reward-gradient magnitude sqrt(p_y)(1-p_y).
+  - train.algorithm: tempered_outcome_control
+    train.learning_rate: 0.000003
+    train.entropy_coefficient: 0.01
+    train.reward_gradient_exponent: 0.5
+
+  # Desaturated endpoint: reward-gradient magnitude (1-p_y), exactly the
+  # correct-action log-probability gradient, at the RL-matched rate/entropy.
+  - train.algorithm: logprob_outcome_control
+    train.learning_rate: 0.000003
+    train.entropy_coefficient: 0.01
+    train.reward_gradient_exponent: 0.0
+
+# Override A3's four-point Herald sweep with the single triggering condition.
+sweep:
+  data.q_p: [0.50]

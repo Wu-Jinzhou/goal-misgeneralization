@@ -1,0 +1,72 @@
+extends: base.yaml
+
+experiment:
+  hypothesis: h5
+  name: entropy_timing
+  mode: entropy_timing
+
+run:
+  task_levels: [choice]
+  save_checkpoints: false
+
+evaluation:
+  save_predictions: false
+
+data:
+  n_train: 10000
+  n_validation: 4000
+  n_eval: 10000
+  q: 0.75
+  k: 4
+  max_k: 5
+  state_dim: 8
+  target_rule: parity
+
+model:
+  width: 64
+  depth: 2
+  activation: relu
+  residual: false
+
+update:
+  mode: full
+  budget: full
+
+train:
+  steps: 2048
+  batch_size: 250
+  learning_rate: 0.003
+  weight_decay: 0.0
+  eval_steps: log
+
+h5:
+  algorithm: rl
+  nuisance_bits: 8
+  nuisance_entropy: 0
+  nuisance_weight: 1.0
+  rl_estimator: actor_critic
+  critic_width: 128
+  critic_depth: 3
+  phase_a_steps: 64
+  phase_b_steps: 1984
+  timing_schedule: zero_zero
+
+cases:
+  - data: {q: 0.75, k: 4}
+    sweep:
+      h5.timing_schedule:
+        - zero_zero
+        - high_high
+        - early_only
+        - delayed_carry
+        - delayed_actor_reset
+        - delayed_critic_reset
+  - data: {q: 0.90, k: 3}
+    sweep:
+      h5.timing_schedule:
+        - zero_zero
+        - high_high
+        - early_only
+        - delayed_carry
+        - delayed_actor_reset
+        - delayed_critic_reset

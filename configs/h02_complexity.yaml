@@ -1,0 +1,43 @@
+extends: base.yaml
+
+experiment:
+  hypothesis: h2
+  name: architecture_relative_complexity
+  mode: calibration_and_competition
+
+h2:
+  target_accuracy: 0.95
+  target_seed_fraction: 0.8
+  persistence: 2
+  # Architecture pairs are contrasted only when their total parameter counts
+  # match exactly or differ by at most this declared relative tolerance.
+  parameter_match_tolerance: 0.05
+  # The protocol always runs both mandatory calibrations. Head-only cases freeze
+  # the freshly initialized representation through update.mode=head below. Both
+  # calibrations retain the competition interface; non-target channels/state are 0.
+
+train:
+  steps: 4096
+
+cases:
+  # Model-capacity/architecture calibration.
+  - update: {mode: full, budget: full}
+    sweep:
+      data.k: [1, 2, 3, 4, 5]
+      model.depth: [1, 2, 4]
+      model.width: [8, 16, 32, 64, 128]
+      model.activation: [relu, tanh, gelu]
+      model.residual: [false, true]
+  - update: {mode: head, budget: full}
+    sweep:
+      data.k: [1, 2, 3, 4, 5]
+      model.depth: [1, 2, 4]
+      model.width: [8, 16, 32, 64, 128]
+      model.activation: [relu, tanh, gelu]
+      model.residual: [false, true]
+  # Update-capacity calibration uses one fixed, sufficiently large base model.
+  - model: {width: 128, depth: 4, activation: relu, residual: true}
+    update: {mode: subspace, budget: 64}
+    sweep:
+      data.k: [1, 2, 3, 4, 5]
+      update.budget: [1, 4, 16, 64, 256, 1024]

@@ -1,0 +1,19 @@
+{
+  "archive_sha256": "56700896a4f62f6e92a495cc0af109ff1f8982c8e9be57b920de6737a3b919f8",
+  "assigned_run_count": 4,
+  "checkpoint_objects_excluded_from_download": true,
+  "completion_verifier": "archived goalzendo_hidden_law.artifacts.verify_completed_run",
+  "job_id": "qwen35-hidden-law-20260815T153604Z",
+  "schema": "goalzendo.hidden_law_independent_shard_verification",
+  "schema_version": 1,
+  "shard_index": 0,
+  "status_byte_identical_to_terminal_receipt": true,
+  "terminal_receipt_sha256": "decd596a2af3378527bbcda356d4ce89b82c584e11627a23597ab617294997a5",
+  "verified_at": "2026-08-16T03:57:40Z",
+  "verified_runs": [
+    {"completion_digest": "d537d875ab933e8004b70e66fd7faf1db6e7afa56f9e8aff50225dc6f801e5cf", "completion_file_count": 11, "identity_matches_archived_plan": true, "plan_key": "241880c078b9ef2e5864", "run_id": "52e80f32deae4566d3cf", "status_complete": true},
+    {"completion_digest": "5a707969d4834c2235c4546801de1c8927b5650b0b2692e556dd5f000e88d858", "completion_file_count": 11, "identity_matches_archived_plan": true, "plan_key": "0a159bef9768340bfdae", "run_id": "d0aa5fef3033df7ee0d8", "status_complete": true},
+    {"completion_digest": "ec5aa051e426e7124cd8c6f5ff5c4a2a5fc67bf60ab5c4aea5bb1e9684353a4f", "completion_file_count": 11, "identity_matches_archived_plan": true, "plan_key": "499c0af8824ab157a5ce", "run_id": "cf8079480e4dc7810241", "status_complete": true},
+    {"completion_digest": "94509e9a8813c607f2a744d20605d7694f67d37f4e6e15651b595c53b24976e7", "completion_file_count": 11, "identity_matches_archived_plan": true, "plan_key": "b3a2243bff2615730e18", "run_id": "4426266d2a2d65ddb801", "status_complete": true}
+  ]
+}

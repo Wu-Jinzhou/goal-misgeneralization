@@ -1,0 +1,182 @@
+{
+  "analysis_script_sha256": "0aca675d5600724d6a993373b5ebba560f4bcf4f01887a6f30dc8acd1b7f7c89",
+  "analysis_attempts": [
+    {
+      "analysis_outputs_created": false,
+      "attempt": 1,
+      "created_at": "2026-08-15T01:47:56Z",
+      "deleted_after_terminal": true,
+      "failure": "runtime image did not provide the optional /usr/bin/time executable",
+      "finished_at": "2026-08-15T01:48:00Z",
+      "pod_confirmed_absent": true,
+      "pod_id": "ylhezvaloej4jn",
+      "preserved_diagnostics": "analysis/attempts/attempt-01-missing-time/",
+      "primary_log_bytes": 145,
+      "primary_log_sha256": "5bd7c260b3dce7d9ea5d149ba91df0f0ee2d7a21b99ccc4952ccec883e0c8300",
+      "runner_rc": 127,
+      "state": "failed",
+      "status_sha256": "48834ae3bfd87d6c2c1770a5b80a5251429670233617b3c7ee3f075683a43490",
+      "wrapper_sha256": "62011d62a226ab58d2b4ce9c146cd7993e92f1f24fbc6dcd164ff2015e486bdd"
+    },
+    {
+      "analysis_outputs_created": true,
+      "attempt": 2,
+      "created_at": "2026-08-15T01:51:38Z",
+      "deleted_after_terminal": true,
+      "descriptive_output_sha256": "3da4f5525716214eb9c182118fb64402d3e765f42f234435289ca5165dd8d5f5",
+      "finished_at": "2026-08-15T02:22:12Z",
+      "pod_confirmed_absent": true,
+      "pod_id": "9gmt2iaom6k2r1",
+      "primary_output_sha256": "6755e94884683863f0ccbf44fe25b0db48dac3455fb8bb1bda175f5e8670b924",
+      "runner_rc": 0,
+      "sha256sums_sha256": "a060c1180f281855c9548661b27c5c82bd9173192236aaeb51c3cf9113f20e82",
+      "state": "complete",
+      "status_sha256": "f5b4ffbc7402d72943faaa51c5c424c0ea2dfaaa87b4210c479dd6207d5be380",
+      "wrapper_sha256": "4896f5265a886ccde2c1f1eee30500693babf6f367f10bf305277c4fdf1d856f"
+    }
+  ],
+  "analysis_outputs": {
+    "completed_at": "2026-08-15T02:22:12Z",
+    "descriptive_path": "analysis/qwen35-known-law-descriptives.json",
+    "descriptive_sha256": "3da4f5525716214eb9c182118fb64402d3e765f42f234435289ca5165dd8d5f5",
+    "primary_path": "analysis/qwen35-known-law-analysis.json",
+    "primary_sha256": "6755e94884683863f0ccbf44fe25b0db48dac3455fb8bb1bda175f5e8670b924",
+    "sha256sums_path": "analysis/SHA256SUMS",
+    "sha256sums_sha256": "a060c1180f281855c9548661b27c5c82bd9173192236aaeb51c3cf9113f20e82"
+  },
+  "archive_sha256": "559fa11ed2b4a3b073a67463b733185b55c9e98437efe2494eb3bfa100f47fe9",
+  "config_sha256": "2e1bbd650d466bb42f24b70d6081fd0f4f2490b14bfc7e02d17d59d9e251e7a6",
+  "data_center": "US-CA-2",
+  "finished_at": "2026-08-14T22:44:20Z",
+  "implementation_fingerprint": "592dd4df02ceff4293ce6eebc6ea2a0975e7d427cb1298335bcd3319431f301b",
+  "job_id": "qwen35-main-20260813T184845Z",
+  "launcher_sha256": "2c7f41287e210e9fc7729060f3358d874ce0c9d9ee783f5855331a92ff296edc",
+  "network_volume_id": "5f06o456rx",
+  "num_shards": 6,
+  "pilot_decision": "proceed",
+  "pilot_job_id": "qwen35-pilot-20260813T134449Z",
+  "postlaunch_descriptive_companion": {
+    "epistemic_status": "postlaunch_export_of_prelaunch_defined_measurements",
+    "exporter_path": "input/postlaunch-descriptive/export_qwen35_known_law_descriptives.py",
+    "exporter_sha256": "5147a9767585b0e869faf84fcd0c343cae5e47b5671f4da9a422f259301c6cbf",
+    "record_path": "input/postlaunch-descriptive/record.json",
+    "record_sha256": "2f9e6c579cdf133a76d07e4a590771b7d010a501e410c137b576d8d1d643d630",
+    "test_path": "input/postlaunch-descriptive/test_export_qwen35_known_law_descriptives.py",
+    "test_sha256": "96a701ee07173ebdf8781e444e2c362d3c8ab13b5408124121549e4b9267bb93"
+  },
+  "postcompletion_analysis_wrapper": {
+    "epistemic_status": "postcompletion_operational_wrapper_staged_after_launch",
+    "path": "input/run-analysis-on-volume.sh",
+    "requires_complete_seals": 96,
+    "sha256": "4896f5265a886ccde2c1f1eee30500693babf6f367f10bf305277c4fdf1d856f"
+  },
+  "pretraining_infrastructure_attempts": [
+    {
+      "deleted": true,
+      "failed_at": "2026-08-13T18:53:24Z",
+      "failure": "pilot virtual environment could not import NumPy from a different base-image system layer",
+      "metrics_written": false,
+      "model_loaded": false,
+      "pod_id": "5pgzuaxluo89gi",
+      "runtime_image": "runpod/pytorch:1.0.3-cu1281-torch291-ubuntu2404",
+      "shard_index": 0,
+      "training_updates": 0
+    }
+  ],
+  "protocol_sha256": "104e1409236d767f58423b80c3544eb190d590fb37ac8d782cd2ae309d785855",
+  "record_updated_at": "2026-08-15T02:27:46Z",
+  "runtime_image": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+  "schema": "goalzendo.qwen35_main_launch_record",
+  "schema_version": 1,
+  "shard_plan_counts": [
+    22,
+    12,
+    19,
+    18,
+    12,
+    13
+  ],
+  "started_at": "2026-08-13T18:56:15Z",
+  "status": "complete",
+  "unstarted_shards_at_record": [],
+  "working_shards_at_record": [
+    {
+      "completed_at": "2026-08-14T22:44:20Z",
+      "deleted_after_completion": true,
+      "deleted_at": "2026-08-15T01:45:33Z",
+      "gpu": "NVIDIA H100 80GB HBM3",
+      "planned_runs": 22,
+      "pod_id": "q5pczyfleqlz4v",
+      "pod_name": "qwen35-main-20260813T184845Z-s00",
+      "runtime_status": "deleted",
+      "runtime_verified": true,
+      "shard_index": 0,
+      "shard_status": "complete"
+    },
+    {
+      "completed_at": "2026-08-14T09:52:45Z",
+      "deleted_after_completion": true,
+      "deleted_at": "2026-08-14T15:14:59Z",
+      "gpu": "NVIDIA H100 80GB HBM3",
+      "planned_runs": 12,
+      "pod_id": "r9x4pai6at8gq2",
+      "pod_name": "qwen35-main-20260813T184845Z-s01",
+      "runtime_status": "deleted",
+      "runtime_verified": true,
+      "shard_index": 1,
+      "shard_status": "complete"
+    },
+    {
+      "completed_at": "2026-08-14T19:07:30Z",
+      "deleted_after_completion": true,
+      "deleted_at": "2026-08-14T19:14:55Z",
+      "gpu": "NVIDIA H100 80GB HBM3",
+      "planned_runs": 19,
+      "pod_id": "am7rxn2yvbr4dm",
+      "pod_name": "qwen35-main-20260813T184845Z-s02",
+      "runtime_status": "deleted",
+      "runtime_verified": true,
+      "shard_index": 2,
+      "shard_status": "complete"
+    },
+    {
+      "completed_at": "2026-08-14T17:59:03Z",
+      "deleted_after_completion": true,
+      "deleted_at": "2026-08-14T18:01:19Z",
+      "gpu": "NVIDIA H100 80GB HBM3",
+      "planned_runs": 18,
+      "pod_id": "tqdkxwdfyu81aw",
+      "pod_name": "qwen35-main-20260813T184845Z-s03",
+      "runtime_status": "deleted",
+      "runtime_verified": true,
+      "shard_index": 3,
+      "shard_status": "complete"
+    },
+    {
+      "completed_at": "2026-08-14T10:44:37Z",
+      "deleted_after_completion": true,
+      "deleted_at": "2026-08-14T15:14:59Z",
+      "gpu": "NVIDIA H100 80GB HBM3",
+      "planned_runs": 12,
+      "pod_id": "mkcq08wwo8c193",
+      "pod_name": "qwen35-main-20260813T184845Z-s04",
+      "runtime_status": "deleted",
+      "runtime_verified": true,
+      "shard_index": 4,
+      "shard_status": "complete"
+    },
+    {
+      "completed_at": "2026-08-14T22:01:53Z",
+      "deleted_after_completion": true,
+      "deleted_at": "2026-08-15T01:45:33Z",
+      "gpu": "NVIDIA H100 NVL",
+      "planned_runs": 13,
+      "pod_id": "wrff412jb0bcy5",
+      "pod_name": "qwen35-main-20260813T184845Z-s05",
+      "runtime_status": "deleted",
+      "runtime_verified": true,
+      "shard_index": 5,
+      "shard_status": "complete"
+    }
+  ]
+}

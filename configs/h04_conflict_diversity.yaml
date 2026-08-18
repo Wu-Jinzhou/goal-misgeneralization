@@ -1,0 +1,28 @@
+extends: base.yaml
+
+experiment:
+  hypothesis: h4
+  name: distinguishing_evidence
+  mode: matched_conflict_counts
+
+h4:
+  condition: diverse
+  n_conflict: 128
+  # Converted to round(fraction*N_conflict), with at least one target-stratified
+  # context prototype per represented Y sign; requested and realized U are logged.
+  unique_fraction: 1.0
+  # Named, invertible context-corruption mechanisms. Evaluation families are
+  # disjoint from training families and mechanism identity is analysis-only.
+  structured_train_types: [location_reflection, coordinate_exchange]
+  structured_test_types: [geometry_rotation, nuisance_inversion]
+
+sweep:
+  h4.n_conflict: [0, 8, 32, 128, 512, 2048]
+  data.k: [1, 2, 3, 4, 5]
+
+cases:
+  - h4: {condition: concentrated, unique_fraction: 0.02}
+  - h4: {condition: concentrated, unique_fraction: 0.1}
+  - h4: {condition: diverse, unique_fraction: 0.5}
+  - h4: {condition: diverse, unique_fraction: 1.0}
+  - h4: {condition: structured_holdout, unique_fraction: 1.0}

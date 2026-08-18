@@ -1,0 +1,89 @@
+extends: base.yaml
+
+experiment:
+  id: qwen35_evidence_geometry
+  name: qwen35_evidence_geometry_panel
+  status: prospective
+
+run:
+  output_root: /workspace/artifacts-goalzendo/qwen35-evidence-geometry
+  seeds: [22011, 22013, 22017, 22019, 22023, 22031]
+  resume: true
+  save_checkpoints: true
+  checkpoint_steps: [512, 1000]
+  snapshot_steps: []
+  launch_guard: null
+
+data:
+  n_train: 10000
+  n_validation: 1000
+  n_eval_per_cell: 16
+  rule_family: parity
+  sage_rule_family: parity
+  q_p: 0.95
+  q_q: 0.90
+  training_view: full
+  renderer: natural
+  counterbalance: true
+
+update:
+  method: full
+
+train:
+  algorithm: outcome_rl
+  steps: 1000
+  batch_size: 10
+  gradient_accumulation_steps: 5
+  learning_rate: 0.000003
+  max_sequence_length: 768
+  deterministic_algorithms: false
+  allow_tf32: false
+  eval_steps: [0, 1, 4, 16, 64, 256, 512, 1000]
+  kl_coefficient: 0.0
+  entropy_coefficient: 0.01
+  samples_per_prompt: 4
+
+evaluation:
+  prompt_views: [full, audit_law_matched]
+  causal_prompt_views: [full]
+  causal_per_cell: 8
+  final_causal_per_cell: 16
+  final_eval_per_cell: 64
+  mirror_pairs: true
+  save_predictions: true
+
+cases:
+  - model.name: Qwen/Qwen3.5-0.8B
+    model.revision: "2fc06364715b967f1860aea9cf38778875588b17"
+    data.error_geometry: specified
+    data.joint_error_rate: 0.005
+    data.conflict_diversity: diverse
+  - model.name: Qwen/Qwen3.5-0.8B
+    model.revision: "2fc06364715b967f1860aea9cf38778875588b17"
+    data.error_geometry: specified
+    data.joint_error_rate: 0.040
+    data.conflict_diversity: diverse
+  - model.name: Qwen/Qwen3.5-0.8B
+    model.revision: "2fc06364715b967f1860aea9cf38778875588b17"
+    data.error_geometry: specified
+    data.joint_error_rate: 0.040
+    data.conflict_diversity: concentrated
+    data.concentrated_unique_conflicts_per_tuple: 16
+  - model.name: Qwen/Qwen3.5-2B
+    model.revision: "15852e8c16360a2fea060d615a32b45270f8a8fc"
+    data.error_geometry: specified
+    data.joint_error_rate: 0.005
+    data.conflict_diversity: diverse
+  - model.name: Qwen/Qwen3.5-2B
+    model.revision: "15852e8c16360a2fea060d615a32b45270f8a8fc"
+    data.error_geometry: specified
+    data.joint_error_rate: 0.040
+    data.conflict_diversity: diverse
+  - model.name: Qwen/Qwen3.5-2B
+    model.revision: "15852e8c16360a2fea060d615a32b45270f8a8fc"
+    data.error_geometry: specified
+    data.joint_error_rate: 0.040
+    data.conflict_diversity: concentrated
+    data.concentrated_unique_conflicts_per_tuple: 16
+
+sweep: {}

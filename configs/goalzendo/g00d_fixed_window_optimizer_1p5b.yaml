@@ -1,0 +1,13 @@
+extends: g00c_strict_optimizer_1p5b.yaml
+
+experiment:
+  id: g00
+  # The gate recognizes this exact name as the target-model selection panel.
+  name: deployed_model_full_context_pilot
+  status: prospective
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g00d-fixed-window-optimizer-1p5b
+
+# Gate schema v2 evaluates the predeclared terminal window [128, 256], while
+# retaining steps 1--32 for the independent sampled-RL diversity screen.

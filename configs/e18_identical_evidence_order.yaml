@@ -1,0 +1,94 @@
+extends: base.yaml
+
+# Adaptive/post-hoc experiment selected after E17.  The A/B/D evidence multiset,
+# atomic batches, optimizer resets, checkpoints, and distinct pilot/full seeds
+# are frozen in followups.md before any E18 outcome is observed.
+experiment:
+  hypothesis: h15
+  name: identical_evidence_order
+  mode: adaptive_identical_evidence_order
+
+run:
+  seeds: [269, 271, 277, 281, 283, 293, 307, 311, 313, 317,
+          331, 337, 347, 349, 353, 359, 367, 373, 379, 383]
+  task_levels: [choice]
+  save_checkpoints: false
+
+evaluation:
+  save_predictions: false
+
+data:
+  n_train: 10000
+  n_validation: 4000
+  n_eval: 10000
+  q: 0.90
+  k: 3
+  max_k: 5
+  state_dim: 8
+
+model:
+  width: 64
+  depth: 2
+  activation: relu
+  residual: false
+
+update:
+  mode: full
+  budget: full
+
+train:
+  algorithm: clean_sft
+  optimizer: adamw
+  steps: 4000
+  batch_size: 250
+  learning_rate: 0.003
+  weight_decay: 0.0
+  shuffle: false
+  deterministic: true
+  eval_steps: [3240, 3440, 3441, 3442, 3443, 3444, 3445, 3447, 3449,
+               3453, 3457, 3464, 3473, 3485, 3502, 3525, 3557, 3568,
+               3601, 3640, 3641, 3642, 3643, 3644, 3645, 3647, 3649,
+               3653, 3657, 3664, 3673, 3685, 3702, 3725, 3757, 3768,
+               3801, 3862, 3944, 4000]
+
+h15:
+  schedule: b_then_d
+  q_p: 0.90
+  q_q: 0.95
+  k_q: 2
+  k_y: 3
+  max_k_q: 3
+  max_k_y: 5
+  prefix_a_repetitions: 90
+  washout_a_repetitions: 10
+  diagnostic_repetitions: 100
+  prefix_steps: 3240
+  block_steps: 200
+  washout_steps: 360
+  total_steps: 4000
+  second_block_checkpoints: [1, 2, 3, 4, 5, 7, 9, 13, 17, 24, 33, 45,
+                             62, 85, 117, 128, 161, 200]
+  washout_checkpoints: [0, 1, 2, 3, 4, 5, 7, 9, 13, 17, 24, 33, 45,
+                        62, 85, 117, 128, 161, 222, 304, 360]
+  auc_horizon: 128
+  probe_train_n: 2048
+  probe_eval_n: 4096
+  probe_ridge: 0.001
+  truth_table_control_seed: 1500450271
+  pure_threshold: 0.90
+  pure_margin: 0.10
+  late_stability_steps: [222, 304, 360]
+  late_stability_tolerance: 0.02
+  primary_effect_threshold: 0.10
+  equivalence_margin: 0.05
+  terminal_effect_threshold: 0.10
+  minimum_sign_count: 15
+  pilot_seeds: [389, 397, 401]
+
+cases:
+  - h15:
+      schedule: b_then_d
+  - h15:
+      schedule: d_then_b
+  - h15:
+      schedule: interleave

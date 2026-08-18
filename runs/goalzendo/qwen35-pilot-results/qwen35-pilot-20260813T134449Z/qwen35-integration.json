@@ -1,0 +1,307 @@
+{
+  "model_family": "qwen35",
+  "pinned_models": [
+    {
+      "dtype": "bfloat16",
+      "name": "Qwen/Qwen3.5-0.8B",
+      "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+      "trust_remote_code": false
+    },
+    {
+      "dtype": "bfloat16",
+      "name": "Qwen/Qwen3.5-2B",
+      "revision": "15852e8c16360a2fea060d615a32b45270f8a8fc",
+      "trust_remote_code": false
+    }
+  ],
+  "reports": [
+    {
+      "action_boundary": {
+        "continuation_token_ids_by_prompt": [
+          [
+            [
+              32
+            ],
+            [
+              33
+            ]
+          ],
+          [
+            [
+              32
+            ],
+            [
+              33
+            ]
+          ]
+        ],
+        "continuation_token_lengths_by_prompt": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "labels": [
+          "A",
+          "B"
+        ],
+        "prefix_stable": true,
+        "standalone_token_ids": [
+          [
+            32
+          ],
+          [
+            33
+          ]
+        ]
+      },
+      "model": {
+        "action_labels": [
+          "A",
+          "B"
+        ],
+        "action_token_ids": [
+          [
+            32
+          ],
+          [
+            33
+          ]
+        ],
+        "chat_template_sha256": "273d8e0e683b885071fb17e08d71e5f2a5ddfb5309756181681de4f5a1822d80",
+        "dependency_versions": {
+          "accelerate": "1.14.0",
+          "huggingface_hub": "1.5.0",
+          "peft": "0.20.0",
+          "python": "3.12.3",
+          "safetensors": "0.8.0",
+          "tokenizers": "0.22.2",
+          "torch": "2.8.0+cu128",
+          "torch_cuda": "12.8",
+          "transformers": "5.15.0"
+        },
+        "model_class": "transformers.models.qwen3_5.modeling_qwen3_5.Qwen3_5ForCausalLM",
+        "parameter_count": 752393024,
+        "peft_version": "0.20.0",
+        "requested_dtype": "bfloat16",
+        "requested_model": "Qwen/Qwen3.5-0.8B",
+        "requested_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+        "resolved_revision": null,
+        "tokenizer_class": "transformers.models.qwen2.tokenization_qwen2.Qwen2Tokenizer",
+        "tokenizer_name_or_path": "Qwen/Qwen3.5-0.8B",
+        "tokenizer_resolved_revision": null,
+        "torch_version": "2.8.0+cu128",
+        "trainable_parameter_count": 0,
+        "transformers_version": "5.15.0",
+        "vocabulary_size": 248044
+      },
+      "passed": true,
+      "prompt_tokens": {
+        "configured_maximum": 768,
+        "counts": [
+          66,
+          88
+        ],
+        "maximum": 88
+      },
+      "runtime": {
+        "dependencies": {
+          "accelerate": "1.14.0",
+          "huggingface_hub": "1.5.0",
+          "peft": "0.20.0",
+          "python": "3.12.3",
+          "safetensors": "0.8.0",
+          "tokenizers": "0.22.2",
+          "torch": "2.8.0+cu128",
+          "torch_cuda": "12.8",
+          "transformers": "5.15.0"
+        },
+        "last_logit_parameter": "logits_to_keep",
+        "parameter_devices": [
+          "cuda:0"
+        ],
+        "parameter_dtypes": [
+          "torch.bfloat16"
+        ],
+        "requested_device": "cuda"
+      },
+      "scores": {
+        "finite": true,
+        "maximum_normalization_error": 0.0,
+        "maximum_probability_swap_error": 0.0,
+        "maximum_score_swap_error": 0.0,
+        "normalized_log_scores": [
+          [
+            -0.42870065569877625,
+            -1.0537006855010986
+          ],
+          [
+            -0.3132617473602295,
+            -1.3132617473602295
+          ]
+        ],
+        "probabilities": [
+          [
+            0.65234375,
+            0.349609375
+          ],
+          [
+            0.73046875,
+            0.26953125
+          ]
+        ],
+        "swap_atol": 0.002,
+        "swap_invariant": true,
+        "swap_rtol": 0.002
+      }
+    },
+    {
+      "action_boundary": {
+        "continuation_token_ids_by_prompt": [
+          [
+            [
+              32
+            ],
+            [
+              33
+            ]
+          ],
+          [
+            [
+              32
+            ],
+            [
+              33
+            ]
+          ]
+        ],
+        "continuation_token_lengths_by_prompt": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "labels": [
+          "A",
+          "B"
+        ],
+        "prefix_stable": true,
+        "standalone_token_ids": [
+          [
+            32
+          ],
+          [
+            33
+          ]
+        ]
+      },
+      "model": {
+        "action_labels": [
+          "A",
+          "B"
+        ],
+        "action_token_ids": [
+          [
+            32
+          ],
+          [
+            33
+          ]
+        ],
+        "chat_template_sha256": "273d8e0e683b885071fb17e08d71e5f2a5ddfb5309756181681de4f5a1822d80",
+        "dependency_versions": {
+          "accelerate": "1.14.0",
+          "huggingface_hub": "1.5.0",
+          "peft": "0.20.0",
+          "python": "3.12.3",
+          "safetensors": "0.8.0",
+          "tokenizers": "0.22.2",
+          "torch": "2.8.0+cu128",
+          "torch_cuda": "12.8",
+          "transformers": "5.15.0"
+        },
+        "model_class": "transformers.models.qwen3_5.modeling_qwen3_5.Qwen3_5ForCausalLM",
+        "parameter_count": 1881825088,
+        "peft_version": "0.20.0",
+        "requested_dtype": "bfloat16",
+        "requested_model": "Qwen/Qwen3.5-2B",
+        "requested_revision": "15852e8c16360a2fea060d615a32b45270f8a8fc",
+        "resolved_revision": null,
+        "tokenizer_class": "transformers.models.qwen2.tokenization_qwen2.Qwen2Tokenizer",
+        "tokenizer_name_or_path": "Qwen/Qwen3.5-2B",
+        "tokenizer_resolved_revision": null,
+        "torch_version": "2.8.0+cu128",
+        "trainable_parameter_count": 0,
+        "transformers_version": "5.15.0",
+        "vocabulary_size": 248044
+      },
+      "passed": true,
+      "prompt_tokens": {
+        "configured_maximum": 768,
+        "counts": [
+          66,
+          88
+        ],
+        "maximum": 88
+      },
+      "runtime": {
+        "dependencies": {
+          "accelerate": "1.14.0",
+          "huggingface_hub": "1.5.0",
+          "peft": "0.20.0",
+          "python": "3.12.3",
+          "safetensors": "0.8.0",
+          "tokenizers": "0.22.2",
+          "torch": "2.8.0+cu128",
+          "torch_cuda": "12.8",
+          "transformers": "5.15.0"
+        },
+        "last_logit_parameter": "logits_to_keep",
+        "parameter_devices": [
+          "cuda:0"
+        ],
+        "parameter_dtypes": [
+          "torch.bfloat16"
+        ],
+        "requested_device": "cuda"
+      },
+      "scores": {
+        "finite": true,
+        "maximum_normalization_error": 0.0,
+        "maximum_probability_swap_error": 0.0,
+        "maximum_score_swap_error": 0.0,
+        "normalized_log_scores": [
+          [
+            -0.28115010261535645,
+            -1.4061501026153564
+          ],
+          [
+            -0.1602240949869156,
+            -1.9102240800857544
+          ]
+        ],
+        "probabilities": [
+          [
+            0.75390625,
+            0.2451171875
+          ],
+          [
+            0.8515625,
+            0.1484375
+          ]
+        ],
+        "swap_atol": 0.002,
+        "swap_invariant": true,
+        "swap_rtol": 0.002
+      }
+    }
+  ]
+}

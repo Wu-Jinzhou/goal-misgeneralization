@@ -1,0 +1,66 @@
+extends: base.yaml
+
+experiment:
+  id: g00
+  name: remote_smoke
+  status: exploratory
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g00-smoke
+  seeds: [991]
+  protocol_unlocked: true
+  launch_guard: null
+  save_checkpoints: true
+  checkpoint_steps: [1, 2]
+  snapshot_steps: [2]
+
+data:
+  n_train: 40
+  n_validation: 20
+  n_eval_per_cell: 2
+  law_features: [5, 6, 7]
+  sage_features: [8, 9]
+  distractor_features: [0, 1, 2, 3, 4, 10, 11, 12, 13, 14, 15, 16]
+  feature_names:
+    - bears the arven sigil
+    - bears the belic sigil
+    - bears the corva sigil
+    - bears the drann sigil
+    - bears the eskin sigil
+    - bears the falor sigil
+    - bears the gatin sigil
+    - bears the helva sigil
+    - bears the iskar sigil
+    - bears the jorin sigil
+    - bears the keldo sigil
+    - bears the lumet sigil
+    - bears the morin sigil
+    - bears the nevan sigil
+    - bears the orlis sigil
+    - bears the paven sigil
+    - bears the quorin sigil
+  q_p: 0.95
+  q_q: 0.90
+  rule_family: parity
+  training_view: full
+
+evaluation:
+  prompt_views: [full, audit_law_full, audit_law_matched, law_only]
+  causal_prompt_views: [full]
+  causal_per_cell: 2
+  final_causal_per_cell: 2
+  batch_size: 4
+  final_eval_per_cell: 2
+  save_predictions: true
+  bootstrap_samples: 100
+
+train:
+  algorithm: sft
+  steps: 2
+  batch_size: 4
+  gradient_accumulation_steps: 1
+  learning_rate: 0.0001
+  eval_steps: [0, 1, 2]
+
+cases: []
+sweep: {}

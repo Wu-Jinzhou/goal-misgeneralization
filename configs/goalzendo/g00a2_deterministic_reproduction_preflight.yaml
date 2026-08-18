@@ -1,0 +1,40 @@
+extends: g00_capability_controls_1p5b.yaml
+
+experiment:
+  id: g00a2
+  name: deterministic_matched_reproduction_preflight
+  status: adaptive
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g00a2-deterministic-preflight
+  seeds: [9200]
+  launch_guard: null
+  protocol_unlocked: true
+  snapshot_steps: [128]
+
+data:
+  rule_family: parity
+  training_view: audit_law_matched
+
+train:
+  algorithm: sft
+  steps: 128
+  batch_size: 10
+  gradient_accumulation_steps: 4
+  learning_rate: 0.00001
+  warmup_ratio: 0.05
+  eval_steps: [0, 1, 2, 4, 8, 16, 32, 64, 128]
+  deterministic_algorithms: true
+  allow_tf32: false
+  cublas_workspace_config: ":4096:8"
+
+evaluation:
+  prompt_views: [audit_law_matched]
+
+sweep: {}
+
+# These labels change artifact identity only. Both replicas receive identical
+# data, model initialization, batch order, optimizer settings, and evaluation.
+cases:
+  - experiment.reproducibility_replica: a
+  - experiment.reproducibility_replica: b

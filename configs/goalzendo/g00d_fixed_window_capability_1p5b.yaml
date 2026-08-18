@@ -1,0 +1,13 @@
+extends: g00b_deterministic_capability_validation.yaml
+
+experiment:
+  id: g00
+  name: fixed_window_capability_controls_1p5b
+  status: prospective
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g00d-fixed-window-capability-1p5b
+
+# G00-B established capability on fresh seeds, but it used an earlier source
+# fingerprint.  This exact 24-run panel is rerun rather than combined across
+# source versions.

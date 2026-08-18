@@ -1,0 +1,20 @@
+extends: g00f_capability_repair_0p5b.yaml
+
+experiment:
+  id: g00f
+  name: capability_repair_h200_tuned_0p5b
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g00f-h200-tuned-0p5b
+  launch_guard: G00F_H200_FROZEN_SELECTOR_AND_EXECUTION_MANIFEST_REQUIRED
+  protocol_unlocked: false
+
+# The tuned profile keeps the effective batch at 50 while using the H200
+# memory envelope selected by the separately frozen real-model parity gate.
+train:
+  batch_size: 50
+  gradient_accumulation_steps: 1
+  gradient_checkpointing: false
+
+evaluation:
+  batch_size: 128

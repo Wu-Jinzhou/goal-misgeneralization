@@ -1,0 +1,12 @@
+# Exact GoalZendo G00 GPU software stack validated on Runpod on 2026-08-10.
+# G03's pinned tokenizer/compiler probe deliberately reuses this stable stack;
+# it does not use the incompatible tokenizers 0.23.1 release.
+# The CUDA-enabled torch wheel is supplied by the pinned Runpod image
+# (runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404).
+torch==2.8.0
+accelerate==1.14.0
+huggingface-hub==0.36.2
+peft==0.20.0
+safetensors==0.8.0
+tokenizers==0.22.2
+transformers==4.57.6

@@ -1,0 +1,10 @@
+# Separate runtime for the prospective Qwen3.5 GoalZendo study.
+# The historical Qwen2.5 runtime remains frozen in constraints-goalzendo.txt.
+# CUDA-enabled PyTorch is supplied by the Runpod image.
+torch==2.8.0
+accelerate==1.14.0
+huggingface-hub==1.5.0
+peft==0.20.0
+safetensors==0.8.0
+tokenizers==0.22.2
+transformers==5.15.0

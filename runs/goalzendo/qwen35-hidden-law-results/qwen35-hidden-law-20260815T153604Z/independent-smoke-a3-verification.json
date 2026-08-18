@@ -1,0 +1,54 @@
+{
+  "archive_sha256": "56700896a4f62f6e92a495cc0af109ff1f8982c8e9be57b920de6737a3b919f8",
+  "attempt": 3,
+  "canonical_status_sha256": "77fdc49b431377c0249e00aded0211797961c738d245bee3483e481e6605e5c6",
+  "outcomes_inspected": false,
+  "passed": true,
+  "remote_verification_sha256": "345c17825335d4debe3a28861f5bfa5c8a85b157c927e948fd2e7e39a297bc40",
+  "run_count": 4,
+  "schema": "goalzendo.hidden_law_independent_smoke_verification",
+  "schema_version": 1,
+  "verified": [
+    {
+      "algorithm": "process_sft",
+      "completion_sha256": "bf952604f10120aa58a15fec6a50d8a1a961c718c212fc05dbf78d5d31e0a938",
+      "manifest_sha256": "ce848035e9df9fbe4ade6f6cf3679a7394002ca164d7401ec3da1fdd97cd22fe",
+      "metrics_sha256": "0a31ea522c623a9b4f1eed1024ef6f11c52b2694d63c002fddeb8471962f976c",
+      "model": "Qwen/Qwen3.5-0.8B",
+      "rerun_receipt_sha256": "1e3592c239e50b0d35c4ff0c7acf74cac667c3ccd351f42b2f5195543cf23e90",
+      "run_id": "d2b532c422dca1597f72",
+      "summary_sha256": "40968de850c1d83142b59fb848e5416f28e262af3761700327cd8f2482e898f1"
+    },
+    {
+      "algorithm": "outcome_rl",
+      "completion_sha256": "6c400e4468d9ec154e1d8453af6550a254fca829a1779f0a79c5ff2c6ea4319f",
+      "manifest_sha256": "ce848035e9df9fbe4ade6f6cf3679a7394002ca164d7401ec3da1fdd97cd22fe",
+      "metrics_sha256": "81daaa140b2773a7a12b1754d035c758fec8ec7a49722e5f9364f1484475b3ea",
+      "model": "Qwen/Qwen3.5-0.8B",
+      "rerun_receipt_sha256": "048782e5443c933c10d5a2e04e4766ed3a198a3244fd40b1a31e3e4f26edd7b3",
+      "run_id": "1a159b626be7dcc80c16",
+      "summary_sha256": "cee7d26bf54e54c5f6c7ffbf2c26c540eb6b23689d9708f882cced03d87a968c"
+    },
+    {
+      "algorithm": "process_sft",
+      "completion_sha256": "08be9103df685dc81ad190b83df7e0c6d969d41a3f35ba9645f272fdaae93d5b",
+      "manifest_sha256": "cb882fea66a3662d33281c863e0357306b40278021ec5dafd7ba9ef4629d8d04",
+      "metrics_sha256": "7e889810ad8db22510f89786402f53cfc2b99e14be0312aa9fdcf7a686ed9b03",
+      "model": "Qwen/Qwen3.5-2B",
+      "rerun_receipt_sha256": "0bda3caaaf15eb477aeac8daed762b900077fb07e76efc082912383af4148819",
+      "run_id": "0bcd7f1d541c4096a5ec",
+      "summary_sha256": "01d3ba9d76cec40e41d975cae2aa2463d3dd876c450c8dcf5ba44baf9602e20b"
+    },
+    {
+      "algorithm": "outcome_rl",
+      "completion_sha256": "e9237aea4be58a5b9e9073f2b54a85d0b9644c80915fb95658b4c8db8ae4c8ae",
+      "manifest_sha256": "cb882fea66a3662d33281c863e0357306b40278021ec5dafd7ba9ef4629d8d04",
+      "metrics_sha256": "5c9fd4c1f8aa2a932fc11370741d9c8c84551858f28efd9ff14bd7a5c068169a",
+      "model": "Qwen/Qwen3.5-2B",
+      "rerun_receipt_sha256": "aa0813984ddbfb269afcc9a716e708dce7ab250f7ecafd2ea94cb6dfb0dc01a1",
+      "run_id": "d935d61c13fdb6b8a0a3",
+      "summary_sha256": "0d5487cdc76a725575b07e2dab3eced056e4b0c14060f1b4ec39301bad2797be"
+    }
+  ],
+  "wrapper_sha256": "cab0c375b68ae0bfa28407d489e18833e88102a18e5ac205d0967485b87f21ab"
+}

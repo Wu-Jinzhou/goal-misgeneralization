@@ -1,0 +1,19 @@
+extends: smoke.yaml
+
+experiment:
+  id: g00a3
+  name: expected_outcome_smoke
+  status: adaptive
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g00a3-expected-outcome-smoke
+  seeds: [9399]
+
+train:
+  algorithm: expected_outcome_rl
+  learning_rate: 0.000003
+  entropy_coefficient: 0.01
+  kl_coefficient: 0.0
+  deterministic_algorithms: true
+  allow_tf32: false
+  cublas_workspace_config: ":4096:8"

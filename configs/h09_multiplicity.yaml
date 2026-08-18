@@ -1,0 +1,25 @@
+extends: base.yaml
+
+experiment:
+  hypothesis: h9
+  name: conditional_multiplicity
+  mode: context_selector
+
+h9:
+  context_balance: 0.5
+  proxy0_degree: 1
+  proxy1_degree: 1
+  include_single_rule_controls: true
+  mastery_threshold: 0.9
+  selector_threshold: 0.9
+  context_conditions: [normal, removed, randomized, mismatch_0_1, mismatch_1_0]
+
+cases:
+  - update: {mode: full, budget: full}
+    sweep:
+      model.width: [2, 4, 8, 16, 32, 64, 128]
+      model.depth: [1, 2, 4]
+  - model: {width: 128, depth: 4, activation: relu, residual: true}
+    update: {mode: subspace, budget: 1}
+    sweep:
+      update.budget: [1, 4, 16, 64, 256, 1024]

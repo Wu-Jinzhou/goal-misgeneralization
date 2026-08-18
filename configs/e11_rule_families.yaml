@@ -1,0 +1,50 @@
+extends: base.yaml
+
+experiment:
+  hypothesis: h2
+  name: exact_rule_families
+  mode: calibrated_rule_competition
+
+run:
+  task_levels: [choice]
+  save_checkpoints: false
+
+evaluation:
+  save_predictions: false
+
+data:
+  n_train: 10000
+  n_validation: 4000
+  n_eval: 10000
+  max_k: 6
+  state_dim: 8
+
+model:
+  activation: relu
+  residual: false
+
+train:
+  steps: 4096
+  batch_size: 250
+  learning_rate: 0.003
+  weight_decay: 0.0
+  eval_steps: log
+
+h2:
+  target_accuracy: 0.95
+  target_seed_fraction: 0.8
+  persistence: 2
+  parameter_match_tolerance: 0.05
+
+cases:
+  - data: {target_rule: parity, k: 5}
+    sweep: &rule_sweep
+      data.q: [0.75, 0.90, 0.99]
+      model.width: [8, 16, 32, 64, 128]
+      model.depth: [1, 2]
+  - data: {target_rule: majority, k: 5}
+    sweep: *rule_sweep
+  - data: {target_rule: conjunction, k: 5}
+    sweep: *rule_sweep
+  - data: {target_rule: multiplexer, k: 6}
+    sweep: *rule_sweep

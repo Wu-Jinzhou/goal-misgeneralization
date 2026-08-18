@@ -1,0 +1,18 @@
+extends: g00_engineering.yaml
+
+experiment:
+  id: g00
+  name: strict_source_engineering_calibration
+  status: prospective
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g00c-strict-engineering-0p5b
+
+# This is a source-compatible bridge, not a new optimizer search. It repeats
+# the originally frozen 0.5B calibration grid under the strict deterministic
+# implementation used by G00-B and the eventual G01 launch.
+train:
+  deterministic_algorithms: true
+  allow_tf32: false
+  cublas_workspace_config: ":4096:8"
+

@@ -1,0 +1,22 @@
+{
+  "containerDiskInGb": 20,
+  "costPerHr": 3.29,
+  "desiredStatus": "RUNNING",
+  "env": [
+    "POSTCOMPLETION_WRAPPER_SHA256=61d90978578d0878b85de3e35a8d535cbb83ea867e6cf9230765095354d876c0"
+  ],
+  "gpuCount": 1,
+  "id": "ieayaecj1db8ra",
+  "imageName": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+  "lastStatusChange": "Rented by User: Sun Aug 16 2026 15:40:00 GMT+0000 (Coordinated Universal Time)",
+  "machine": {
+    "gpuDisplayName": "H100 SXM",
+    "location": "US"
+  },
+  "memoryInGb": 251,
+  "name": "qwen35-hidden-law-20260815T153604Z-analysis",
+  "ports": null,
+  "vcpuCount": 16,
+  "volumeInGb": 0,
+  "volumeMountPath": "/workspace"
+}

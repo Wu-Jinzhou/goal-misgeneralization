@@ -1,0 +1,13 @@
+extends: g00c_strict_engineering_0p5b.yaml
+
+experiment:
+  id: g00
+  name: fixed_window_engineering_calibration_0p5b
+  status: prospective
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g00d-fixed-window-engineering-0p5b
+
+# G00-D is a complete same-source rerun under gate schema v2.  It does not
+# reuse G00-C plans or artifacts, which were frozen against an earlier source
+# snapshot and were never launched.

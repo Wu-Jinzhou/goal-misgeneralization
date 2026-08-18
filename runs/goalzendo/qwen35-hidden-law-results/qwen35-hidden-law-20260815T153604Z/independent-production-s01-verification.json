@@ -1,0 +1,55 @@
+{
+  "archive_sha256": "56700896a4f62f6e92a495cc0af109ff1f8982c8e9be57b920de6737a3b919f8",
+  "assigned_run_count": 5,
+  "checkpoint_objects_excluded_from_download": true,
+  "completion_verifier": "archived goalzendo_hidden_law.artifacts.verify_completed_run",
+  "job_id": "qwen35-hidden-law-20260815T153604Z",
+  "schema": "goalzendo.hidden_law_independent_shard_verification",
+  "schema_version": 1,
+  "shard_index": 1,
+  "status_byte_identical_to_terminal_receipt": true,
+  "terminal_receipt_sha256": "e9325ec33622b3d12f22bffb9a2c3f96bf8519bee652b5bf33b37c1e6a62e036",
+  "verified_at": "2026-08-16T15:36:06Z",
+  "verified_runs": [
+    {
+      "completion_digest": "19c4633a6b15de613a4842828f9db0107d9fe238a003d245f24890b15b88e8e3",
+      "completion_file_count": 11,
+      "identity_matches_archived_plan": true,
+      "plan_key": "87bb7fb60376cdf22987",
+      "run_id": "81755b4849aa7c0dc583",
+      "status_complete": true
+    },
+    {
+      "completion_digest": "5cb6d695de0ab5e086fd2e769165d90ebab99b86ffd39db71c45f6eb7e8f1bed",
+      "completion_file_count": 11,
+      "identity_matches_archived_plan": true,
+      "plan_key": "200e08dee10e737cb799",
+      "run_id": "46982c2fde4b63521aa3",
+      "status_complete": true
+    },
+    {
+      "completion_digest": "55aa86d770e01fd537e484f1ff8067d414498f48f91cdb01445ed0c8495722c7",
+      "completion_file_count": 11,
+      "identity_matches_archived_plan": true,
+      "plan_key": "8d4ed1bc826dbdd81297",
+      "run_id": "ecf8d9b3fa2aed3e1fca",
+      "status_complete": true
+    },
+    {
+      "completion_digest": "1ccdcfd7faea80e375fd9f589606d032cf8b72fce668c5baa9659763c8d54992",
+      "completion_file_count": 11,
+      "identity_matches_archived_plan": true,
+      "plan_key": "23ca3b9894a1215a81c3",
+      "run_id": "ef29961e7a2c058e9b04",
+      "status_complete": true
+    },
+    {
+      "completion_digest": "f5fb11400c7a60c277a7dc5c4b12bcd4205f50f38828073f6edc6d77e34cdaa3",
+      "completion_file_count": 11,
+      "identity_matches_archived_plan": true,
+      "plan_key": "5aa6887180ffdbc4d629",
+      "run_id": "3cd34e78d30d4d5bf9dd",
+      "status_complete": true
+    }
+  ]
+}

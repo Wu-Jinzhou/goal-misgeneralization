@@ -1,0 +1,12 @@
+extends: g00c_strict_capability_0p5b.yaml
+
+experiment:
+  id: g00
+  name: fixed_window_capability_controls_0p5b
+  status: prospective
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g00d-fixed-window-capability-0p5b
+
+# This panel is regenerated and rerun with the other G00-D inputs so that the
+# artifact-derived gate never mixes implementation fingerprints.

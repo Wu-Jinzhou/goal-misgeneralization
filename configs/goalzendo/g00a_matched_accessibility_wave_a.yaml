@@ -1,0 +1,47 @@
+extends: g00_capability_controls_1p5b.yaml
+
+experiment:
+  id: g00a
+  name: adaptive_matched_accessibility_wave_a
+  status: adaptive
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g00a-matched-accessibility-wave-a
+  seeds: [9001, 9002, 9003]
+  launch_guard: null
+  protocol_unlocked: true
+  snapshot_steps: []
+
+# This adaptive study was specified after all three exact-model parity
+# audit_law_matched controls failed at 128 updates.  Reusing the engineering
+# seeds makes the first 128 updates a deterministic reproduction check; these
+# seeds and outcomes are never confirmatory G01 evidence.
+data:
+  rule_family: parity
+
+train:
+  algorithm: sft
+  learning_rate: 0.00001
+  batch_size: 10
+  gradient_accumulation_steps: 4
+
+sweep: {}
+
+cases:
+  # Hold the prompt and optimizer fixed while extending the horizon.  Six
+  # warmup updates exactly match the completed 128-step controls.
+  - data.training_view: audit_law_matched
+    evaluation.prompt_views: [audit_law_matched, law_only]
+    train.steps: 512
+    train.warmup_ratio: 0.01171875
+    train.eval_steps: [0, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
+    run.checkpoint_steps: [512]
+
+  # Cross-view transfer distinguishes acquisition interference from failure to
+  # express an already acquired parity rule in the matched layout.
+  - data.training_view: law_only
+    evaluation.prompt_views: [law_only, audit_law_matched]
+    train.steps: 128
+    train.warmup_ratio: 0.05
+    train.eval_steps: [0, 1, 2, 4, 8, 16, 32, 64, 128]
+    run.checkpoint_steps: [128]

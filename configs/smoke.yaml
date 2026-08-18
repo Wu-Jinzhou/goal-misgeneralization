@@ -1,0 +1,34 @@
+# A tiny end-to-end H1 run used by CI and `runs/00_smoke.sh`.
+extends: base.yaml
+
+experiment:
+  hypothesis: h1
+  name: smoke
+  mode: integration
+
+run:
+  seeds: [0]
+  output_root: artifacts/smoke
+  task_levels: [choice, fork, navigation]
+  navigation_episodes: 8
+
+data:
+  n_train: 64
+  n_validation: 64
+  n_eval: 128
+  q: 0.75
+  k: 2
+  max_k: 5
+
+model:
+  width: 16
+  depth: 2
+
+train:
+  steps: 16
+  batch_size: 32
+  eval_steps: log
+
+evaluation:
+  bootstrap_samples: 100
+  save_predictions: true

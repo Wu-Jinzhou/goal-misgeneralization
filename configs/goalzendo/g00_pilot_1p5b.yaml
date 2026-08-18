@@ -1,0 +1,35 @@
+extends: g00_pilot.yaml
+
+experiment:
+  id: g00
+  name: deployed_model_full_context_pilot
+  status: exploratory
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g00-pilot-1p5b
+
+model:
+  name: Qwen/Qwen2.5-1.5B-Instruct
+  revision: 989aa7980e4cf806f80c7fef2b1adb7bc71aa306
+
+train:
+  # Match G01's full-FT effective batch exactly so this pilot, rather than the
+  # separate 0.5B engineering grid, is the only optimizer-selection authority.
+  batch_size: 10
+  gradient_accumulation_steps: 5
+
+# These short, exploratory runs establish whether G01's exact model is
+# informative at step zero and can acquire each Law under full competition.
+sweep:
+  data.rule_family: [parity, majority]
+  data.q_p: [0.95, 1.0]
+
+cases:
+  - train.algorithm: sft
+    train.learning_rate: 0.000003
+  - train.algorithm: sft
+    train.learning_rate: 0.00001
+  - train.algorithm: outcome_rl
+    train.learning_rate: 0.000001
+  - train.algorithm: outcome_rl
+    train.learning_rate: 0.000003

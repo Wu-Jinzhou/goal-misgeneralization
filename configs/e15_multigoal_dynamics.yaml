@@ -1,0 +1,65 @@
+extends: base.yaml
+
+# Adaptive/post-hoc temporal bridge selected after inspecting E12.  The design
+# and analysis rules are frozen in followups.md before the full run.
+experiment:
+  hypothesis: h12
+  name: multigoal_temporal_bridge
+  mode: adaptive_multigoal_dynamics
+
+run:
+  seeds: [11, 23, 37, 41, 53, 67, 71, 83, 97, 101,
+          103, 107, 109, 113, 127, 131, 137, 139, 149, 151]
+  task_levels: [choice]
+  save_checkpoints: false
+
+evaluation:
+  save_predictions: false
+
+data:
+  n_train: 10000
+  n_validation: 4000
+  n_eval: 10000
+  max_k: 5
+  state_dim: 8
+
+model:
+  width: 64
+  depth: 2
+  activation: relu
+  residual: false
+
+update:
+  mode: full
+  budget: full
+
+train:
+  steps: 8192
+  batch_size: 250
+  learning_rate: 0.003
+  weight_decay: 0.0
+  # The prefix is exactly E12's 2,048-step schedule; the suffix continues it.
+  eval_steps: [1, 2, 3, 4, 5, 7, 9, 13, 17, 24, 33, 45, 62, 85, 117, 161,
+               222, 304, 418, 575, 790, 1085, 1491, 2048,
+               2435, 2896, 3444, 4096, 4871, 5793, 6890, 8192]
+
+h12:
+  q_p: 0.90
+  q_q: 0.95
+  k_q: 2
+  k_y: 3
+  max_k_q: 3
+  max_k_y: 5
+  error_structure: independent
+  calibration_steps: 2048
+  competition_steps: 8192
+  probe_train_n: 2048
+  probe_eval_n: 4096
+  probe_ridge: 0.001
+  truth_table_control_seed: 1500450271
+  bridge_step: 2048
+
+sweep:
+  h12.q_q: [0.90, 0.95, 0.99]
+  h12.k_y: [3, 5]
+  h12.error_structure: [independent, nested]

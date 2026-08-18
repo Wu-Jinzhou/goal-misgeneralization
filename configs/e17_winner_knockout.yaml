@@ -1,0 +1,87 @@
+extends: base.yaml
+
+# Adaptive/post-hoc intervention selected after E15 found that an encoded rule
+# can be decodable before it controls behavior.  The six trajectories and all
+# analysis checkpoints are frozen in followups.md before outcomes are observed.
+experiment:
+  hypothesis: h14
+  name: winner_knockout_handoff
+  mode: adaptive_winner_knockout
+
+run:
+  seeds: [157, 163, 167, 173, 179, 181, 191, 193, 197, 199,
+          211, 223, 227, 229, 233, 239, 241, 251, 257, 263]
+  task_levels: [choice]
+  save_checkpoints: false
+
+evaluation:
+  save_predictions: false
+
+data:
+  n_train: 10000
+  n_validation: 4000
+  n_eval: 10000
+  q: 0.90
+  k: 3
+  max_k: 5
+  state_dim: 8
+
+model:
+  width: 64
+  depth: 2
+  activation: relu
+  residual: false
+
+update:
+  mode: full
+  budget: full
+
+train:
+  # Phase A has its own 45-update historical prefix.  The shared train horizon
+  # is the local phase-B horizon, not the sum of both phases.
+  steps: 1024
+  batch_size: 250
+  learning_rate: 0.003
+  weight_decay: 0.0
+  eval_steps: [1, 2, 3, 4, 5, 7, 9, 13, 17, 24, 33, 45, 62, 85, 117,
+               128, 161, 222, 304, 418, 575, 790, 1024]
+
+h14:
+  trajectory: independent_carry
+  q_p: 0.90
+  q_q: 0.90
+  k_q: 2
+  k_y: 3
+  max_k_q: 3
+  max_k_y: 5
+  phase_a_steps: 45
+  phase_b_steps: 1024
+  eligibility_steps: [33, 45]
+  phase_b_checkpoints: [0, 1, 2, 3, 4, 5, 7, 9, 13, 17, 24, 33, 45,
+                        62, 85, 117, 128, 161, 222, 304, 418, 575, 790, 1024]
+  probe_train_n: 2048
+  probe_eval_n: 4096
+  probe_ridge: 0.001
+  truth_table_control_seed: 1500450271
+  # 64 raw P/Q/R codewords: 8 retain 79 source rows and 56 retain 78,
+  # yielding exactly 5,000 base rows before opposite-label cloning.
+  sham_source_repeats: 79
+  auc_horizon: 128
+  pure_threshold: 0.90
+  pure_margin: 0.10
+
+# Scratch and sham are shared controls, so each appears exactly once rather
+# than being duplicated under independent and nested history labels.
+cases:
+  - h14:
+      trajectory: independent_carry
+  - h14:
+      trajectory: independent_reset
+  - h14:
+      trajectory: nested_carry
+  - h14:
+      trajectory: nested_reset
+  - h14:
+      trajectory: scratch
+  - h14:
+      trajectory: sham

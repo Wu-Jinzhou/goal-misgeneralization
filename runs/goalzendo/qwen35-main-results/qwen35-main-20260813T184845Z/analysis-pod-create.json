@@ -1,0 +1,20 @@
+{
+  "containerDiskInGb": 20,
+  "costPerHr": 3.19,
+  "desiredStatus": "RUNNING",
+  "env": [],
+  "gpuCount": 1,
+  "id": "ylhezvaloej4jn",
+  "imageName": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+  "lastStatusChange": "Rented by User: Sat Aug 15 2026 01:47:56 GMT+0000 (Coordinated Universal Time)",
+  "machine": {
+    "gpuDisplayName": "H100 NVL",
+    "location": "US"
+  },
+  "memoryInGb": 206,
+  "name": "qwen35-main-20260813T184845Z-analysis",
+  "ports": null,
+  "vcpuCount": 27,
+  "volumeInGb": 0,
+  "volumeMountPath": "/workspace"
+}

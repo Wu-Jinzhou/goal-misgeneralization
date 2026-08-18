@@ -1,0 +1,52 @@
+extends: base.yaml
+
+experiment:
+  id: g01
+  name: known_law_competing_rule_control
+  status: prospective
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g01-known-law
+  seeds: [1103, 1129, 1151, 1171, 1201, 1217, 1231, 1277, 1291, 1301]
+  # This source-registered guard string is immutable under the frozen legacy
+  # implementation. The rates below are now frozen, but the guard remains
+  # active because the six-check gate failed.
+  launch_guard: G00_NOT_PASSED__LEARNING_RATES_NOT_FROZEN
+  checkpoint_steps: [256, 512, 768, 1000]
+  snapshot_steps: [1000]
+
+model:
+  name: Qwen/Qwen2.5-1.5B-Instruct
+  revision: 989aa7980e4cf806f80c7fef2b1adb7bc71aa306
+
+data:
+  n_train: 10000
+  n_validation: 1000
+  n_eval_per_cell: 64
+  q_q: 0.90
+  error_geometry: independent
+  conflict_diversity: diverse
+
+train:
+  steps: 1000
+  batch_size: 10
+  gradient_accumulation_steps: 5
+  deterministic_algorithms: true
+  allow_tf32: false
+  cublas_workspace_config: ":4096:8"
+  eval_steps: [0, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 768, 1000]
+
+sweep:
+  data.rule_family: [parity, majority]
+  data.q_p: [0.80, 0.95, 1.00]
+
+cases:
+  # Frozen by G00-D's preregistered minimum-learning-rate-then-entropy rule.
+  # Two independent scientific checks still fail, so these values do not
+  # authorize this guarded config.
+  - train.algorithm: sft
+    train.learning_rate: 0.000003
+    train.entropy_coefficient: 0.0
+  - train.algorithm: outcome_rl
+    train.learning_rate: 0.000003
+    train.entropy_coefficient: 0.01

@@ -1,0 +1,120 @@
+extends: base.yaml
+
+# Outcome-blind isolated-component engineering pilot. No schedule, pooled
+# component bundle, concordant washout, or order estimand may be constructed.
+experiment:
+  hypothesis: h17
+  name: counterbalanced_identical_evidence_order_pilot
+  mode: isolated_component_pilot
+
+run:
+  seeds: [563, 569, 571]
+  device: cpu
+  task_levels: [choice]
+  save_checkpoints: false
+
+evaluation:
+  bootstrap_samples: 4000
+  confidence: 0.95
+  save_predictions: false
+
+data:
+  n_train: 9216
+  n_validation: 64
+  n_eval: 64
+  q: 0.5
+  k: 3
+  max_k: 3
+  state_dim: 0
+
+model:
+  width: 64
+  depth: 2
+  activation: relu
+  residual: false
+  bias: true
+  nuisance_bits: 0
+
+update:
+  mode: full
+  budget: full
+
+train:
+  algorithm: clean_sft
+  optimizer: adamw
+  steps: 256
+  batch_size: 288
+  learning_rate: 0.003
+  weight_decay: 0.0
+  shuffle: false
+  deterministic: true
+  grad_clip: 1.0
+  label_smoothing: 0.0
+  eval_steps: [1, 2, 3, 4, 5, 7, 9, 13, 17, 24, 33, 45, 62, 85,
+               117, 128, 161, 222, 256]
+
+h17:
+  design_memo_sha256: 1386cb401aef8ed187389dc84aa210b09b564436bc16c9246bbd22fce257529a
+  pilot_only: true
+  isolated_goal: P
+  pilot_seeds: [563, 569, 571]
+  full_seeds: [577, 587, 593, 599, 601, 607, 613, 617, 619, 631,
+               641, 643, 647, 653, 659, 661, 673, 677, 683, 691]
+  data_seed: 171000001
+  stream_seed: 171000002
+  phase_seeds:
+    component_P: 171000101
+    component_Q: 171000102
+    component_Y: 171000103
+    washout: 171000104
+
+  feature_names: [P, P_present, R_1, R_2, R_3, Q_present, Q_1, Q_2]
+  presence_constants: {P_present: 1, Q_present: 1}
+  expected_input_dim: 8
+  k_q: 2
+  k_y: 3
+
+  rows_per_weight_unit: 96
+  weighted_strata: 96
+  examples_per_weight_unit_per_batch: 3
+  batches_per_presentation: 32
+  presentations: 8
+  component_steps: 256
+  washout_steps: 256
+  total_steps: 256
+  component_checkpoints: [0, 1, 2, 3, 4, 5, 7, 9, 13, 17, 24, 33,
+                          45, 62, 85, 117, 128, 161, 222, 256]
+  washout_checkpoints: [0, 1, 2, 3, 4, 5, 7, 9, 13, 17, 24, 33,
+                        45, 62, 85, 117, 128, 161, 222, 256]
+
+  probe_folds: 8
+  probe_ridge: 0.001
+  fold_digest: 25d5e9584a2ea74d42d48a673645a3b34c1b76e75e8230bf5722985e66968ec7
+  truth_table_control_bits: "0110001001011011111001011000100101011110100110000010011010110101"
+  truth_table_control_digest: c7a186308102e807e594fd76b3fc5e7ef1678314a95de067b6fd347b390e53d0
+
+  pure_threshold: 0.90
+  pure_margin: 0.10
+  probe_threshold: 0.90
+  probe_advantage: 0.20
+  pilot_late_steps: [161, 222, 256]
+  late_stability_tolerance: 0.02
+  pilot_minimum_joint_seeds: 2
+
+  primary_auc_window: [33, 128]
+  primary_effect_threshold: 0.10
+  primary_ci_lower_boundary: 0.05
+  primary_equivalence_margin: 0.05
+  primary_prevalence_threshold: 0.05
+  minimum_prevalence_count: 15
+  directional_effect_threshold: 0.10
+  directional_equivalence_margin: 0.05
+  bonferroni_confidence: 0.9833333333333333
+
+cases:
+  - h17:
+      isolated_goal: P
+  - h17:
+      isolated_goal: Q
+  - h17:
+      isolated_goal: Y

@@ -1,0 +1,60 @@
+extends: g00_capability_controls_1p5b.yaml
+
+experiment:
+  id: g00b
+  name: deterministic_capability_validation
+  status: prospective
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g00b-deterministic-capability-validation
+  seeds: [9101, 9102, 9103]
+  protocol_unlocked: true
+  launch_guard: null
+  checkpoint_steps: [512]
+  snapshot_steps: []
+
+# G00-A2 selected the first registered horizon at which every adaptive seed
+# passed the unchanged matched-layout capability threshold. G00-B freezes
+# that setting on fresh seeds and bridges to G01's effective batch of 50.
+train:
+  algorithm: sft
+  steps: 512
+  batch_size: 10
+  gradient_accumulation_steps: 5
+  learning_rate: 0.00001
+  warmup_ratio: 0.01171875
+  eval_steps: [0, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
+  deterministic_algorithms: true
+  allow_tf32: false
+  cublas_workspace_config: ":4096:8"
+
+# Preserve the original exact-model capability and leakage panel. The only
+# changes are the prospectively frozen seeds, horizon, effective batch, and
+# deterministic numerical controls above.
+cases:
+  - data.rule_family: parity
+    data.training_view: law_only
+    evaluation.prompt_views: [law_only]
+  - data.rule_family: majority
+    data.training_view: law_only
+    evaluation.prompt_views: [law_only]
+  - data.rule_family: parity
+    data.training_view: audit_law_matched
+    evaluation.prompt_views: [audit_law_matched]
+  - data.rule_family: majority
+    data.training_view: audit_law_matched
+    evaluation.prompt_views: [audit_law_matched]
+  - data.rule_family: parity
+    data.training_view: sage_only
+    evaluation.prompt_views: [sage_only]
+  - data.rule_family: parity
+    data.training_view: herald_only
+    evaluation.prompt_views: [herald_only]
+  - data.rule_family: parity
+    data.training_view: no_signal
+    evaluation.prompt_views: [no_signal]
+  - data.rule_family: parity
+    data.training_view: surface_only
+    evaluation.prompt_views: [surface_only]
+
+sweep: {}

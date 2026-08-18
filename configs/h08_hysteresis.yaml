@@ -1,0 +1,46 @@
+extends: base.yaml
+
+experiment:
+  hypothesis: h8
+  name: hysteresis_rebound
+  mode: fixed_volume
+
+h8:
+  history: old_goal
+  n0: 4096
+  n1: 8192
+  n0_units: examples
+  stage1_mode: fixed
+  stage1_threshold: 0.9
+  stage1_match_band: [0.9, 0.93]
+  stage1_match_patience: 2
+  perturbation: partial_reversal
+  stage2_steps: 2048
+  p_old_on_disagreement: 0.75
+  reactivation_threshold: 0.9
+  reset_optimizer: true
+
+sweep:
+  h8.perturbation: [neutral, weak_conflict, intended_removal, partial_reversal]
+  model.width: [16, 32, 64, 128]
+
+cases:
+  - h8: {history: old_goal, n0: 512}
+    sweep:
+      h8.n0: [512, 2048, 8192, 32768]
+  - h8: {history: control, n0: 0}
+  - h8: {history: compute_matched_sham, n0: 512}
+    sweep:
+      h8.n0: [512, 2048, 8192, 32768]
+  # Separate behavior-matched analysis: N1 is a maximum alignment budget and
+  # training stops after two consecutive evaluations in the match band.
+  - experiment: {mode: behavior_matched}
+    h8: {history: old_goal, n0: 512, n1: 32768, stage1_mode: behavior_matched}
+    sweep:
+      h8.n0: [512, 2048, 8192, 32768]
+  - experiment: {mode: behavior_matched}
+    h8: {history: control, n0: 0, n1: 32768, stage1_mode: behavior_matched}
+  - experiment: {mode: behavior_matched}
+    h8: {history: compute_matched_sham, n0: 512, n1: 32768, stage1_mode: behavior_matched}
+    sweep:
+      h8.n0: [512, 2048, 8192, 32768]

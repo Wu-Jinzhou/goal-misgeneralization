@@ -1,0 +1,62 @@
+extends: base.yaml
+
+experiment:
+  hypothesis: h5
+  name: rl_entropy_shortcut_boundary
+  mode: exploration_entropy
+
+run:
+  task_levels: [choice]
+  save_checkpoints: false
+
+evaluation:
+  save_predictions: false
+
+data:
+  n_train: 10000
+  n_validation: 4000
+  n_eval: 10000
+  max_k: 5
+  state_dim: 8
+
+model:
+  width: 64
+  depth: 2
+  activation: relu
+  residual: false
+
+train:
+  steps: 2048
+  batch_size: 250
+  learning_rate: 0.003
+  weight_decay: 0.0
+  eval_steps: log
+
+h5:
+  algorithm: rl
+  nuisance_bits: 8
+  nuisance_entropy: 0
+  nuisance_weight: 1.0
+  rl_estimator: actor_critic
+  entropy_coefficient: 0.0
+  critic_width: 128
+  critic_depth: 3
+
+cases:
+  # Primary entropy dose-response.
+  - update: {mode: full, budget: full}
+    sweep:
+      data.q: [0.50, 0.75, 0.90, 0.99]
+      data.k: [2, 3, 4]
+      h5.entropy_coefficient: [0.0, 0.003, 0.01, 0.03, 0.10, 0.30]
+  # Estimator falsifier at the canonical cell.
+  - data: {q: 0.90, k: 3}
+    update: {mode: full, budget: full}
+    h5: {rl_estimator: reinforce}
+    sweep:
+      h5.entropy_coefficient: [0.0, 0.003, 0.01, 0.03, 0.10, 0.30]
+  # Update-capacity sensitivity at the canonical cell.
+  - data: {q: 0.90, k: 3}
+    update: {mode: subspace, budget: 1024}
+    sweep:
+      h5.entropy_coefficient: [0.0, 0.003, 0.01, 0.03, 0.10, 0.30]

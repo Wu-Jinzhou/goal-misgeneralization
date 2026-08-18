@@ -1,0 +1,38 @@
+extends: smoke.yaml
+
+experiment:
+  id: g00a4
+  name: reward_gradient_shape_full_model_smoke
+  status: adaptive
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g00a4-full-model-smoke
+  seeds: [9499]
+  checkpoint_steps: [1, 2]
+  snapshot_steps: [2]
+
+data:
+  q_p: 0.50
+  q_q: 0.90
+  rule_family: parity
+  training_view: full
+
+train:
+  steps: 2
+  batch_size: 10
+  gradient_accumulation_steps: 2
+  learning_rate: 0.000003
+  entropy_coefficient: 0.01
+  kl_coefficient: 0.0
+  eval_steps: [0, 1, 2]
+  deterministic_algorithms: true
+  allow_tf32: false
+  cublas_workspace_config: ":4096:8"
+
+cases:
+  - train.algorithm: tempered_outcome_control
+    train.reward_gradient_exponent: 0.5
+  - train.algorithm: logprob_outcome_control
+    train.reward_gradient_exponent: 0.0
+
+sweep: {}

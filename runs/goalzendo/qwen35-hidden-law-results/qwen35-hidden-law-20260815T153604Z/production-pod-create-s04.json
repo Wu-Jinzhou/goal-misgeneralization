@@ -1,0 +1,34 @@
+{
+  "containerDiskInGb": 20,
+  "costPerHr": 3.29,
+  "desiredStatus": "RUNNING",
+  "env": [
+    "RUNNER_SHA256=849c4db9d2fa546fc3c14018bb71303504c32a82627be8de40187bf5ce5f0c7d",
+    "LAUNCHER_SHA256=9340b2f99900870dc8979fd47c8050fb63552fa3f21de7d8dd8681d6f94f4e01",
+    "CONSTRAINTS_SHA256=d434e42c1b57933601de6a3890d0937389fd5c7c797a2d84777b77e8f3febff3",
+    "PLAN_JSON_SHA256=7b60ed59e8d8842f8c9e6b21830f3d092ebfa94e60427294dce9b6e210659a86",
+    "SHARD_INDEX=4",
+    "ARCHIVE_SHA256=56700896a4f62f6e92a495cc0af109ff1f8982c8e9be57b920de6737a3b919f8",
+    "PROTOCOL_SHA256=f4752515e3848a98452b89a3f753e8310dc45c131cd33244dc56fa696125883e",
+    "IMPLEMENTATION_FINGERPRINT=9cd679289fc22ceeb5fe1a9cbc2ca134051faf8491b9fa478be9b13ca81dd087",
+    "ANALYZER_SHA256=8bedacc9b5935e67224676101e12692bb0a5b913f1e9de180a033ac20f0a2d8c",
+    "JOB_ID=qwen35-hidden-law-20260815T153604Z",
+    "NUM_SHARDS=6",
+    "CONFIG_SHA256=a2e31815f3fbe1d65fcd64654f8fb9e51a2d950cf8a2985cc5d90121bad3e53a",
+    "SCIENTIFIC_CONFIG_DIGEST=d61cad537e4ae3ea439250bc5e7e2466405e5331be251f6b8f15d0de8683207b"
+  ],
+  "gpuCount": 1,
+  "id": "fx0s1psep5p1hf",
+  "imageName": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+  "lastStatusChange": "Rented by User: Sat Aug 15 2026 16:08:47 GMT+0000 (Coordinated Universal Time)",
+  "machine": {
+    "gpuDisplayName": "H100 SXM",
+    "location": "US"
+  },
+  "memoryInGb": 251,
+  "name": "qwen35-hidden-law-20260815T153604Z-s04",
+  "ports": null,
+  "vcpuCount": 16,
+  "volumeInGb": 0,
+  "volumeMountPath": "/workspace"
+}

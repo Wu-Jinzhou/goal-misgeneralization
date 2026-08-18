@@ -1,0 +1,7 @@
+extends: g00a4_reward_gradient_shape.yaml
+
+# Operational seed block only. ``run.seeds`` is excluded from a seed-level
+# artifact identity, so these four runs are exactly the corresponding rows of
+# the frozen 12-run plan.
+run:
+  seeds: [9401]

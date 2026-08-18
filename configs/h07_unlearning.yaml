@@ -1,0 +1,53 @@
+extends: base.yaml
+
+experiment:
+  hypothesis: h7
+  name: counterevidence_unlearning
+  mode: phased
+
+h7:
+  q_a: 0.99
+  condition: reversal
+  q_b: 0.01
+  q_new: 0.99
+  phase_a_max_steps: 4096
+  phase_b_steps: 1024
+  transition_threshold: 0.9
+  transition_patience: 3
+  eval_every: 1
+  reset_optimizer: true
+  restore_probe: true
+  weight_decay_ablation: false
+
+train:
+  steps: 4096
+  weight_decay: 0.0
+
+sweep:
+  h7.q_a: [0.9, 0.99, 1.0]
+  model.width: [16, 32, 64, 128]
+
+cases:
+  - h7: {condition: removal, q_b: 0.5}
+  - h7: {condition: decorrelation, q_b: 0.5}
+  - h7: {condition: reversal, q_b: 0.1}
+    sweep:
+      h7.q_b: [0.4, 0.25, 0.1, 0.0]
+  - h7: {condition: replacement, q_b: 0.5, q_new: 0.99}
+  # Weight decay is excluded from the primary ordering and scheduled only as
+  # a separately labeled sensitivity analysis.
+  - experiment: {mode: weight_decay_ablation}
+    h7: {condition: removal, q_b: 0.5, weight_decay_ablation: true}
+    train: {weight_decay: 0.0001}
+    sweep:
+      train.weight_decay: [0.00001, 0.0001, 0.001]
+  - experiment: {mode: weight_decay_ablation}
+    h7: {condition: decorrelation, q_b: 0.5, weight_decay_ablation: true}
+    train: {weight_decay: 0.0001}
+    sweep:
+      train.weight_decay: [0.00001, 0.0001, 0.001]
+  - experiment: {mode: weight_decay_ablation}
+    h7: {condition: reversal, q_b: 0.1, weight_decay_ablation: true}
+    train: {weight_decay: 0.0001}
+    sweep:
+      train.weight_decay: [0.00001, 0.0001, 0.001]

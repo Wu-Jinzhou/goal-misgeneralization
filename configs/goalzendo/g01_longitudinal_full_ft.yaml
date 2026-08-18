@@ -1,0 +1,25 @@
+extends: g01_known_law.yaml
+
+experiment:
+  id: g01a
+  name: known_law_longitudinal_full_ft
+  status: adaptive
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g01-longitudinal-full-ft
+  launch_guard: G01_PRIMARY_RESULT_NOT_SELECTED_FOR_LONGITUDINAL_FOLLOWUP
+  checkpoint_steps: [256, 512, 768, 1000]
+  snapshot_steps: [64, 256, 1000]
+
+# Dense behavioral metrics already cover every primary checkpoint. This
+# deliberately narrower rerun retains intermediate weights only for a later,
+# explicitly adaptive activation/probe analysis.
+sweep:
+  data.rule_family: [parity, majority]
+  data.q_p: [0.95]
+
+cases:
+  - train.algorithm: sft
+    train.learning_rate: 0.00001
+  - train.algorithm: outcome_rl
+    train.learning_rate: 0.000003

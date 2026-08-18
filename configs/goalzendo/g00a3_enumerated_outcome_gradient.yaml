@@ -1,0 +1,56 @@
+extends: g00_pilot.yaml
+
+experiment:
+  id: g00a3
+  name: enumerated_outcome_gradient
+  status: adaptive
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g00a3-enumerated-outcome-gradient
+  seeds: [9301, 9323, 9341]
+  protocol_unlocked: true
+  launch_guard: null
+  checkpoint_steps: [256, 512]
+  snapshot_steps: [512]
+
+data:
+  n_train: 2000
+  n_validation: 400
+  n_eval_per_cell: 16
+  rule_family: parity
+  q_q: 0.90
+  training_view: full
+
+evaluation:
+  prompt_views: [full, audit_law_matched, law_only]
+  causal_prompt_views: [full]
+  causal_per_cell: 2
+  final_causal_per_cell: 2
+  final_eval_per_cell: 32
+  batch_size: 32
+
+train:
+  steps: 512
+  batch_size: 10
+  gradient_accumulation_steps: 5
+  warmup_ratio: 0.01171875
+  eval_steps: [0, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
+  deterministic_algorithms: true
+  allow_tf32: false
+  cublas_workspace_config: ":4096:8"
+  kl_coefficient: 0.0
+  samples_per_prompt: 4
+
+cases:
+  - train.algorithm: sft
+    train.learning_rate: 0.00001
+    train.entropy_coefficient: 0.0
+  - train.algorithm: outcome_rl
+    train.learning_rate: 0.000003
+    train.entropy_coefficient: 0.01
+  - train.algorithm: expected_outcome_rl
+    train.learning_rate: 0.000003
+    train.entropy_coefficient: 0.01
+
+sweep:
+  data.q_p: [0.50, 0.80, 0.95, 1.00]

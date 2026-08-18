@@ -1,0 +1,35 @@
+extends: g01_known_law.yaml
+
+experiment:
+  id: g01l
+  name: known_law_lora_secondary
+  status: prospective
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g01-known-law-lora-secondary
+  launch_guard: G01_FULL_FT_COMPLETE__LORA_SECONDARY_NOT_UNLOCKED
+  checkpoint_steps: [256, 512, 768, 1000]
+  snapshot_steps: [1000]
+
+# This is a separately named robustness family. It must never be pooled with
+# the primary full-model cells or used to select their learning rates.
+update:
+  method: lora
+  rank: 8
+  alpha: 16
+  dropout: 0.0
+  bias: none
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - gate_proj
+    - up_proj
+    - down_proj
+
+cases:
+  - train.algorithm: sft
+    train.learning_rate: 0.0001
+  - train.algorithm: outcome_rl
+    train.learning_rate: 0.00003

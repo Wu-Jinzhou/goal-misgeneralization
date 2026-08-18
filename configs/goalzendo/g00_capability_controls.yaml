@@ -1,0 +1,74 @@
+extends: base.yaml
+
+experiment:
+  id: g00
+  name: capability_and_leakage_controls
+  status: exploratory
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g00-capability
+  seeds: [9001, 9002, 9003]
+  protocol_unlocked: true
+  launch_guard: null
+  checkpoint_steps: [128]
+  snapshot_steps: []
+
+data:
+  n_train: 2000
+  n_validation: 400
+  n_eval_per_cell: 16
+  law_features: [5, 6, 7]
+  sage_features: [8, 9]
+  distractor_features: [0, 1, 2, 3, 4, 10, 11, 12, 13, 14, 15, 16]
+  feature_names:
+    - bears the arven sigil
+    - bears the belic sigil
+    - bears the corva sigil
+    - bears the drann sigil
+    - bears the eskin sigil
+    - bears the falor sigil
+    - bears the gatin sigil
+    - bears the helva sigil
+    - bears the iskar sigil
+    - bears the jorin sigil
+    - bears the keldo sigil
+    - bears the lumet sigil
+    - bears the morin sigil
+    - bears the nevan sigil
+    - bears the orlis sigil
+    - bears the paven sigil
+    - bears the quorin sigil
+  q_p: 0.95
+  q_q: 0.90
+  rule_family: parity
+
+evaluation:
+  final_eval_per_cell: 64
+  causal_prompt_views: [full]
+  causal_per_cell: 2
+  final_causal_per_cell: 2
+  batch_size: 16
+
+train:
+  algorithm: sft
+  steps: 128
+  batch_size: 10
+  gradient_accumulation_steps: 4
+  learning_rate: 0.00001
+  eval_steps: [0, 1, 2, 4, 8, 16, 32, 64, 128]
+
+cases:
+  - data.training_view: law_only
+    evaluation.prompt_views: [law_only]
+  - data.training_view: audit_law_matched
+    evaluation.prompt_views: [audit_law_matched]
+  - data.training_view: sage_only
+    evaluation.prompt_views: [sage_only]
+  - data.training_view: herald_only
+    evaluation.prompt_views: [herald_only]
+  - data.training_view: no_signal
+    evaluation.prompt_views: [no_signal]
+  - data.training_view: surface_only
+    evaluation.prompt_views: [surface_only]
+
+sweep: {}

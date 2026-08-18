@@ -1,0 +1,33 @@
+extends: g00d_fixed_window_capability_0p5b.yaml
+
+experiment:
+  id: g00f
+  name: capability_repair_0p5b
+  status: prospective
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g00f-capability-repair-0p5b
+  seeds: [10007, 10009, 10037, 10039, 10061, 10067, 10069, 10079, 10091, 10093]
+  # G00-F is a design-only protocol until an additive evaluator and an
+  # independently reviewed execution manifest exist. The legacy G00 gate
+  # failed and cannot unlock this nonempty guard.
+  launch_guard: G00F_DESIGN_ONLY__FRESH_GATE_AND_EXECUTION_MANIFEST_REQUIRED
+  protocol_unlocked: false
+  checkpoint_steps: [1000]
+  snapshot_steps: []
+
+# The singleton remediation increases semantic coverage and uses the same
+# 1,000-update horizon as G01. No candidate is chosen from G00-F outcomes.
+data:
+  n_train: 10000
+  n_validation: 1000
+  n_eval_per_cell: 64
+
+train:
+  steps: 1000
+  eval_steps: [0, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 768, 1000]
+
+evaluation:
+  mirror_pairs: true
+  final_eval_per_cell: 64
+

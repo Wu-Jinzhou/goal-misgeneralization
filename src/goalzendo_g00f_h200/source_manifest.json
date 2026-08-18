@@ -1,0 +1,15 @@
+{
+  "manifest_digest": "63f52b01b6bf4528b990b491ba7ecaaff7a4141448933e06e7a7c56c0fd3d976",
+  "schema": "goalzendo.g00f_h200_additive_source_manifest",
+  "schema_version": 1,
+  "source_digest": "2abfe7e0fa0b9acfa2017390f6c156f00a9af6395cc7a0714f462ba4a2a635e5",
+  "source_files": {
+    "__init__.py": "59ec86dc5724d5dd2b7d8630f1c1b360fcc07209bba48381f5f63b60ee41b3f9",
+    "cli.py": "42cec61a91ebb379fd1ededa48bef1132557ad0169c2adedeca8e300760699e0",
+    "evaluator.py": "e5f023bd0fd81800414733f7f918f34c459dbf99aaf08c6566cc54c2c5aaf256",
+    "freeze.py": "c07a58870aa640021aa277f90d81289869994771c3f9bbedfdffef8ee82e07a7",
+    "py.typed": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "qualification.py": "1c10462bd52d47a28f6d5378537cbb8b4993fc1a1367f125ca26faaea5c814b0",
+    "qualification_producer.py": "974a9b8cd45011c90ae038dc7686e62270c471ddf16b77be78688733ca00ade1"
+  }
+}

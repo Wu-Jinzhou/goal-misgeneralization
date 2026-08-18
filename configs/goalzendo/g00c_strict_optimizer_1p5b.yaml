@@ -1,0 +1,38 @@
+extends: g00_pilot_1p5b.yaml
+
+experiment:
+  id: g00
+  # The artifact-derived gate deliberately recognizes this exact name as the
+  # deployed-model optimizer-selection panel.
+  name: deployed_model_full_context_pilot
+  status: prospective
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g00c-strict-optimizer-1p5b
+  checkpoint_steps: [128, 256]
+  snapshot_steps: []
+
+train:
+  deterministic_algorithms: true
+  allow_tf32: false
+  cublas_workspace_config: ":4096:8"
+
+# SFT repeats the two predeclared target-model rates. For sampled outcome RL,
+# beta=.01 is the smallest entropy coefficient that passed the registered
+# early-sampling screen; both original target-model rates remain candidates.
+# The gate will select the lowest passing rate within each algorithm, never an
+# average over failing seeds or Law families.
+cases:
+  - train.algorithm: sft
+    train.learning_rate: 0.000003
+    train.entropy_coefficient: 0.0
+  - train.algorithm: sft
+    train.learning_rate: 0.00001
+    train.entropy_coefficient: 0.0
+  - train.algorithm: outcome_rl
+    train.learning_rate: 0.000001
+    train.entropy_coefficient: 0.01
+  - train.algorithm: outcome_rl
+    train.learning_rate: 0.000003
+    train.entropy_coefficient: 0.01
+

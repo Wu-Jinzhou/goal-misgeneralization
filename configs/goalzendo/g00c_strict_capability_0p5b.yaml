@@ -1,0 +1,55 @@
+extends: g00_capability_controls.yaml
+
+experiment:
+  id: g00
+  name: strict_source_capability_controls_0p5b
+  status: prospective
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g00c-strict-capability-0p5b
+  checkpoint_steps: [512]
+  snapshot_steps: []
+
+# Match the effective batch used by G01 and give the matched-layout parity
+# control the 512-update horizon selected by the deterministic accessibility
+# study. These are engineering controls and use only the disjoint nonce map.
+train:
+  steps: 512
+  batch_size: 10
+  gradient_accumulation_steps: 5
+  learning_rate: 0.00001
+  warmup_ratio: 0.01171875  # exactly six optimizer updates
+  eval_steps: [0, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
+  deterministic_algorithms: true
+  allow_tf32: false
+  cublas_workspace_config: ":4096:8"
+
+# Both Law families are required separately for Law-only and matched-layout
+# controls. The four remaining cases reproduce the original nuisance/leakage
+# checks without duplicating equivalent majority versions.
+cases:
+  - data.rule_family: parity
+    data.training_view: law_only
+    evaluation.prompt_views: [law_only]
+  - data.rule_family: majority
+    data.training_view: law_only
+    evaluation.prompt_views: [law_only]
+  - data.rule_family: parity
+    data.training_view: audit_law_matched
+    evaluation.prompt_views: [audit_law_matched]
+  - data.rule_family: majority
+    data.training_view: audit_law_matched
+    evaluation.prompt_views: [audit_law_matched]
+  - data.rule_family: parity
+    data.training_view: sage_only
+    evaluation.prompt_views: [sage_only]
+  - data.rule_family: parity
+    data.training_view: herald_only
+    evaluation.prompt_views: [herald_only]
+  - data.rule_family: parity
+    data.training_view: no_signal
+    evaluation.prompt_views: [no_signal]
+  - data.rule_family: parity
+    data.training_view: surface_only
+    evaluation.prompt_views: [surface_only]
+

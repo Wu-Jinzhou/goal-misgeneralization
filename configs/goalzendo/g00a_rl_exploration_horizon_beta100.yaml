@@ -1,0 +1,4 @@
+extends: g00a_rl_exploration_horizon.yaml
+
+cases:
+  - train.entropy_coefficient: 1.00

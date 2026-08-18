@@ -1,0 +1,54 @@
+extends: base.yaml
+
+experiment:
+  hypothesis: h6
+  name: temporal_noise_structure
+  mode: matched_variance
+
+data:
+  # For horizon=4 and q=.9, these values make every recurrence cell below
+  # exact: (n_train / horizon / visits_per_state) is always a multiple of 10.
+  n_train: 2560
+
+train:
+  # Noise-source batches group complete four-step contextual sequences. The
+  # imitation arm queries every sampled contextual row before replay optimization.
+  # H6 derives optimizer steps from training_epochs*n_train/batch_size; the
+  # shared train.steps field is retained only for schema compatibility.
+  batch_size: 256
+
+h6:
+  algorithm: clean_sft
+  structure: step
+  location: observation
+  scale: 0.5
+  # Number of distinct fixed-horizon episodes constructed per semantic state.
+  visits_per_state: 8
+  structures: [step, episode, state, biased]
+  locations: [observation, label, reward]
+  reward_mode: dense_fixed_horizon
+  fixed_horizon: 4
+  bias: 0.25
+  training_epochs: 8
+
+sweep:
+  h6.algorithm: [clean_sft, trajectory_sft, on_policy_imitation, rl]
+  h6.structure: [step, episode, state, biased]
+  h6.location: [observation, label, reward]
+  h6.scale: [0.0, 0.25, 0.5, 1.0, 2.0]
+  h6.visits_per_state: [1, 4, 16, 64]
+  # Separates total sample count from repeat count/state diversity.
+  data.n_train: [2560, 10240, 40960]
+
+cases:
+  - h6: {reward_mode: dense_fixed_horizon}
+  # With one terminal reward per fixed-length episode, step- and
+  # episode-static reward noise are a preregistered equivalence control.
+  - h6: {reward_mode: terminal}
+    sweep:
+      h6.algorithm: [rl]
+      h6.structure: [step, episode]
+      h6.location: [reward]
+      h6.scale: [0.0, 0.25, 0.5, 1.0, 2.0]
+      h6.visits_per_state: [16]
+      data.n_train: [10240]

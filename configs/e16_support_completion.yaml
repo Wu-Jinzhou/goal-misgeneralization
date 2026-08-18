@@ -1,0 +1,64 @@
+extends: base.yaml
+
+# Adaptive/post-hoc intervention selected after E15 identified a recurring
+# conditional endpoint on nested-error support.  The design and refinement rule
+# are fixed in followups.md before the primary 140-run panel.
+experiment:
+  hypothesis: h13
+  name: conditional_support_completion
+  mode: adaptive_support_completion
+
+run:
+  seeds: [11, 23, 37, 41, 53, 67, 71, 83, 97, 101,
+          103, 107, 109, 113, 127, 131, 137, 139, 149, 151]
+  task_levels: [choice]
+  save_checkpoints: false
+
+evaluation:
+  save_predictions: false
+
+data:
+  n_train: 10000
+  n_validation: 4000
+  n_eval: 10000
+  max_k: 5
+  state_dim: 8
+
+model:
+  width: 64
+  depth: 2
+  activation: relu
+  residual: false
+
+update:
+  mode: full
+  budget: full
+
+train:
+  steps: 8192
+  batch_size: 250
+  learning_rate: 0.003
+  weight_decay: 0.0
+  eval_steps: [1, 2, 3, 4, 5, 7, 9, 13, 17, 24, 33, 45, 62, 85, 117, 161,
+               222, 304, 418, 575, 790, 1085, 1491, 2048,
+               2435, 2896, 3444, 4096, 4871, 5793, 6890, 8192]
+
+h13:
+  q_p: 0.90
+  q_q: 0.95
+  k_q: 2
+  k_y: 5
+  max_k_q: 3
+  max_k_y: 5
+  error_structure: nested
+  q_only_error_count: 0
+  calibration_steps: 2048
+  competition_steps: 8192
+  probe_train_n: 2048
+  probe_eval_n: 4096
+  probe_ridge: 0.001
+  truth_table_control_seed: 1500450271
+  bridge_step: 2048
+
+sweep:
+  h13.q_only_error_count: [0, 2, 10, 50, 100, 250, 450]

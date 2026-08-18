@@ -1,0 +1,49 @@
+extends: base.yaml
+
+experiment:
+  hypothesis: h11
+  name: routeworld_complexity
+  mode: repeated_reward_relevant_forks
+
+run:
+  task_levels: [choice]
+  save_checkpoints: false
+
+evaluation:
+  save_predictions: false
+
+data:
+  # RouteWorld interprets these counts as complete route episodes.
+  n_train: 4000
+  n_validation: 2000
+  n_eval: 2000
+  q: 0.95
+  k: 2
+  max_k: 4
+  state_dim: 0
+
+model:
+  depth: 2
+  activation: relu
+  residual: false
+
+train:
+  steps: 1024
+  batch_size: 256
+  learning_rate: 0.003
+  weight_decay: 0.0
+  eval_steps: log
+
+h11:
+  route_depth: 1
+  max_depth: 4
+  evidence_regime: fixed_total
+  base_steps: 1024
+  physical_rollouts: 128
+
+sweep:
+  h11.route_depth: [1, 2, 4]
+  data.q: [0.75, 0.95, 0.99]
+  data.k: [2, 4]
+  model.width: [16, 64]
+  h11.evidence_regime: [fixed_total, per_fork_matched]

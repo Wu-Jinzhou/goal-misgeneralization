@@ -1,0 +1,5 @@
+extends: g00a4_reward_gradient_shape.yaml
+
+# Operational seed block only; see the seed-9401 companion config.
+run:
+  seeds: [9461]

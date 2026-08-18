@@ -1,0 +1,33 @@
+extends: base.yaml
+
+experiment:
+  hypothesis: h5
+  name: rl_update_capacity
+  mode: algorithm_nuisance_interaction
+
+h5:
+  algorithm: clean_sft
+  nuisance_bits: 8  # fixed actor heads/gadgets in every condition
+  # Integer count of active fair policy branches; remaining gadgets are forced.
+  nuisance_entropy: 0
+  # Per variable branch-action coefficient. The implementation sums branch
+  # NLLs, so 1.0 gives each branch the same weight as the final goal action.
+  nuisance_weight: 1.0
+  # DAgger receives the same minimal goal-action oracle as clean SFT. This
+  # isolates on-policy state distribution from trajectory nuisance modeling.
+  on_policy_label_mode: clean_action
+  # Each sampled context roots a deterministic binary tree. Take this many
+  # current-policy transitions, then query the clean oracle at the final state.
+  on_policy_rollout_depth: 2
+  critic_width: 128
+  critic_depth: 3
+
+sweep:
+  h5.algorithm: [clean_sft, trajectory_sft, on_policy_imitation, rl]
+  h5.nuisance_entropy: [0, 2, 4, 8]
+
+cases:
+  - update: {mode: full, budget: full}
+  - update: {mode: subspace, budget: 1}
+    sweep:
+      update.budget: [1, 4, 16, 64, 256, 1024]

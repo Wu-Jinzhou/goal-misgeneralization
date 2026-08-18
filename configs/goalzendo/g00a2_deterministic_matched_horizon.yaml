@@ -1,0 +1,47 @@
+extends: g00_capability_controls_1p5b.yaml
+
+experiment:
+  id: g00a2
+  name: deterministic_matched_horizon
+  status: adaptive
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g00a2-deterministic-matched-horizon
+  seeds: [9201, 9202, 9203]
+  # Unlocked 2026-08-10 only after the registered same-host preflight passed.
+  # Audit SHA-256: 99e3755f6d0cc57f58baf7c14ce22f1fa1a56b3bccb73da0c8c26260c85cee11
+  launch_guard: null
+  protocol_unlocked: true
+
+data:
+  rule_family: parity
+
+train:
+  algorithm: sft
+  batch_size: 10
+  gradient_accumulation_steps: 4
+  learning_rate: 0.00001
+  deterministic_algorithms: true
+  allow_tf32: false
+  cublas_workspace_config: ":4096:8"
+
+sweep: {}
+
+cases:
+  - experiment.horizon_arm: baseline_128
+    data.training_view: audit_law_matched
+    evaluation.prompt_views: [audit_law_matched]
+    train.steps: 128
+    train.warmup_ratio: 0.05
+    train.eval_steps: [0, 1, 2, 4, 8, 16, 32, 64, 128]
+    run.checkpoint_steps: [128]
+    run.snapshot_steps: [128]
+
+  - experiment.horizon_arm: extended_512
+    data.training_view: audit_law_matched
+    evaluation.prompt_views: [audit_law_matched, law_only]
+    train.steps: 512
+    train.warmup_ratio: 0.01171875
+    train.eval_steps: [0, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
+    run.checkpoint_steps: [512]
+    run.snapshot_steps: [128, 256, 512]

@@ -1,0 +1,623 @@
+{
+  "schema": "goalzendo.hidden_law_launch_record",
+  "schema_version": 1,
+  "job_id": "qwen35-hidden-law-20260815T153604Z",
+  "status": "postcompletion_complete_outcomes_uninspected",
+  "scientific_status": "prospectively_frozen_outcomes_uninspected",
+  "source_archive": {
+    "bytes": 541200,
+    "sha256": "56700896a4f62f6e92a495cc0af109ff1f8982c8e9be57b920de6737a3b919f8",
+    "s3_uri": "s3://5f06o456rx/goalzendo-hidden-law/jobs/qwen35-hidden-law-20260815T153604Z/input/goalzendo-hidden-law-src.tgz",
+    "verified_after_upload": true
+  },
+  "frozen_bindings": {
+    "analyzer_sha256": "8bedacc9b5935e67224676101e12692bb0a5b913f1e9de180a033ac20f0a2d8c",
+    "config_sha256": "a2e31815f3fbe1d65fcd64654f8fb9e51a2d950cf8a2985cc5d90121bad3e53a",
+    "constraints_sha256": "d434e42c1b57933601de6a3890d0937389fd5c7c797a2d84777b77e8f3febff3",
+    "implementation_file_count": 75,
+    "implementation_fingerprint": "9cd679289fc22ceeb5fe1a9cbc2ca134051faf8491b9fa478be9b13ca81dd087",
+    "launcher_sha256": "9340b2f99900870dc8979fd47c8050fb63552fa3f21de7d8dd8681d6f94f4e01",
+    "launcher_plan_json_sha256": "7b60ed59e8d8842f8c9e6b21830f3d092ebfa94e60427294dce9b6e210659a86",
+    "protocol_sha256": "f4752515e3848a98452b89a3f753e8310dc45c131cd33244dc56fa696125883e",
+    "runner_sha256": "849c4db9d2fa546fc3c14018bb71303504c32a82627be8de40187bf5ce5f0c7d",
+    "scientific_config_digest": "d61cad537e4ae3ea439250bc5e7e2466405e5331be251f6b8f15d0de8683207b"
+  },
+  "models": [
+    {
+      "name": "Qwen/Qwen3.5-0.8B",
+      "parameter_count": 752393024,
+      "revision": "2fc06364715b967f1860aea9cf38778875588b17"
+    },
+    {
+      "name": "Qwen/Qwen3.5-2B",
+      "parameter_count": 1881825088,
+      "revision": "15852e8c16360a2fea060d615a32b45270f8a8fc"
+    }
+  ],
+  "smoke": {
+    "outcome_fields_may_not_be_inspected": true,
+    "planned_cells": 4,
+    "pod": {
+      "cost_per_hour_usd": 3.29,
+      "create_receipt_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/smoke-pod-create-a3.json",
+      "create_receipt_sha256": "a8969efd6ea9b1dbf44a681c622313e6eada595de3b6d850afa36f92ea4ad8f4",
+      "created_at": "2026-08-15T15:52:42.449Z",
+      "gpu": "H100 SXM",
+      "id": "nlyet75nvfduge",
+      "name": "qwen35-hidden-law-20260815T153604Z-smoke-a3",
+      "teardown": {
+        "confirmation": {
+          "code": "not_found",
+          "status": 404
+        },
+        "confirmation_observed_at": "2026-08-15T16:01:53Z",
+        "delete_receipt": {
+          "deleted": true,
+          "id": "nlyet75nvfduge"
+        }
+      }
+    },
+    "state": "complete",
+    "attempts": [
+      {
+        "attempt": 1,
+        "completed_run_ids": [],
+        "diagnosis": {
+          "category": "archive_extraction_ownership_restore",
+          "message": "GNU tar could not restore archive uid 501 and gid 50 on the mounted filesystem; extraction exited before imports, model loading, or any update.",
+          "recommended_wrapper_change": "Extract the byte-identical frozen archive with tar --no-same-owner."
+        },
+        "engineering_log": {
+          "bytes": 15176,
+          "s3_uri": "s3://5f06o456rx/goalzendo-hidden-law/jobs/qwen35-hidden-law-20260815T153604Z/logs/smoke.log",
+          "sha256": "11c780ef46bb4018f4d4d33f291add6d0f66500543f269c63bba8c98c8b3d93a"
+        },
+        "outcomes_inspected": false,
+        "pod": {
+          "cost_per_hour_usd": 3.29,
+          "create_receipt_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/smoke-pod-create.json",
+          "create_receipt_sha256": "2e74291df14a937c8d349de100c37b93fec77793014d827e9b901c4541cda689",
+          "created_at": "2026-08-15T15:41:39.030Z",
+          "gpu": "H100 SXM",
+          "id": "1kebgev0r4v1w7",
+          "name": "qwen35-hidden-law-20260815T153604Z-smoke",
+          "teardown": {
+            "confirmation": {
+              "code": "not_found",
+              "status": 404
+            },
+            "confirmation_observed_at": "2026-08-15T15:44:11Z",
+            "delete_receipt": {
+              "deleted": true,
+              "id": "1kebgev0r4v1w7"
+            }
+          }
+        },
+        "production_gate": "no_go",
+        "registered_run_ids": [],
+        "smoke_verification": {
+          "present": false,
+          "sha256": null
+        },
+        "terminal_status": {
+          "archive_sha256": "56700896a4f62f6e92a495cc0af109ff1f8982c8e9be57b920de6737a3b919f8",
+          "bytes": 300,
+          "finished_at": "2026-08-15T15:41:42Z",
+          "runner_rc": 2,
+          "s3_uri": "s3://5f06o456rx/goalzendo-hidden-law/jobs/qwen35-hidden-law-20260815T153604Z/status/smoke.failed.json",
+          "sha256": "58ceac91eebc6d6bb6185ae7af8a0fdb1493f5475c2ae552d9af9190ced92b05",
+          "started_at": "2026-08-15T15:41:41Z",
+          "state": "failed"
+        }
+      },
+      {
+        "attempt": 2,
+        "completed_run_ids": [],
+        "diagnosis": {
+          "category": "extracted_source_not_on_pythonpath",
+          "message": "Archive extraction succeeded, but the wrapper unset PYTHONPATH and the first provenance import failed before model loading or any update.",
+          "recommended_wrapper_change": "Export PYTHONPATH=$SRC/src before the first Python import."
+        },
+        "engineering_log": {
+          "bytes": 230,
+          "s3_uri": "s3://5f06o456rx/goalzendo-hidden-law/jobs/qwen35-hidden-law-20260815T153604Z/logs/smoke-a2.log",
+          "sha256": "7b19b27ff1f69195810545fdb4e3f70de95a9b3214ff5e619445751489712f52"
+        },
+        "operational_delta": {
+          "frozen_archive_changed": false,
+          "status_path_issue": "Attempt-specific status was written, but canonical status/smoke.status.json remained stale; attempt 3 corrects both paths.",
+          "tar_command": "tar --no-same-owner -xzf"
+        },
+        "outcomes_inspected": false,
+        "pod": {
+          "cost_per_hour_usd": 3.29,
+          "create_receipt_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/smoke-pod-create-a2.json",
+          "create_receipt_sha256": "858fc7bb5a2426bea7346033e3afbef96dd4cc667ba2576042cd9ae9d9e3603b",
+          "created_at": "2026-08-15T15:48:15.477Z",
+          "gpu": "H100 SXM",
+          "id": "ac4qw8me14guds",
+          "name": "qwen35-hidden-law-20260815T153604Z-smoke-a2",
+          "teardown": {
+            "confirmation": {
+              "code": "not_found",
+              "status": 404
+            },
+            "confirmation_observed_at": "2026-08-15T15:49:11Z",
+            "delete_receipt": {
+              "deleted": true,
+              "id": "ac4qw8me14guds"
+            }
+          }
+        },
+        "production_gate": "no_go",
+        "registered_run_ids": [],
+        "smoke_verification": {
+          "present": false,
+          "sha256": null
+        },
+        "terminal_status": {
+          "archive_sha256": "56700896a4f62f6e92a495cc0af109ff1f8982c8e9be57b920de6737a3b919f8",
+          "bytes": 312,
+          "finished_at": "2026-08-15T15:48:19Z",
+          "runner_rc": 1,
+          "s3_uri": "s3://5f06o456rx/goalzendo-hidden-law/jobs/qwen35-hidden-law-20260815T153604Z/status/smoke-a2.failed.json",
+          "sha256": "d98afbdcbe0da44b4e60c80a809f2894d1fbd5823d333a4a5d95757efcdd9eac",
+          "started_at": "2026-08-15T15:48:18Z",
+          "state": "failed"
+        },
+        "wrapper": {
+          "local_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/launch-smoke-attempt-2.sh",
+          "sha256": "3c6c5bb077d840f69735a3bd78958f7d916fb053eb10e527be208986a329e1dd"
+        }
+      },
+      {
+        "attempt": 3,
+        "completed_run_ids": [
+          "d2b532c422dca1597f72",
+          "1a159b626be7dcc80c16",
+          "0bcd7f1d541c4096a5ec",
+          "d935d61c13fdb6b8a0a3"
+        ],
+        "engineering_log": {
+          "bytes": 2799,
+          "s3_uri": "s3://5f06o456rx/goalzendo-hidden-law/jobs/qwen35-hidden-law-20260815T153604Z/logs/smoke-a3.log",
+          "sha256": "c2afc881ec8d48fca4fac62e367c273a7505696241675970eedff5bbcf9ed911"
+        },
+        "finished_at": "2026-08-15T16:00:13Z",
+        "operational_delta": {
+          "canonical_status_rewritten": true,
+          "frozen_archive_changed": false,
+          "pre_model_checks": "wrapper, archive, source paths, model cache, frozen file hashes, implementation fingerprint, scientific config, runtime stack, GPU, and launch plan",
+          "pythonpath": "$SRC/src",
+          "tar_command": "tar --no-same-owner -xzf"
+        },
+        "outcomes_inspected": false,
+        "planned_run_ids": [
+          "d2b532c422dca1597f72",
+          "1a159b626be7dcc80c16",
+          "0bcd7f1d541c4096a5ec",
+          "d935d61c13fdb6b8a0a3"
+        ],
+        "pod": {
+          "cost_per_hour_usd": 3.29,
+          "create_receipt_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/smoke-pod-create-a3.json",
+          "create_receipt_sha256": "a8969efd6ea9b1dbf44a681c622313e6eada595de3b6d850afa36f92ea4ad8f4",
+          "created_at": "2026-08-15T15:52:42.449Z",
+          "gpu": "H100 SXM",
+          "id": "nlyet75nvfduge",
+          "name": "qwen35-hidden-law-20260815T153604Z-smoke-a3",
+          "teardown": {
+            "confirmation": {
+              "code": "not_found",
+              "status": 404
+            },
+            "confirmation_observed_at": "2026-08-15T16:01:53Z",
+            "delete_receipt": {
+              "deleted": true,
+              "id": "nlyet75nvfduge"
+            }
+          }
+        },
+        "production_gate": "go",
+        "registered_run_ids": [
+          "d2b532c422dca1597f72",
+          "1a159b626be7dcc80c16",
+          "0bcd7f1d541c4096a5ec",
+          "d935d61c13fdb6b8a0a3"
+        ],
+        "smoke_verification": {
+          "independent": {
+            "local_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/independent-smoke-a3-verification.json",
+            "s3_uri": "s3://5f06o456rx/goalzendo-hidden-law/jobs/qwen35-hidden-law-20260815T153604Z/independent-smoke-a3-verification.json",
+            "sha256": "1e735a4e3cbe3e3ca7cd6af10a0790095a6b6ceef93d39cc21757aceafec3674"
+          },
+          "outcomes_inspected": false,
+          "passed": true,
+          "remote": {
+            "bytes": 2319,
+            "s3_uri": "s3://5f06o456rx/goalzendo-hidden-law/jobs/qwen35-hidden-law-20260815T153604Z/smoke-verification-a3.json",
+            "sha256": "345c17825335d4debe3a28861f5bfa5c8a85b157c927e948fd2e7e39a297bc40"
+          }
+        },
+        "started_at": "2026-08-15T15:52:46Z",
+        "state": "complete",
+        "status_paths": {
+          "attempt": "s3://5f06o456rx/goalzendo-hidden-law/jobs/qwen35-hidden-law-20260815T153604Z/status/attempts/smoke-a3.status.json",
+          "canonical": "s3://5f06o456rx/goalzendo-hidden-law/jobs/qwen35-hidden-law-20260815T153604Z/status/smoke.status.json"
+        },
+        "terminal_status": {
+          "archive_sha256": "56700896a4f62f6e92a495cc0af109ff1f8982c8e9be57b920de6737a3b919f8",
+          "attempt_copy_s3_uri": "s3://5f06o456rx/goalzendo-hidden-law/jobs/qwen35-hidden-law-20260815T153604Z/status/attempts/smoke-a3.complete.json",
+          "bytes": 398,
+          "canonical_s3_uri": "s3://5f06o456rx/goalzendo-hidden-law/jobs/qwen35-hidden-law-20260815T153604Z/status/smoke.status.json",
+          "finished_at": "2026-08-15T16:00:13Z",
+          "runner_rc": 0,
+          "sha256": "77fdc49b431377c0249e00aded0211797961c738d245bee3483e481e6605e5c6",
+          "started_at": "2026-08-15T15:52:46Z",
+          "state": "complete",
+          "wrapper_sha256": "cab0c375b68ae0bfa28407d489e18833e88102a18e5ac205d0967485b87f21ab"
+        },
+        "wrapper": {
+          "launcher_local_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/launch-smoke-attempt-3.sh",
+          "launcher_sha256": "176c611a32e5d865a66738bb0d62137e84cadf2757765adae4e465bb80ef441d",
+          "local_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/input/smoke-attempt-3-wrapper.sh",
+          "s3_uri": "s3://5f06o456rx/goalzendo-hidden-law/jobs/qwen35-hidden-law-20260815T153604Z/input/smoke-attempt-3-wrapper.sh",
+          "sha256": "cab0c375b68ae0bfa28407d489e18833e88102a18e5ac205d0967485b87f21ab",
+          "verified_after_upload": true
+        }
+      }
+    ]
+  },
+  "production": {
+    "operational_wrapper": {
+      "frozen_source_archive_member": false,
+      "local_path": "runs/goalzendo/launch_qwen35_hidden_law_main.sh",
+      "sha256": "0d1ab0d40ae35aa254a0ac9404511bca71f4356203bfed4059069bcfddb3dbee",
+      "tar_command": "tar --no-same-owner -xzf",
+      "timestamp_paths": "colon-free UTC basic format; RFC 3339 is retained in status metadata"
+    },
+    "attempts": [
+      {
+        "attempt": 1,
+        "artifact_objects_after_teardown": 0,
+        "diagnosis": {
+          "category": "network_volume_filename_compatibility",
+          "message": "The mounted filesystem rejected a source-directory component containing RFC 3339 colons; the wrapper exited at mkdir before status emission, model loading, or any update.",
+          "operational_fix": "Use a separate colon-free UTC tag for the extraction path while retaining RFC 3339 timestamps in status metadata."
+        },
+        "frozen_archive_changed": false,
+        "outcomes_inspected": false,
+        "pods": [
+          {
+            "create_receipt_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/production-pod-create-s00.json",
+            "create_receipt_sha256": "fa9f5a6af17d9ad6d7fb8bb5634d364e4481b65ab17f854fffee4d136acea900",
+            "gpu": "H100 NVL",
+            "id": "oo2e0es1onqr9h",
+            "name": "qwen35-hidden-law-20260815T153604Z-s00",
+            "shard_index": 0
+          },
+          {
+            "create_receipt_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/production-pod-create-s01.json",
+            "create_receipt_sha256": "4c9b7ba76686a17b994bb82e58ef97f9a295e74de654f4607557e78d3a39d962",
+            "gpu": "H100 NVL",
+            "id": "55p9myf22rgrhw",
+            "name": "qwen35-hidden-law-20260815T153604Z-s01",
+            "shard_index": 1
+          },
+          {
+            "create_receipt_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/production-pod-create-s02.json",
+            "create_receipt_sha256": "a392407dae6f9407f9ecf42a58b120da1b9f9acead24bfb47ca1c44d6d6c0b71",
+            "gpu": "H100 SXM",
+            "id": "0b6ggs5arj0fks",
+            "name": "qwen35-hidden-law-20260815T153604Z-s02",
+            "shard_index": 2
+          },
+          {
+            "create_receipt_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/production-pod-create-s03.json",
+            "create_receipt_sha256": "5df6940e4432c604028b26e6d8aaf8cf735f04a4c5365160a5f326b7d570f27a",
+            "gpu": "H100 SXM",
+            "id": "aivjrove2q0yi8",
+            "name": "qwen35-hidden-law-20260815T153604Z-s03",
+            "shard_index": 3
+          },
+          {
+            "create_receipt_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/production-pod-create-s04.json",
+            "create_receipt_sha256": "cd452d2b7d7a16f06f0b5459132299b48149aca81ab83dea09993a3de312794d",
+            "gpu": "H100 SXM",
+            "id": "fx0s1psep5p1hf",
+            "name": "qwen35-hidden-law-20260815T153604Z-s04",
+            "shard_index": 4
+          },
+          {
+            "create_receipt_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/production-pod-create-s05.json",
+            "create_receipt_sha256": "ff750f2d59bd830ed79afdbbae95ecf982deff87ef62c550a5430a9802024010",
+            "gpu": "H100 SXM",
+            "id": "7piqbymgva72x3",
+            "name": "qwen35-hidden-law-20260815T153604Z-s05",
+            "shard_index": 5
+          }
+        ],
+        "preference_fallback_failures": [
+          {
+            "gpu": "NVIDIA H100 NVL",
+            "receipt_sha256": "92d89bf60f3350e070893d1ae1814c9b635f8beea8e995375b6545808f6b75ac",
+            "shard_indices": [2, 3, 4, 5],
+            "state": "capacity_unavailable"
+          }
+        ],
+        "production_log_objects_after_teardown": 0,
+        "production_status_objects_after_teardown": 0,
+        "state": "aborted_before_status",
+        "teardown": {
+          "confirmation": {
+            "code": "not_found",
+            "status": 404
+          },
+          "confirmation_observed_at": "2026-08-15T16:10:39Z",
+          "delete_receipts": [
+            {"deleted": true, "id": "oo2e0es1onqr9h"},
+            {"deleted": true, "id": "55p9myf22rgrhw"},
+            {"deleted": true, "id": "0b6ggs5arj0fks"},
+            {"deleted": true, "id": "aivjrove2q0yi8"},
+            {"deleted": true, "id": "fx0s1psep5p1hf"},
+            {"deleted": true, "id": "7piqbymgva72x3"}
+          ]
+        },
+        "updates_completed": 0,
+        "wrapper_sha256": "1ca4abc937297c67f5e14ec21eec0d942f065e97caad7ba1b1068e5f0b35a8b3"
+      },
+      {
+        "attempt": 2,
+        "canary_gate": {
+          "runtime_verification": "GOALZENDO_HIDDEN_LAW_RUNTIME_VERIFIED gpu=NVIDIA H100 NVL",
+          "shard_index": 0,
+          "shard_verification": "GOALZENDO_HIDDEN_LAW_SHARD_VERIFIED shard=0 planned_runs=4",
+          "state": "passed"
+        },
+        "frozen_archive_changed": false,
+        "launch_plan_sha256": "7b60ed59e8d8842f8c9e6b21830f3d092ebfa94e60427294dce9b6e210659a86",
+        "outcomes_inspected": false,
+        "pods": [
+          {
+            "cost_per_hour_usd": 3.19,
+            "create_receipt_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/production-pod-create-a2-s00.json",
+            "create_receipt_sha256": "ce9e5ed4b7749d402e769db941e56c1139c9dfbcdd4d477212e8896c53b4f312",
+            "gpu": "H100 NVL",
+            "id": "iwhpy40w5u0ld9",
+            "name": "qwen35-hidden-law-20260815T153604Z-s00",
+            "planned_run_ids": ["52e80f32deae4566d3cf", "d0aa5fef3033df7ee0d8", "cf8079480e4dc7810241", "4426266d2a2d65ddb801"],
+            "planned_runs": 4,
+            "shard_index": 0,
+            "started_at": "2026-08-15T16:12:25Z",
+            "state": "complete_verified_deleted",
+            "terminal_finished_at": "2026-08-16T03:55:55Z",
+            "terminal_receipt_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/production-terminal-s00.json",
+            "terminal_receipt_sha256": "decd596a2af3378527bbcda356d4ce89b82c584e11627a23597ab617294997a5",
+            "independent_verification_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/independent-production-s00-verification.json",
+            "independent_verification_sha256": "60c7b5348528faac4fe271ad66874d779ce32bb885d268c8d9086a4176c14629",
+            "teardown": {
+              "confirmation": {"code": "not_found", "status": 404},
+              "confirmation_observed_at": "2026-08-16T03:58:35Z",
+              "delete_receipt": {"deleted": true, "id": "iwhpy40w5u0ld9"}
+            },
+            "verified_plan_count": 4
+          },
+          {
+            "cost_per_hour_usd": 3.19,
+            "create_receipt_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/production-pod-create-a2-s01.json",
+            "create_receipt_sha256": "863451324e748285b6129bd30fe9a10089e3dcea909ee86bbb87200c17ec3fae",
+            "gpu": "H100 NVL",
+            "id": "u7hj7s9sjvk285",
+            "name": "qwen35-hidden-law-20260815T153604Z-s01",
+            "planned_run_ids": ["81755b4849aa7c0dc583", "46982c2fde4b63521aa3", "ecf8d9b3fa2aed3e1fca", "ef29961e7a2c058e9b04", "3cd34e78d30d4d5bf9dd"],
+            "planned_runs": 5,
+            "shard_index": 1,
+            "started_at": "2026-08-15T16:13:15Z",
+            "state": "complete_verified_deleted",
+            "terminal_finished_at": "2026-08-16T10:33:29Z",
+            "terminal_receipt_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/production-terminal-s01.json",
+            "terminal_receipt_sha256": "e9325ec33622b3d12f22bffb9a2c3f96bf8519bee652b5bf33b37c1e6a62e036",
+            "independent_verification_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/independent-production-s01-verification.json",
+            "independent_verification_sha256": "885a7f710f3107999ddac7d81af9e3ab0849a57e1c8bfb59b118988982a60977",
+            "teardown": {
+              "confirmation": {"code": "not_found", "status": 404},
+              "confirmation_observed_at": "2026-08-16T15:36:52Z",
+              "delete_receipt": {"deleted": true, "id": "u7hj7s9sjvk285"}
+            },
+            "verified_plan_count": 5
+          },
+          {
+            "cost_per_hour_usd": 3.29,
+            "create_receipt_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/production-pod-create-a2-s02.json",
+            "create_receipt_sha256": "2bc768f0afa97dbb4a09b3ef22e9f3ffeae2f0a98ce258b6acd1c1a6e9ebfabb",
+            "gpu": "H100 SXM",
+            "id": "pm2193y8z7arx1",
+            "name": "qwen35-hidden-law-20260815T153604Z-s02",
+            "planned_run_ids": ["42b86d7758ec2e6704cf", "5a82775d27991020e68f", "f983068243192cd533c5"],
+            "planned_runs": 3,
+            "shard_index": 2,
+            "started_at": "2026-08-15T16:14:09Z",
+            "state": "complete_verified_deleted",
+            "terminal_finished_at": "2026-08-15T22:08:13Z",
+            "terminal_receipt_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/production-terminal-s02.json",
+            "terminal_receipt_sha256": "552733143a2bef04b6efff4cff32edc106d9b7a621c0de053145c1fd888667d4",
+            "independent_verification_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/independent-production-s02-verification.json",
+            "independent_verification_sha256": "db5718189db1ba18f6597265427e8e49966289f04ba5cd25f698143e4c063e0d",
+            "teardown": {
+              "confirmation": {"code": "not_found", "status": 404},
+              "confirmation_observed_at": "2026-08-15T22:18:19Z",
+              "delete_receipt": {"deleted": true, "id": "pm2193y8z7arx1"}
+            },
+            "verified_plan_count": 3
+          },
+          {
+            "cost_per_hour_usd": 3.29,
+            "create_receipt_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/production-pod-create-a2-s03.json",
+            "create_receipt_sha256": "09e3d1722510da1c83da1d9507a6519a8675f3524a7851eea22ed68ba9bbdfb0",
+            "gpu": "H100 SXM",
+            "id": "26czglz6o1bd0a",
+            "name": "qwen35-hidden-law-20260815T153604Z-s03",
+            "planned_run_ids": ["6f478e6437b80187dd83", "62e57c279d837d8b0650", "05b0a9cfea9397831022", "47401ab79f9bf3424134"],
+            "planned_runs": 4,
+            "shard_index": 3,
+            "started_at": "2026-08-15T16:14:43Z",
+            "state": "complete_verified_deleted",
+            "terminal_finished_at": "2026-08-16T04:08:47Z",
+            "terminal_receipt_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/production-terminal-s03.json",
+            "terminal_receipt_sha256": "13821ed46331a2bd13a3863234708b8486fe1f6929cf3baf0f5111bf96d1e279",
+            "independent_verification_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/independent-production-s03-verification.json",
+            "independent_verification_sha256": "c941834c8d2101b22ae76f67cce1ccd8ac49291fa79f9a6f6c1b7adbf3331650",
+            "teardown": {
+              "confirmation": {"code": "not_found", "status": 404},
+              "confirmation_observed_at": "2026-08-16T04:12:51Z",
+              "delete_receipt": {"deleted": true, "id": "26czglz6o1bd0a"}
+            },
+            "verified_plan_count": 4
+          },
+          {
+            "cost_per_hour_usd": 3.29,
+            "create_receipt_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/production-pod-create-a2-s04.json",
+            "create_receipt_sha256": "99dea3fe7cf8b803c7a254dedaf66882ed6e3e4d70e1831672016ae67e466d85",
+            "gpu": "H100 SXM",
+            "id": "3cnrtbdnofcs6u",
+            "name": "qwen35-hidden-law-20260815T153604Z-s04",
+            "planned_run_ids": ["1afcb070d4202dd87667", "55103fdc7457db618ea2", "04f0f31957d4d74b96dc", "0e9eb5003e96f05abf54", "b34dfcd29e24254ddf95"],
+            "planned_runs": 5,
+            "shard_index": 4,
+            "started_at": "2026-08-15T16:15:14Z",
+            "state": "complete_verified_deleted",
+            "terminal_finished_at": "2026-08-16T02:12:19Z",
+            "terminal_receipt_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/production-terminal-s04.json",
+            "terminal_receipt_sha256": "e06c10622edb634733885bbd0a66d94744c9a24d5bb068ad851c7a25b89c4e6c",
+            "independent_verification_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/independent-production-s04-verification.json",
+            "independent_verification_sha256": "4b5f25ab35a2b5a2c13ecd96684cf15c28d892351328752a768110c92b8f71ce",
+            "teardown": {
+              "confirmation": {"code": "not_found", "status": 404},
+              "confirmation_observed_at": "2026-08-16T02:23:28Z",
+              "delete_receipt": {"deleted": true, "id": "3cnrtbdnofcs6u"}
+            },
+            "verified_plan_count": 5
+          },
+          {
+            "cost_per_hour_usd": 3.29,
+            "create_receipt_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/production-pod-create-a2-s05.json",
+            "create_receipt_sha256": "28a31e68a4654f83f35f8d25879a5e2e446c64827804abd0661cc9ae5b1e1f62",
+            "gpu": "H100 SXM",
+            "id": "uehewh2vu3lybi",
+            "name": "qwen35-hidden-law-20260815T153604Z-s05",
+            "planned_run_ids": ["c05261f61243dd6d0826", "4fae2dc122fcfb13700b", "ea8355193521eea1ef50"],
+            "planned_runs": 3,
+            "shard_index": 5,
+            "started_at": "2026-08-15T16:15:41Z",
+            "state": "complete_verified_deleted",
+            "terminal_finished_at": "2026-08-16T03:24:19Z",
+            "terminal_receipt_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/production-terminal-s05.json",
+            "terminal_receipt_sha256": "76a89c42dcac9e9bc24ec73400f98b8dec43e8afe3890e3c488bedf403a532b7",
+            "independent_verification_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/independent-production-s05-verification.json",
+            "independent_verification_sha256": "683b805505737bd3d9194fdb0102827f0aa8f78568c22a373f782c85b7c3fe4d",
+            "teardown": {
+              "confirmation": {"code": "not_found", "status": 404},
+              "confirmation_observed_at": "2026-08-16T03:28:02Z",
+              "delete_receipt": {"deleted": true, "id": "uehewh2vu3lybi"}
+            },
+            "verified_plan_count": 3
+          }
+        ],
+        "preference_fallback": {
+          "preferred_gpu": "NVIDIA H100 NVL",
+          "preferred_gpu_pods": 2,
+          "s02_capacity_failure_receipt_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/production-pod-create-a2-s02-nvl-failed.json",
+          "s02_capacity_failure_receipt_sha256": "92d89bf60f3350e070893d1ae1814c9b635f8beea8e995375b6545808f6b75ac",
+          "fallback_gpu": "NVIDIA H100 80GB HBM3",
+          "fallback_gpu_pods": 4
+        },
+        "terminal_shards_verified_and_deleted": [0, 1, 2, 3, 4, 5],
+        "global_terminal_verification": {
+          "observed_at": "2026-08-16T15:37:19Z",
+          "expected_run_identities": 24,
+          "observed_run_identities": 24,
+          "valid_complete_seals": 24,
+          "missing_run_ids": 0,
+          "extra_run_ids": 0,
+          "failed_production_shards": 0,
+          "terminal_rc0_receipts": 6,
+          "all_production_pods_confirmed_404": true,
+          "outcomes_inspected": false
+        },
+        "state": "complete_verified_deleted",
+        "wrapper_sha256": "0d1ab0d40ae35aa254a0ac9404511bca71f4356203bfed4059069bcfddb3dbee"
+      }
+    ],
+    "postcompletion_analysis": {
+      "frozen_source_archive_member": false,
+      "s3_uri": "s3://5f06o456rx/goalzendo-hidden-law/jobs/qwen35-hidden-law-20260815T153604Z/input/postcomplete_qwen35_hidden_law.sh",
+      "sha256": "61d90978578d0878b85de3e35a8d535cbb83ea867e6cf9230765095354d876c0",
+      "state": "complete_verified_deleted",
+      "outcomes_inspected": false,
+      "launch": {
+        "preferred_gpu_attempt": {
+          "gpu": "NVIDIA H100 NVL",
+          "observed_at": "2026-08-16T15:39:36Z",
+          "state": "no_allocation_no_receipt"
+        },
+        "fallback_gpu": "NVIDIA H100 80GB HBM3",
+        "pod": {
+          "id": "ieayaecj1db8ra",
+          "name": "qwen35-hidden-law-20260815T153604Z-analysis",
+          "gpu": "H100 SXM",
+          "cost_per_hour_usd": 3.29,
+          "created_at": "2026-08-16T15:40:00.394Z",
+          "started_at": "2026-08-16T15:40:05Z",
+          "create_receipt_path": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/postcompletion-pod-create.json",
+          "create_receipt_sha256": "5b90da3827113c9896daeb5ecf9f0f97c1341a05d82c7a7719c118092a55c0de",
+          "network_volume_id": "5f06o456rx",
+          "volume_mount_path": "/workspace"
+        },
+        "running_status": {
+          "state": "running",
+          "runner_rc": null,
+          "terminal_shard_receipt_count": 0,
+          "verified_complete_run_count": 0,
+          "started_at": "2026-08-16T15:40:05Z"
+        },
+        "terminal_status": {
+          "state": "complete",
+          "runner_rc": 0,
+          "terminal_shard_receipt_count": 6,
+          "verified_complete_run_count": 24,
+          "started_at": "2026-08-16T15:40:05Z",
+          "finished_at": "2026-08-16T15:41:21Z",
+          "analysis_sha256": "7918392987d22336fc9e237b8cdc7022ebe77e68592a5fb526e347220a476bd6",
+          "status_sha256": "b08aba4c221b580cd29eb6e77bf035827282541b79af8bfd5629ff017fda6b92",
+          "sha256sums_sha256": "f59928db3da0b9973a3e242ce9795f25bcf622eb1cfef23901b0a730b85c54e0",
+          "remote_inventory_count": 3,
+          "checksum_verification_passed": true,
+          "local_sync_byte_identical": true,
+          "local_paths": {
+            "analysis_json": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/analysis/qwen35-hidden-law-analysis.json",
+            "status_json": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/analysis/status.json",
+            "sha256sums": "runs/goalzendo/qwen35-hidden-law-results/qwen35-hidden-law-20260815T153604Z/analysis/SHA256SUMS"
+          }
+        },
+        "teardown": {
+          "confirmation": {"code": "not_found", "status": 404},
+          "confirmation_observed_at": "2026-08-16T15:42:51Z",
+          "delete_receipt": {"deleted": true, "id": "ieayaecj1db8ra"}
+        }
+      },
+      "test_sha256": "5e4b4c2a3f7272dc9c053349c318e3074f3528831eff41cf4cc65349e2e7c368",
+      "verified_after_upload": true
+    },
+    "planned_runs": 24,
+    "shard_count": 6,
+    "shard_run_counts": [4, 5, 3, 4, 5, 3],
+    "smoke_gate": "go",
+    "state": "complete_verified_deleted"
+  },
+  "prelaunch_audit": {
+    "independent_cross_checks_passed": 40,
+    "outcomes_inspected": false,
+    "status": "go_for_outcome_blind_smokes",
+    "tests_passed": 93
+  }
+}

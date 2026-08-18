@@ -1,0 +1,4 @@
+extends: g00_rl_exploration_screen.yaml
+
+cases:
+  - train.entropy_coefficient: 0.01

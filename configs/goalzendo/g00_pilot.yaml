@@ -1,0 +1,70 @@
+extends: base.yaml
+
+experiment:
+  id: g00
+  name: acquisition_pilot
+  status: exploratory
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g00-pilot
+  seeds: [9001, 9002, 9003]
+  protocol_unlocked: true
+  launch_guard: null
+  checkpoint_steps: [128, 256]
+  snapshot_steps: []
+
+data:
+  n_train: 2000
+  n_validation: 400
+  n_eval_per_cell: 16
+  law_features: [5, 6, 7]
+  sage_features: [8, 9]
+  distractor_features: [0, 1, 2, 3, 4, 10, 11, 12, 13, 14, 15, 16]
+  feature_names:
+    - bears the arven sigil
+    - bears the belic sigil
+    - bears the corva sigil
+    - bears the drann sigil
+    - bears the eskin sigil
+    - bears the falor sigil
+    - bears the gatin sigil
+    - bears the helva sigil
+    - bears the iskar sigil
+    - bears the jorin sigil
+    - bears the keldo sigil
+    - bears the lumet sigil
+    - bears the morin sigil
+    - bears the nevan sigil
+    - bears the orlis sigil
+    - bears the paven sigil
+    - bears the quorin sigil
+  q_p: 0.95
+  q_q: 0.90
+  rule_family: parity
+  training_view: full
+
+evaluation:
+  prompt_views: [full, audit_law_full, audit_law_matched, no_herald, no_sage, law_only]
+  causal_prompt_views: [full]
+  causal_per_cell: 8
+  final_causal_per_cell: 16
+  batch_size: 16
+  final_eval_per_cell: 64
+
+train:
+  steps: 256
+  batch_size: 10
+  gradient_accumulation_steps: 4
+  eval_steps: [0, 1, 2, 4, 8, 16, 32, 64, 128, 256]
+
+cases:
+  - train.algorithm: sft
+    train.learning_rate: 0.000003
+  - train.algorithm: sft
+    train.learning_rate: 0.00001
+  - train.algorithm: outcome_rl
+    train.learning_rate: 0.000001
+  - train.algorithm: outcome_rl
+    train.learning_rate: 0.000003
+
+sweep: {}

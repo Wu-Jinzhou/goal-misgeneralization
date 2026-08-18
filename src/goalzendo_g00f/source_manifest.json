@@ -1,0 +1,13 @@
+{
+  "manifest_digest": "348a3f0f2520234c8fd124b28a2f5eb85d8250af5ec2dc6473859d9a669a6897",
+  "schema": "goalzendo.g00f_additive_source_manifest",
+  "schema_version": 1,
+  "source_digest": "df41a4370ec39abe3cc9e293262655fabef59775b14db1c3c5fa57fb9122bb13",
+  "source_files": {
+    "__init__.py": "20d4902d4bbac56634486c5f5ac7c1b5c2f1e7089ee068a7c1037774fbb86115",
+    "cli.py": "18bfc31f6bb83a4aaa6c59f1c883ee2866120de09dfc9ae0b6f1003cbe34e44e",
+    "evaluator.py": "d305391790475a6039254d180ff7a2542f0513bfa5f83e5939fbe22e5c17fefd",
+    "freeze.py": "114b96c94328fb70944f50a2bc18f2f843a4dbacfb2fb5938de2c2491e2ac573",
+    "py.typed": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  }
+}

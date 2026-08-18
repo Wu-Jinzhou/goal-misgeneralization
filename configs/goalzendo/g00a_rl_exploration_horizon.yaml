@@ -1,0 +1,43 @@
+extends: g00_rl_exploration_screen.yaml
+
+experiment:
+  id: g00a
+  name: adaptive_rl_exploration_horizon
+  status: adaptive
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g00a-rl-exploration-horizon
+  seeds: [9101]
+  checkpoint_steps: [256, 512]
+  snapshot_steps: []
+
+# This follow-up was specified only after all three entropy-screen cells had
+# finished.  The screen showed that beta=.01 and .1 re-collapsed after learning
+# the Herald, whereas beta=1 retained stochastic exploration through step 64.
+# The horizon study asks whether continued exploration changes the eventual
+# greedy controller when the Herald has real counterexamples.
+train:
+  algorithm: outcome_rl
+  steps: 512
+  batch_size: 10
+  gradient_accumulation_steps: 5
+  learning_rate: 0.000003
+  samples_per_prompt: 4
+  eval_steps: [0, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
+
+evaluation:
+  prompt_views: [full]
+  causal_prompt_views: [full]
+  causal_per_cell: 2
+  final_causal_per_cell: 2
+  final_eval_per_cell: 32
+  batch_size: 32
+
+cases:
+  - train.entropy_coefficient: 0.01
+  - train.entropy_coefficient: 0.10
+  - train.entropy_coefficient: 1.00
+
+sweep:
+  data.rule_family: [parity]
+  data.q_p: [0.95, 1.00]

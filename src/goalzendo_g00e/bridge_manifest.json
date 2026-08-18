@@ -1,0 +1,14 @@
+{
+  "equivalence_audit_digest": "e80049fbd121092dc95ef12faf5103e7ddaa9c35f3d4ec03b19b963ab37bf88b",
+  "frozen_goalzendo_implementation_fingerprint": "1a8146377b9a9620690025671614edb2dd20d214f4e195da3cf3528809b2c694",
+  "numerical_definition": "central Binomial(n, 1/2), alpha=1/20, inclusive CDF boundaries at 1/40 and 39/40",
+  "schema": "goalzendo.g00e_numerical_gate_bridge_manifest",
+  "schema_version": 1,
+  "source_digest": "ed872054c3e11b258ac15d711c0ab9f9cefa961a4a4632e033fabc2bd13dd5a6",
+  "source_files": {
+    "__init__.py": "698e9d3d15114e431f6d888431e3997f25201a5a605f48a716c66953a7c80b79",
+    "bridge.py": "0dc624a240bed3af87bf02c44b41d01ba76388f0eeec6cc0d1ef328ac8520ba3",
+    "cli.py": "bf252b899f40cdbb3047c4c6e8532956a261ea48ed4fa63c0cf00f41a7a85495",
+    "py.typed": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  }
+}

@@ -1,0 +1,67 @@
+# Shared preregistration defaults. Hypothesis files extend this configuration.
+schema_version: 1
+
+run:
+  output_root: artifacts
+  seeds: [11, 23, 37, 41, 53, 67, 71, 83, 97, 101]
+  device: auto
+  resume: true
+  save_checkpoints: true
+  # Full factorial inference is performed at choice level. The same learned
+  # selector is confirmed through fork and navigation rollouts at no extra fit.
+  task_levels: [choice, fork, navigation]
+  navigation_episodes: 128
+
+navigator:
+  checkpoint_root: null  # defaults to <output_root>/navigators
+  auto_pretrain: true
+  navigation_maps: 32
+  epochs: 250
+  target_accuracy: 0.99
+  target_patience: 3
+  # Goal selection is evaluated where frozen navigation skill is known;
+  # unseen-map planning is reported separately as a capability control.
+  evaluation_split: support
+  report_heldout_capability: true
+
+data:
+  # Multiples of 100 make every preregistered q (including .99) exact.
+  n_train: 10000
+  n_validation: 4000
+  n_eval: 10000
+  q: 0.9
+  k: 3
+  max_k: 5
+  state_dim: 8
+
+model:
+  width: 64
+  depth: 2
+  activation: relu
+  residual: false
+  bias: true
+  nuisance_bits: 0
+
+update:
+  mode: full
+  budget: full
+  subspace_seed: 1729
+
+train:
+  algorithm: clean_sft
+  steps: 2048
+  batch_size: 250
+  learning_rate: 0.003
+  weight_decay: 0.0
+  eval_steps: log
+  grad_clip: 1.0
+
+evaluation:
+  acquisition_threshold: 0.9
+  persistence: 2
+  equivalence_margin: 0.05
+  bootstrap_samples: 4000
+  confidence: 0.95
+  # Seed resampling is descriptive below this independent-replication floor.
+  minimum_inferential_seeds: 3
+  save_predictions: true

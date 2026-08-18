@@ -1,0 +1,20 @@
+extends: g00f_capability_repair_1p5b.yaml
+
+experiment:
+  id: g00f
+  name: capability_repair_h200_baseline_1p5b
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g00f-h200-baseline-1p5b
+  launch_guard: G00F_H200_FROZEN_SELECTOR_AND_EXECUTION_MANIFEST_REQUIRED
+  protocol_unlocked: false
+
+# The baseline profile restates the immutable G00-F execution layout so the
+# H200 selector can bind it independently of inherited defaults.
+train:
+  batch_size: 10
+  gradient_accumulation_steps: 5
+  gradient_checkpointing: true
+
+evaluation:
+  batch_size: 16

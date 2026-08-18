@@ -1,0 +1,43 @@
+{
+  "outcome_blind_rule": "Proceed depends only on complete scoring/model integrity, SFT Law capability in the matched layout, RL IID learning, and noncollapsed early action sampling. Conflict controller outcomes and SFT--RL differences do not affect this decision.",
+  "proceed": true,
+  "runs": [
+    {
+      "algorithm": "outcome_rl",
+      "early_both_actions_sampled_median": 0.73,
+      "final_iid_law_accuracy": 0.95,
+      "final_matched_layout_law_agreement": 0.5026041666666666,
+      "model": "Qwen/Qwen3.5-0.8B",
+      "passed": true,
+      "run_id": "4fd545c936966451b6aa"
+    },
+    {
+      "algorithm": "sft",
+      "early_both_actions_sampled_median": null,
+      "final_iid_law_accuracy": 1.0,
+      "final_matched_layout_law_agreement": 1.0,
+      "model": "Qwen/Qwen3.5-0.8B",
+      "passed": true,
+      "run_id": "bf0a2450a422a70cb577"
+    },
+    {
+      "algorithm": "outcome_rl",
+      "early_both_actions_sampled_median": 0.72,
+      "final_iid_law_accuracy": 0.95,
+      "final_matched_layout_law_agreement": 0.5,
+      "model": "Qwen/Qwen3.5-2B",
+      "passed": true,
+      "run_id": "9d3aa5b504d68fee78eb"
+    },
+    {
+      "algorithm": "sft",
+      "early_both_actions_sampled_median": null,
+      "final_iid_law_accuracy": 1.0,
+      "final_matched_layout_law_agreement": 0.9921875,
+      "model": "Qwen/Qwen3.5-2B",
+      "passed": true,
+      "run_id": "759a28edaaa78f763200"
+    }
+  ],
+  "schema": "goalzendo.qwen35_pilot_decision"
+}

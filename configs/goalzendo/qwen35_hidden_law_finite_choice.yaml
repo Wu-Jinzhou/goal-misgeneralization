@@ -1,0 +1,96 @@
+schema: goalzendo.hidden_law_finite_choice
+schema_version: 1
+
+experiment:
+  id: qwen35_hidden_law_finite_choice
+  status: prospective_frozen
+  protocol: docs/goalzendo/protocols/qwen35-hidden-law-finite-choice.md
+
+models:
+  - name: Qwen/Qwen3.5-0.8B
+    revision: "2fc06364715b967f1860aea9cf38778875588b17"
+    dtype: bfloat16
+    trust_remote_code: false
+  - name: Qwen/Qwen3.5-2B
+    revision: "15852e8c16360a2fea060d615a32b45270f8a8fc"
+    dtype: bfloat16
+    trust_remote_code: false
+
+algorithms:
+  - name: process_sft
+    learning_rate: 0.00001
+    entropy_coefficient: 0.0
+    phase_weights:
+      inquiry: 0.3333333333333333
+      rule: 0.3333333333333333
+      classification: 0.3333333333333333
+  - name: outcome_rl
+    learning_rate: 0.000003
+    entropy_coefficient: 0.01
+    trajectories_per_official: 4
+    exact_rule_reward_weight: 0.25
+    classification_reward_weight: 0.75
+
+seeds: [23011, 23013, 23017, 23019, 23023, 23031]
+
+game:
+  candidate_count: 4
+  candidate_families: [placard_literal, piece_literal, monotone_composed, exactly_one_composed]
+  opening_examples: 10
+  opening_positive: 5
+  query_menu_size: 8
+  max_queries: 2
+  query_partition_profile:
+    balanced_2v2: 4
+    imbalanced_1v3: 4
+    uninformative: 0
+  terminal_truth_cells: 16
+  train_renderers: [train_compact, train_positional, train_tabletop, train_inventory]
+  eval_renderers: [eval_reverse, eval_ledger]
+
+training:
+  blocks: 128
+  official_rotations_per_block: 4
+  steps: 128
+  full_model_update: true
+  optimizer: adamw
+  weight_decay: 0.0
+  scheduler: constant_after_linear_warmup
+  warmup_steps: 7
+  gradient_clip_norm: 1.0
+  gradient_checkpointing: true
+  use_cache: false
+  scoring_microbatch: 4
+  max_prompt_tokens: 1536
+  deterministic_algorithms: false
+  allow_tf32: false
+  checkpoint_steps: [32, 128]
+  evaluation_steps: [0, 8, 32, 128]
+  resume: true
+
+evaluation:
+  interim_quartets: 4
+  final_quartets: 16
+  evidence_cells: [both_perfect, p_noisy, q_noisy, both_noisy]
+  final_views: [active, oracle_query, no_query]
+  terminal_one_per_four_rule_truth_cell: true
+  matched_interventions: [official, placard, semantic, other_composed, distractor]
+  intervention_pairs_per_target_per_quartet: 2
+  intervention_atomic_edit: one_primitive_field
+  isolated_terminal_calls: true
+  save_transcripts: true
+  save_predictions: true
+
+analysis:
+  seed_is_inferential_unit: true
+  primary_outcomes: [information_fraction, exact_rule_recovery, law_control_margin]
+  causal_companion: causal_law_control_margin
+  exhaustive_seed_bootstrap: true
+  exact_sign_flip: true
+  binary_claims: false
+
+run:
+  output_root: /workspace/goalzendo-hidden-law/qwen35-hidden-law-finite-choice
+  smoke_seed: 23999
+  scientific_pilot: false
+  outcome_gate: false

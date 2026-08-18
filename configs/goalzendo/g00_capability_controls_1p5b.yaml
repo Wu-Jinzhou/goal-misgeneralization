@@ -1,0 +1,42 @@
+extends: g00_capability_controls.yaml
+
+experiment:
+  id: g00
+  name: capability_and_leakage_controls_1p5b
+  status: exploratory
+
+run:
+  output_root: /workspace/artifacts-goalzendo/g00-capability-1p5b
+
+# Repeat every isolation and leakage gate on the exact model snapshot used by
+# G01. The inherited data map is intentionally disjoint from G01's semantic
+# feature positions and natural-language feature names.
+model:
+  name: Qwen/Qwen2.5-1.5B-Instruct
+  revision: 989aa7980e4cf806f80c7fef2b1adb7bc71aa306
+
+cases:
+  - data.rule_family: parity
+    data.training_view: law_only
+    evaluation.prompt_views: [law_only]
+  - data.rule_family: majority
+    data.training_view: law_only
+    evaluation.prompt_views: [law_only]
+  - data.rule_family: parity
+    data.training_view: audit_law_matched
+    evaluation.prompt_views: [audit_law_matched]
+  - data.rule_family: majority
+    data.training_view: audit_law_matched
+    evaluation.prompt_views: [audit_law_matched]
+  - data.rule_family: parity
+    data.training_view: sage_only
+    evaluation.prompt_views: [sage_only]
+  - data.rule_family: parity
+    data.training_view: herald_only
+    evaluation.prompt_views: [herald_only]
+  - data.rule_family: parity
+    data.training_view: no_signal
+    evaluation.prompt_views: [no_signal]
+  - data.rule_family: parity
+    data.training_view: surface_only
+    evaluation.prompt_views: [surface_only]

@@ -1,0 +1,114 @@
+extends: base.yaml
+
+# Adaptive/post-hoc intervention selected after E17. The edited layer,
+# coordinates, six branches, thresholds, and disjoint pilot/full seed panels
+# are frozen in followups.md before any E19 outcome is observed.
+experiment:
+  hypothesis: h16
+  name: active_q_input_pathway_intervention
+  mode: adaptive_q_pathway_intervention
+
+run:
+  seeds: [409, 419, 421, 431, 433, 439, 443, 449, 457, 461,
+          463, 467, 479, 487, 491, 499, 503, 509, 521, 523]
+  device: cpu
+  task_levels: [choice]
+  save_checkpoints: false
+
+evaluation:
+  bootstrap_samples: 4000
+  confidence: 0.95
+  save_predictions: false
+
+data:
+  n_train: 10000
+  n_validation: 4000
+  n_eval: 10000
+  q: 0.90
+  k: 3
+  max_k: 5
+  state_dim: 8
+
+model:
+  width: 64
+  depth: 2
+  activation: relu
+  residual: false
+  bias: true
+
+update:
+  mode: full
+  budget: full
+
+train:
+  algorithm: clean_sft
+  optimizer: adamw
+  steps: 1024
+  batch_size: 250
+  learning_rate: 0.003
+  weight_decay: 0.0
+  shuffle: true
+  deterministic: true
+  eval_steps: [1, 2, 3, 4, 5, 7, 9, 13, 17, 24, 33, 45, 62, 85, 117,
+               128, 161, 222, 304, 418, 575, 790, 1024]
+
+h16:
+  branch: independent_noop
+  # The launcher sets this true only for the disjoint engineering pilot. A
+  # pilot branch exits after the post-edit manipulation checks, before phase B.
+  pilot_only: false
+  pilot_seeds: [541, 547, 557]
+
+  q_p: 0.90
+  q_q: 0.90
+  k_q: 2
+  k_y: 3
+  max_k_q: 3
+  max_k_y: 5
+  phase_a_steps: 45
+  phase_b_steps: 1024
+  eligibility_steps: [33, 45]
+  phase_b_checkpoints: [0, 1, 2, 3, 4, 5, 7, 9, 13, 17, 24, 33, 45,
+                        62, 85, 117, 128, 161, 222, 304, 418, 575, 790, 1024]
+
+  probe_train_n: 2048
+  probe_eval_n: 4096
+  probe_ridge: 0.001
+  truth_table_control_seed: 1500450271
+
+  # The feature contract and surgical coordinates are part of the
+  # frozen design rather than inferred from the implementation at runtime.
+  parameter_name: input_projection.weight
+  feature_names: [P, P_present, R_1, R_2, R_3, R_4, R_5,
+                  Q_present, Q_1, Q_2, Q_3,
+                  state_0, state_1, state_2, state_3,
+                  state_4, state_5, state_6, state_7]
+  active_q_columns: [8, 9]
+  sham_padding_columns: [5, 6]
+  expected_input_dim: 19
+  expected_edited_scalars: 128
+
+  auc_horizon: 128
+  pure_threshold: 0.90
+  pure_margin: 0.10
+  probe_shift_threshold: 0.05
+  preservation_margin: 0.05
+  pilot_minimum_joint_seeds: 2
+  primary_effect_threshold: 0.02
+  sham_auc_equivalence_margin: 0.01
+  minimum_sign_count: 15
+  minimum_eligible_seeds: 15
+
+cases:
+  - h16:
+      branch: independent_noop
+  - h16:
+      branch: independent_q_restore
+  - h16:
+      branch: independent_padding_sham
+  - h16:
+      branch: nested_noop
+  - h16:
+      branch: nested_q_transplant
+  - h16:
+      branch: nested_padding_sham
