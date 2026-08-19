@@ -1,0 +1,87 @@
+{
+  "artifact_root": "/Users/wjz/Documents/Projects/goal-misgeneralization/artifacts-cpu10",
+  "confirmatory_inference_unit": "independent training seed",
+  "figures": {
+    "context_control": {
+      "causal_gate_matrix": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      "highest_update_budget_runs": 10
+    },
+    "counterevidence": {
+      "h4_memorization_subset_runs": 50,
+      "h4_runs": 1500
+    },
+    "decoding_vs_control": {
+      "decoder_threshold_counts": {
+        "full": {
+          "crossed": 4488,
+          "not_crossed": 12
+        },
+        "head_only": {
+          "crossed": 2222,
+          "not_crossed": 2278
+        },
+        "subspace": {
+          "crossed": 171,
+          "not_crossed": 129
+        }
+      },
+      "h2_runs": 9300
+    },
+    "hysteresis": {
+      "eligible_runs": 1916,
+      "excluded_preperturbation_cells": 241,
+      "matched_old_sham_pairs": 604,
+      "runs": 2880
+    },
+    "multiplicity_capacity": {
+      "architecture_runs": 210,
+      "runs": 270,
+      "single_rule_control_failures": 38,
+      "subspace_runs": 60
+    },
+    "phase_and_dynamics": {
+      "h1_runs": 2000,
+      "h3_runs": 2400
+    },
+    "temporal_noise": {
+      "dense_factorial_runs": 28800,
+      "independent_seeds": 10,
+      "n_train_values": [
+        2560,
+        10240,
+        40960
+      ],
+      "objective_active_runs": 19300,
+      "objective_ignored_negative_controls": 9600,
+      "runs": 28900,
+      "status": "complete",
+      "terminal_control_runs": 100,
+      "terminal_reward_equivalence": {
+        "ci_high": -0.00035789999999999975,
+        "ci_low": -0.00530805,
+        "equivalent_within_margin": true,
+        "estimate": -0.0029159999999999998,
+        "n_seeds": 10
+      }
+    },
+    "unlearning": {
+      "phase_a_gate_failures": 0,
+      "primary_runs": 840,
+      "runs": 1920,
+      "weight_decay_ablation_runs": 1080
+    },
+    "update_capacity": {
+      "h5_runs": 1120
+    }
+  },
+  "scope": "nine complete experiment families; 50,290 runs"
+}

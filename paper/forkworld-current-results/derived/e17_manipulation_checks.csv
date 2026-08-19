@@ -1,0 +1,7 @@
+measure,contrast,estimate,ci_low,ci_high,n_seeds,bootstrap_draws
+Q_selective_final_hidden_probe,independent_minus_nested,0.16644287109375,0.15123138427734376,0.1815924072265625,20,4000
+Q_raw_final_hidden_probe,independent_minus_nested,0.17734375,0.1633294677734375,0.19154296875,20,4000
+P_behavior,independent_minus_nested,-0.004541015625,-0.00645751953125,-0.00279541015625,20,4000
+P_causal,independent_minus_nested,-0.004583740234375,-0.00665283203125,-0.0028193664550781234,20,4000
+Y_final_hidden_probe,independent_minus_nested,-0.009033203125,-0.01901947021484375,-0.0007925415039062467,20,4000
+Y_selective_final_hidden_probe,independent_minus_nested,-0.01993408203125,-0.03099395751953125,-0.00894775390625,20,4000

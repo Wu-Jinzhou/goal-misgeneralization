@@ -1,0 +1,20 @@
+{
+  "confirmatory_panel_authorized_by_frozen_gate": false,
+  "fields_inspected": [
+    "prefix_snapshot.pure_goal",
+    "first_half_snapshot.pure_goal"
+  ],
+  "fields_not_inspected": [
+    "outcomes.primary_auc_m_y",
+    "outcomes.terminal_m_y",
+    "post_diagnostic_snapshot scientific values",
+    "washout snapshot scientific values",
+    "metric values"
+  ],
+  "integrity_gate_passed": true,
+  "manipulation_passing_seed_count": 0,
+  "manipulation_passing_seeds": [],
+  "minimum_required": 2,
+  "outcome_blinded": true,
+  "pilot_gate_passed": false
+}

@@ -1,0 +1,4 @@
+outcome,estimand,estimate,ci_low,ci_high,n_seeds
+branch_accuracy,(D4-D1)_per_fork_matched - (D4-D1)_fixed_total,0.17188333333333333,0.15483054687499997,0.18781796875000004,10
+effective_per_fork_success,(D4-D1)_per_fork_matched - (D4-D1)_fixed_total,0.16805568960888842,0.15453917479599386,0.18206398400429383,10
+rule_flip_rate,(D4-D1)_per_fork_matched - (D4-D1)_fixed_total,0.17341874999999998,0.15719979166666667,0.18869304687500002,10

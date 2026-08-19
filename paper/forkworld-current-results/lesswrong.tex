@@ -1,0 +1,329 @@
+\documentclass[11pt,a4paper]{article}
+
+% A shorter, LessWrong-facing edition. The full research draft remains main.tex.
+\usepackage[left=1in,right=1in,top=0.9in,bottom=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{palatino}
+\usepackage{microtype}
+\usepackage[all]{nowidow}
+\global\hyphenpenalty=700
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.62em}
+\raggedbottom
+
+\usepackage[numbers,round]{natbib}
+\bibliographystyle{naturemag}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor={red!45!black},
+  citecolor={blue!45!black},
+  urlcolor={blue!70!black},
+  pdftitle={Predicting Learned Goals: ForkWorld}
+}
+
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{adjustbox}
+\usepackage{pdflscape}
+\usepackage{placeins}
+\usepackage{float}
+\renewcommand{\topfraction}{0.92}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.78}
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{1}
+\setcounter{totalnumber}{3}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\definecolor{intended}{HTML}{2673B8}
+\definecolor{proxy}{HTML}{D55E00}
+\definecolor{evidence}{HTML}{009E73}
+\definecolor{softgray}{HTML}{F2F4F7}
+\definecolor{ink}{HTML}{17212B}
+
+\newcommand{\rhoY}{\rho_Y}
+\newcommand{\rhoP}{\rho_P}
+\newcommand{\Forkworld}{\textsc{Forkworld}}
+\newcommand{\CI}{\textsc{ci}}
+\newcommand{\fig}[1]{Fig.~\ref{#1}}
+
+\newenvironment{takeaway}{%
+  \begin{quote}\small\color{ink}\noindent\textbf{Takeaway.}\ 
+}{%
+  \end{quote}
+}
+
+\makeatletter
+\renewenvironment{abstract}{%
+  \vspace{-10pt}%
+  \centerline{\large\bfseries TL;DR}%
+  \setlength{\leftmargini}{30pt}%
+  \begin{quote}\small
+}{%
+  \par\end{quote}\vskip 1ex
+}
+\makeatother
+
+\title{\textbf{Predicting Learned Goals}\\[-1mm]
+\large ForkWorld}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+A model can perform perfectly on the distribution used to train and validate it while relying entirely on the wrong rule. We built \Forkworld{} to make this ambiguity measurable. A small neural network chooses between two destinations using an intended rule and one or more easier proxies; we then evaluate it only where those rules disagree and intervene on the candidate inputs. In this post, ``motivation'' means the rule that causally controls behavior under those disagreement interventions. It does not mean a subjective desire or a uniquely identified internal utility function.
+
+Across the experiments, models usually learned easy proxies before harder exact rules. Dataset size alone did not predict whether the intended rule would take control; counterexamples from varied contexts and examples where several shortcuts failed together were more informative. Separate exact-only models often decoded the intended rule perfectly even when matched competition models remained completely proxy-controlled. Boolean rules with the same number of inputs also competed differently, so neither decodability nor any single measure of simplicity predicted the winner. Allowing more parameters to change first strengthened the proxy and sometimes later enabled the intended rule. SFT escaped one proxy trap that RL did not; fresh zero-mean noise redirected behavior instead of washing out; and presenting the same collection of examples in a different order produced different controllers. In total, the study includes 54,930 completed training runs, with statistical inference based on independent training seeds.
+
+The models also sometimes behaved according to different rules in different contexts or shifted temporarily to another rule during training. Those patterns complicate claims about unlearning and latent goals: perfect behavioral reversal sometimes installed the inverse proxy, while scratch and compute-matched controls reproduced most of the apparent rebound. Taken together, the results suggest that behavioral control depends on which examples distinguish the candidate rules, how easy each rule is for the particular model to learn, how the rules compete during optimization, whether behavior combines several rules, and what the model learned earlier. These are results from toy models, not evidence that frontier models use the same mechanisms. They motivate concrete evaluation practices for LLM post-training and RLHF: construct cases where plausible reward-correlated rules disagree, supplement probes with causal tests, vary the order and context of training examples, and compare suspected memory effects with matched controls.
+\end{abstract}
+
+\section*{The safety problem: performance does not identify the objective}
+
+Suppose a model receives high reward for helping users during post-training. The observed behavior may be consistent with several rules: follow the user's intent, produce answers that a reward model likes, imitate a preferred style, agree with the evaluator, or exploit some artifact correlated with approval. If these rules agree on the training distribution, high reward cannot tell us which one will govern behavior after deployment. The ambiguity becomes visible only on inputs where the candidate rules recommend different actions.
+
+This ambiguity is the safety-relevant core of goal misgeneralization. A system can retain the capability to act competently out of distribution while selecting actions according to an unintended objective \citep{langosco2022goal,shah2022goal}. The problem is related to underspecification and shortcut learning: models with indistinguishable in-domain performance can implement different solutions and diverge under a shift \citep{damour2022underspecification,geirhos2020shortcut}. The special concern is not merely that predictions become inaccurate, but that an agent continues to act coherently while a different rule determines what it tries to accomplish.
+
+We use ``goal'' and ``motivation'' in a deliberately operational sense. We do not infer subjective wants, a unique utility function, or an internal search process. A candidate goal is the rule that \emph{causally controls the model's choice when plausible rules disagree}. This framing is close to recent proposals to treat motivations as behavior-influencing computations selected during training \citep{mallen2025behavioral,africa2026intentions}. It also keeps separate the signal used to update a policy from the rule the resulting policy follows \citep{turner2022reward}. Unlike analyses of mesa-optimization, the experiments do not assume that the selector performs an internal search \citep{hubinger2019risks}.
+
+\subsection*{Forkworld}
+
+\Forkworld{} removes most of the realism in order to make goal attribution unusually clean. On each example, a selector chooses the left or right target. A frozen controller can then navigate to the selected target, so the main experiments ask which destination is chosen rather than whether the model knows how to move through a maze.
+
+The selector sees an intended binary label $Y\in\{-1,+1\}$ through an exact code and an easy proxy $P$. The proxy agrees with the intended label with probability
+\[
+\Pr(P=Y)=q.
+\]
+In the baseline, the exact code is parity: $Y=\prod_{i=1}^{k}R_i$. No strict subset of the $k$ bits predicts $Y$, whereas the proxy can be read from one coordinate. Most training rows have $P=Y$, so either rule gives the rewarded action. On the diagnostic distribution we force $P=-Y$ and measure
+\[
+\rhoY=\Pr(\widehat A=Y).
+\]
+A score near one means that the intended rule controls the action; a score near zero means that the proxy does. We also flip $P$ or an active exact-code bit while holding the rest of an input fixed. These interventions distinguish mere agreement with a rule from causal dependence on its channel.
+
+Most runs stop at this one-step interface: there is no spatial grid, the action is simply ``left target'' or ``right target,'' and reward is one exactly when the choice matches $Y$. The fixed-fork rollout is neither a $2\times3$ abstraction nor a large open world. It is a $7\times7$ wall grid shaped as a symmetric T corridor; both targets are seven primitive moves from the start, and only the left/right move at the central fork depends on the selected goal. A separate $9\times9$ random-obstacle environment tests whether the selected goal can drive navigation on maps used to pretrain the controller. In both environments the selector chooses a target once, then a frozen two-hidden-layer navigator emits the four cardinal grid actions. RouteWorld later adds one, two, or four learned branch choices inside larger walled mazes, but its branch logits are computed from global route signals and a stage index rather than from online maze observations or history. Exact layouts, observations, horizons, and network architectures are specified in Appendix~\ref{sec:environment-specification}.
+
+Later experiments add a second proxy, context-dependent rules, sequential training phases, other Boolean encodings, and repeated forks in small mazes. The primary test nevertheless remains simple: when candidate explanations of training success are made to disagree, which explanation predicts and causally changes the action?
+
+The completed dataset contains 54,010 runs from thirteen experiment families whose designs and primary analyses were fixed internally before full execution, plus 920 runs from six follow-up panels designed after earlier results had been inspected. This internal planning was not a public or timestamped preregistration. We distinguish the two groups throughout: the first tests predictions specified before the full runs, while the second investigates patterns noticed in earlier results. Engineering pilots, smoke tests, and deterministic replays are excluded from the counts and scientific analyses.
+
+\section*{Finding 1: Perfect in-distribution results can hide complete proxy control}
+
+An agreement example can teach the correct action without identifying why it is correct. If $P=Y$, both ``follow the proxy'' and ``compute the intended rule'' fit the row. Only the fraction $1-q$ on which they disagree supplies evidence that separates them. Meanwhile, the proxy offers an immediate loss reduction: one weight can capture most labels. Parity becomes useful only after several features are combined.
+
+We therefore expected training to follow a characteristic path in which the model first learns the cheapest rule that predicts reward. If sufficiently informative proxy failures continue to produce errors, the model may later build the harder exact rule and transfer control to it. When those failures are absent or too weak, however, excellent performance can lock in the shortcut. This expectation is consistent with controlled studies of simplicity bias and gradient starvation, in which one predictive route suppresses learning along another \citep{shah2020pitfalls,pezeshki2021gradient}.
+
+In the phase grid, whose design and analysis were fixed before the full runs, we varied proxy accuracy, parity degree, and network width across 2,000 runs. At $q=.99$, mean intended-rule reliance fell from 1.000 for one active bit to .117 for five-bit parity. The width-8, five-bit cell achieved 99\% in-distribution accuracy while following the proxy on every conflict input. When $q=1$, every tested model with $k\geq2$ had perfect in-distribution accuracy and complete proxy control, at every width. Feature flips confirmed this interpretation: proxy-controlled policies changed almost every decision when $P$ was flipped and almost none when an exact-code bit was flipped, while intended-controlled policies showed the reverse pattern.
+
+In a second panel planned before the full runs, we followed 2,400 training runs through 8,192 updates and could identify acquisition order in 2,399 of them. The proxy came first in about 91\% when each training seed received equal weight, and in all 1,655 runs that eventually acquired both rules. Median acquisition occurred at 14 updates for the proxy and 279 for the intended rule. Among shorter runs, 76\% of models that first acquired the proxy later replaced it with the intended rule. Replacement was common when counterexamples were plentiful, declined as $q$ approached one, and never occurred when the proxy was perfect. \fig{fig:phase-short} places the final phase map beside these learning curves.
+
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=\linewidth]{fig1_phase_and_dynamics.pdf}
+  \caption{More reliable proxies and harder exact rules increase proxy control even when in-distribution accuracy is perfect (a). During training, the proxy is typically acquired well before the exact rule (b). Curves in (b) pool the experimental conditions descriptively; the acquisition-order analysis resamples independent training seeds.}
+  \label{fig:phase-short}
+\end{figure}
+
+We also expected reward to plateau well before the rule controlling behavior stabilized, but this happened in only 13.2\% of identifiable runs; the controlling rule stabilized first in 606 runs, and the logged events tied in 1,372. In this supervised task, learning the exact rule removes a visible residual error, so reward and rule control usually change together at the available checkpoint resolution. The cross-sectional ambiguity of perfect performance therefore does \emph{not} justify the stronger claim that reward generally stabilizes long before the controlling rule.
+
+\begin{takeaway}
+In-distribution reward estimates how often candidate rules agree with the labels, not which rule will control behavior where they disagree. Training traces add useful information, but the cheap rule's early lead is not by itself permanent.
+\end{takeaway}
+
+\section*{Finding 2: Distinguishing counterexamples matter more than raw data volume}
+
+Repeatedly showing one shortcut failure increases its weight in the loss, but it need not add a new constraint. A flexible model can memorize that exception and keep using the proxy everywhere else. Counterexamples distributed across different contexts are harder to explain as a small patch. With several shortcuts, an example where both fail can also eliminate more candidate explanations than two isolated failures that each leave one shortcut correct.
+
+For alignment data, this means examining the pattern of disagreements, not only the number of labeled examples or proxy errors. We need to know which competing rules each example distinguishes, how varied the disagreement contexts are, and whether the observed combinations of failures still permit a simple rule that switches between shortcuts.
+
+In a diversity experiment planned before full execution, we held training-set size and the total number of proxy conflicts fixed while varying the fraction of distinct conflict contexts. Across 1,500 runs, fully diverse counterexamples raised intended reliance by .299 relative to concentrated repetitions. Every estimable stratum with a fixed conflict count and rule degree showed the same direction. As a descriptive summary, the first tested number of distinct conflicts at which mean reliance reached .9 increased with the difficulty of the intended computation: 32 for the easiest rule, 128 for degrees two and three, and 512 for degrees four and five. These values are crossings on a coarse tested grid, not continuous estimates of sample complexity.
+
+The gap between repeated and novel counterexamples was clearest in the most concentrated condition. Its dataset contained 2,048 presentations of conflicts but only 41 distinct conflict contexts. A five-bit model fit 99.92\% of those repeated conflicts, yet followed the intended rule on only .98\% of unseen conflicts. Flipping the proxy changed 98.39\% of its unseen decisions. The model had learned exceptions to a general proxy rule rather than a general account of why the proxy could fail. \fig{fig:evidence-short} compares conflict count with diversity and shows this gap between repeated and unseen cases directly.
+
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=\linewidth]{fig2_counterevidence.pdf}
+  \caption{Panels (a--b) show how acquisition of the exact rule changes with the number and variety of conflicts. In panel (c), high-capacity models fit repeated training conflicts nearly perfectly but still follow the proxy on novel conflicts.}
+  \label{fig:evidence-short}
+\end{figure}
+
+We found a similar pattern with three competing goals. In a factorial experiment planned in advance, reducing the total number of examples on which either proxy failed, while increasing the fraction on which both proxies failed together, shifted causal control toward the intended rule. This average benefit disappeared when the intended parity had degree five: the intended rule accounted for .203 of the normalized feature-flip influence under independent errors and .200 under nested errors. Thus even a highly diagnostic example helps only if the model can learn the intended computation from it. A later follow-up, designed after we had inspected the earlier results, examined a recurring rule: ``use $Y$ when the proxies agree, otherwise use $Q$.'' This rule was almost perfect on every combination of candidate values represented in training, but failed on one combination that the nested-error design excluded. Adding only a few repeatedly sampled rows from that missing combination often destabilized the rule. The effect was not monotonic for every seed or at every dose, so the experiment does not establish a universal sample threshold. Instead, it suggests that missing combinations in the training data can preserve rules that switch among shortcuts.
+
+If this pattern extends to larger systems, ten thousand preference examples that repeat the same kind of evaluator disagreement could reveal less about the learned rule than a smaller set deliberately spanning different reward-model shortcuts. If two plausible objectives almost never fail together in post-training data, a policy can remain compatible with a rule that switches between them. Dataset audits should therefore describe which plausible objectives disagree on which examples, rather than reporting only volume, reward margin, or aggregate error rate.
+
+\begin{takeaway}
+When trying to identify the learned goal, we should ask which competing explanations the data rule out. Varied disagreements, examples where several shortcuts fail together, and coverage of missing combinations can matter more than repeated evidence that teaches the same exception.
+\end{takeaway}
+
+\section*{Finding 3: An intended rule can be decodable without controlling behavior}
+
+There are at least two thresholds for a candidate goal: the capacity needed to learn or linearly recover it when it is the only target, and the capacity needed for it to win when an easier predictor already explains most of the reward. The second threshold can be higher because little gradient remains to build the harder computation after the proxy has reduced the loss.
+
+For the calibration study, planned before the full runs, we trained separate proxy-only, exact-only, and competition models with matched interfaces. When only a randomly chosen subset of parameters could be updated, the standalone exact decoder met its accuracy criterion at 64 trainable scalars for three-bit parity, but the exact rule did not reliably control the competition model until 1,024 scalars could be updated. At the intermediate budget, decoder accuracy was perfect while intended reliance was .001. Similar gaps appeared for degrees four and five. An exploratory, unadjusted comparison within this architecture grid also found that models matched in parameter count and standalone decoder success could choose different rules in competition. \fig{fig:decode-short} shows the gap between learning a rule on its own and using it when a proxy is also available.
+
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=\linewidth]{fig3_decoding_vs_control.pdf}
+  \caption{Separate exact-only models can decode the intended rule nearly perfectly even when matched competition models remain proxy-controlled, especially when few parameters can change. The orange region marks high decoder accuracy with low intended-rule reliance.}
+  \label{fig:decode-short}
+\end{figure}
+
+The distinction between availability and control mirrors a familiar warning from interpretability research: a probe can reveal information in a representation without showing that the model uses it \citep{ravichander2021probing}. Removing or changing that information is needed to connect it to behavior \citep{elazar2021amnesic,vig2020causal}. In \Forkworld{}, the standalone decoder shows that the architecture can learn the intended computation, while disagreement tests and input-channel flips show whether it controls the choice.
+
+The comparison among exact rules also showed that no single numerical measure of ``goal simplicity'' explained the outcomes. In this experiment, planned before full execution, we replaced parity with majority, conjunction, and a multiplexer while keeping the input interface and training exposure fixed. All four exact rules decoded nearly perfectly in isolation. Against a 99\%-accurate direct proxy, mean intended reliance was .100 for parity, .885 for the multiplexer, .985 for conjunction, and 1.000 for majority. This ordering was correlated with how informative the best individual input was: parity offers no useful single-input clue, whereas the other functions provide partial information before the full rule has been assembled. That interpretation is consistent with work showing that Boolean functions and high-degree parities differ in how gradient-based optimization learns them, not only in their input count \citep{malach2019boolean,abbe2025parities}. However, the effects of depth and width were not monotonic, so even the strength of a partial clue is not a complete measure of difficulty.
+
+In a safety audit, this distinction should shape how we interpret internal measurements. Finding a representation of honesty, instruction intent, or a reward-relevant concept would be encouraging evidence that the model can represent that information. It would not establish that the representation governs generation when an easier reward-correlated heuristic points elsewhere. Conversely, a failed linear probe would not establish that the information is absent. A credible claim about behavioral control needs interventions connected to behavior, ideally on inputs where the candidate objectives disagree.
+
+\begin{takeaway}
+Success in a separate calibration model shows only that the architecture can learn a rule, not that a competing policy uses it. Even when a probe decodes a rule from the competing model, causal tests are needed to show that the rule controls behavior.
+\end{takeaway}
+
+\section*{Finding 4: Training method and history affect which rule wins}
+
+Increasing capability did not always move the model directly from random behavior to the intended goal. In two capacity sweeps planned before full execution, allowing only a small number of parameters to change first made the easy proxy more reliable and therefore made behavior on conflict examples worse. Only after a larger threshold did supervised training replace the proxy with parity. Over this limited range, the result resembles inverse scaling: better in-distribution performance initially meant more consistent pursuit of the wrong rule. This does not imply that capacity is harmful in general. It shows instead that useful computations can become available in an unfavorable order.
+
+To test whether the training algorithm affected which rule won, we compared clean SFT, trajectory SFT, on-policy imitation, and actor--critic RL in an experiment planned before the full runs. All four conditions used the same actor, the same number of presented training examples, and the same core task. Here ``RL'' means that the binary goal selector was trained from terminal success in a simulator with irrelevant intermediate choices; it does not mean that a navigation policy learned to move through the grid. The actor was a 5,897-parameter, two-hidden-layer ReLU network. The actor--critic condition used a separate 35,457-parameter critic, which was never counted toward the limit on trainable actor parameters. At a limit of 1,024 trainable scalar parameters, both SFT variants reached complete intended control and on-policy imitation nearly did, while RL remained completely proxy-controlled. RL did not reliably escape even when all actor weights could be trained. \fig{fig:algorithms-short} shows how the methods diverged as the number of trainable parameters grew. Within this construction, the result is a counterexample to the idea that RL generically avoids proxy lock-in; it is not evidence that SFT is generally safer. It is also relevant to proposals that reward feedback can filter reward-irrelevant variation more efficiently than demonstrations \citep{morris2026reason}.
+
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=\linewidth]{fig4_update_capacity.pdf}
+  \caption{As the number of trainable parameters grows, SFT first learns the proxy and then replaces it with the exact rule. RL does not make the second transition on the tested grid. Points are seeds and lines are means.}
+  \label{fig:algorithms-short}
+\end{figure}
+
+Several features limit how far this comparison can be taken. The labels for irrelevant intermediate choices were random bits rather than learnable language structure, and RL was not separately tuned at every limit on trainable parameters. Entropy regularization moved a narrow boundary but did not rescue the high-accuracy proxy conditions. Our plan required an improvement of at least .20 before running an additional test of the proposed mechanism; the largest estimate in the expected direction was .125, so we did not run it. The narrower conclusion is that the learning algorithm changed which rule won, and reward-based training provided no automatic protection against this shortcut.
+
+A separate noise study, planned before full execution, produced the opposite of our prediction about averaging over samples. Fresh, zero-mean corruption of the observed proxy did not approach the clean behavioral baseline as the dataset grew. Instead, it weakened the easy route and often redirected learning toward the exact rule. Under the fixed-eight-epoch protocol, larger datasets also meant more updates, so the gap from the clean baseline could grow. Noise tied to a particular state preserved more proxy control than noise sampled afresh, while perturbing labels or rewards produced different effects over training. Calling the noise zero-mean describes the average perturbation; it does not determine the solution selected by a nonlinear optimizer whose trajectory depends on earlier updates.
+
+A later study of training order, designed after we inspected earlier results, showed how prior updates can affect the final rule. Each of six schedules received the same three blocks---one favoring a direct rule, one a two-bit parity rule, and one a three-bit parity rule---in a different order. Afterward, every schedule had seen exactly the same labeled examples, and every named rule was equally accurate on the combined dataset. Nevertheless, the rule favored by the last block controlled all 120 policies. We then trained each model on examples where all three rules agreed. After 256 additional updates, the last rule still controlled 119 of 120 models. \fig{fig:order-short} shows the six orders and the persistence of the last rule during this additional training.
+
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=\linewidth]{fig20_identical_evidence_order.pdf}
+  \caption{All six schedules receive the same collection of training examples, but the rule favored by the last block remains dominant during a common phase in which all rules agree (a--c). Harder rules and later blocks take longer to establish stable control (d). This follow-up was designed after earlier results had been inspected.}
+  \label{fig:order-short}
+\end{figure}
+
+Because the combined training objective deliberately assigned equal scores to the rules on the cases where they disagreed, the final data did not identify a unique winner. Reordering whole blocks also changed when their characteristic input patterns appeared. The result therefore demonstrates dependence on training history in this construction; it does not imply that the most recent labels always win. Even so, the unordered collection of training examples was insufficient to predict which rule controlled behavior. The order of the examples, the sequence of optimizer updates, and which rule was already dominant all affected the final outcome.
+
+For LLM post-training, the corresponding research hypothesis is that curricula may install different reward-correlated rules even when aggregate datasets match. Pretraining history, the order of preference data, and late-stage fine-tuning could affect which available rule comes to control behavior. The toy result does not establish that this occurs in frontier models; it identifies order and optimizer history as variables that an alignment evaluation should hold fixed or deliberately vary.
+
+\begin{takeaway}
+Goal learning depends on competition during optimization, not only on a static ranking of the candidate labels. Capacity, algorithm, perturbation structure, curriculum order, and weights learned in earlier phases can change the winner even when final performance and the complete collection of training examples look the same.
+\end{takeaway}
+
+\section*{Finding 5: Behavior can switch among rules across contexts}
+
+With two candidate goals, a single conflict score encourages us to label the policy ``proxy'' or ``intended.'' Those labels become inadequate once several candidates are available. A model can follow different rules in different parts of the input space, use a context cue to choose among them, or move through several rules over the course of training. Earlier exposure to a rule may still affect later behavior if the dominant rule stops working.
+
+In the context experiment, planned before the full runs, we trained a model on two simple rules, $P_0$ and $P_1$, and supplied a cue $C$ indicating which one would be rewarded. Learning either rule alone required far fewer trainable parameters than switching reliably between them. With restricted updates, both single-rule controls were almost perfect at 64 trainable scalars, while the model chose the context-appropriate rule only .127 of the time; perfect switching appeared at 1,024. At high capacity, fixing $C=0$ made only $P_0$ causally affect behavior, and fixing $C=1$ reversed the responses to feature flips. Forcing the cue to disagree with the actual environment reduced accuracy to chance. \fig{fig:context-short} shows both the capacity needed for switching and the intervention on the cue. The model had learned a manipulable way to select a rule rather than one rule that applied globally, analogous at the input--output level to a learned gate over experts \citep{makkuva2020gated}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{fig9_context_control.pdf}
+  \caption{As switching becomes reliable, setting the context cue incorrectly becomes more damaging (a). At maximum capacity, only the rule selected by the fixed cue causally changes the decision (b).}
+  \label{fig:context-short}
+\end{figure}
+
+In the three-goal grid, also planned in advance, all three candidate rules decoded perfectly when trained alone. However, only 607 of 960 policies matched the conservative behavioral pattern expected if exactly one named rule controlled every input. In a later check designed after seeing these results, only 102 of the remaining 353 policies behaved like a fixed weighted average of the three named rules. Another follow-up found a recurring alternative: a rule that performed perfectly on the combinations seen during training but failed badly on one missing combination. A policy that did not consistently follow one candidate was therefore not necessarily averaging smoothly among them. It could instead switch according to context, memorize local exceptions, or follow a rule the analyst had not considered.
+
+Later follow-ups tracked how control moved among several rules during training. All 240 models first followed the direct proxy. Many then switched to a second proxy encoded across two input bits before eventually reaching the exact rule. When we made the current winner uninformative, models whose proxies had failed independently switched to the encoded proxy sooner than models with nested proxy failures. The encoded proxy could also be decoded more selectively in the independent-error condition, although the conditions differed in how errors overlapped and in the gradients accumulated during training. Retaining or resetting the optimizer state made a negligibly small difference, which weighs against Adam's stored momentum as the explanation. In this proxy-removal experiment, every model eventually converged to the exact rule. Changing only the two relevant first-layer input columns delayed or accelerated the encoded proxy's takeover as predicted, while equally sized edits to unused columns had practically negligible effects. The weight edits show that first-layer weights connected to a currently inactive rule affected how quickly it later took control. They do not identify a complete circuit, show that the decoded representation causes the effect, or establish that the intermediate rule is a stored utility function.
+
+The timing results did not support a stronger account in which internal decodability always precedes behavioral change. In the follow-up that presented identical sets of examples in different orders, behavioral control and the feature-flip test changed at the same logged checkpoint. Probe timing varied by layer and rule: sometimes before behavior, sometimes at the same time, and sometimes afterward. The data support repeated replacement of the controlling rule and suggest that earlier training can affect how quickly another rule is used later, but not a universal sequence of ``goal acquisition, probe decodability, then behavioral and causal control.''
+
+These results bear on deceptive or conditional behavior only by analogy. They show behavior consistent with several learned rules and a cue that determines which rule governs a particular input; they do not demonstrate situational awareness, concealment, or deception. For LLMs, the corresponding hypothesis is that evaluations should test whether user identity, system prompts, signs of oversight, task framing, or deployment context change which reward-correlated strategy is active. An audit that averages behavior across all contexts can miss such switching.
+
+\begin{takeaway}
+In these experiments, behavior changed with context, included exceptions limited to parts of the input space, and sometimes shifted to another rule after the dominant rule failed. Evaluation should therefore test both the cues associated with those changes and the alternative rules that predict behavior, rather than examining only the currently dominant pattern.
+\end{takeaway}
+
+\section*{Finding 6: Correct behavior can return while proxy influence remains}
+
+When a proxy stops being rewarded, its old behavior can disappear for several reasons. The model might learn the intended rule, invert the proxy, hide its influence because the feature is absent, or replace it with another shortcut. Accuracy at the end of training alone does not distinguish these mechanisms.
+
+In the persistence study, which was planned before full execution, we first installed proxy control and then either removed the proxy feature, made it independent of the target, reversed its correlation, or introduced a new 99\%-accurate proxy. Negative evidence suppressed behavior consistent with the original proxy faster than simply making the feature unavailable. Under perfect reversal, where $P=-Y$ on every new example, apparently perfect intended behavior was actually complete dependence on $-P$: flipping $P$ flipped every decision, while flipping an exact-code bit changed none. Less extreme reversal included rare rows that distinguished $-P$ from $Y$, and the models eventually transferred control to the exact rule. \fig{fig:unlearning-short} distinguishes suppression of the old behavior, residual dependence on the old feature, and control by the inverse proxy.
+
+When we replaced the old shortcut with a new one, performance on the current distribution recovered before dependence on the old rule disappeared. The model reached nearly perfect accuracy and strong agreement with the replacement proxy after about 18 updates, while behavior consistent with the old proxy took about 59 updates to fall by half. A high-performing model at the end of training can therefore retain some dependence on an old shortcut while also learning a new one.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{fig6_unlearning.pdf}
+  \caption{Negative evidence suppresses behavior consistent with the old proxy faster than removing the feature (a). Restoring the input reveals residual dependence (b), and perfect reversal installs the inverse proxy rather than the exact rule (c).}
+  \label{fig:unlearning-short}
+\end{figure}
+
+In the rebound experiment, also planned in advance, we compared models with three histories: prior training on the old goal, an equal amount of training on random labels, and no relevant prior training. After all groups were brought to similar visible behavior, ambiguous later training produced nearly equal final reliance on the old goal within each matched perturbation condition. The difference in rebound between old-goal and random-label histories stayed within the five-percentage-point range we had defined as practically negligible. Most of the large raw rebound was therefore renewed learning of an easy proxy, rather than evidence that the old objective had remained dormant. This matched comparison is especially relevant to reports of post-alignment ``elasticity,'' in which models move back toward pretraining behavior \citep{ji2025alignment}.
+
+Although prior old-goal training did not explain the final rebound, it did increase the amount of evidence required for realignment. Among the matched conditions that qualified for this analysis, models previously trained on the old goal needed 1,046 additional intended-goal examples after the shortest old history, and 15,677 after the longest, to enter the same behavior range as models that had instead trained on random labels. Qualification for the analysis depended strongly on model width, and the estimate at the largest data volume used only eight seeds, so these numbers do not establish a clean scaling law. They do show that training history can affect how quickly behavior changes without uniquely explaining the model's eventual behavior.
+
+Claims about objective erasure, sleeper behavior, or post-fine-tuning reversion should therefore be supported by causal interventions and matched controls. If a model returns to a shortcut after ambiguous data, it should be compared with both a model trained from scratch and one given the same amount of earlier training on an irrelevant task. If behavior becomes correct after reversal, interventions should test the original feature and its inverse. If a probe remains strong, the audit should test whether intervening on the corresponding representation changes behavior. None of these tests identifies a unique motivation by itself, but together they rule out several simpler explanations.
+
+\begin{takeaway}
+In these experiments, correct behavior sometimes returned while dependence changed sign or moved to another shortcut. Rebound alone did not establish continued causal influence from the earlier rule, because matched controls often reproduced it.
+\end{takeaway}
+
+\section*{Synthesis: five ingredients for predicting behavioral control}
+
+The experiments do not support ``the simplest goal wins'' as a sufficient theory. The results are better organized around five more specific considerations.
+
+\begin{enumerate}[leftmargin=*,itemsep=0.45em]
+  \item \textbf{Which examples distinguish the rules.} When candidate goals agree on the training data, the data cannot tell us which one the model follows. Varied disagreements, examples where several proxies fail together, and coverage of all relevant combinations determine which alternatives are actually ruled out.
+  \item \textbf{How easily this model can learn each rule.} Useful partial clues, network architecture, and which parameters can be updated all affect how readily a model can build a rule. The number of input channels and accuracy of a standalone decoder do not fully describe how difficult the rule is for a particular model to learn.
+  \item \textbf{Competition during training.} A cheap predictor can absorb most of the early gradient and leave little signal for harder alternatives. Capacity, learning algorithm, entropy, and noise can change the sequence in which rules are learned and which one controls behavior.
+  \item \textbf{Combining and switching between rules.} A policy can use context to choose a rule, memorize exceptions for parts of the input space, or hand control from one rule to another during training. In some conditions, it was inaccurate to describe every policy as either one rule used everywhere or a fixed weighted average.
+  \item \textbf{Training history.} What the model learned earlier, together with the order of later examples, affects which alternative takes control. The same complete collection of examples can produce different behavior when those examples do not distinguish among the candidate rules.
+\end{enumerate}
+
+These five considerations are a checklist rather than a fitted theory. Several experimental manipulations changed more than one of them, and all were tested in a small synthetic setting. The checklist is useful because it replaces a vague appeal to ``simplicity'' with properties that can be measured, manipulated, and tested.
+
+\section*{Implications for alignment evaluations}
+
+Because these experiments use small synthetic models, their most direct implications concern how to design evaluations rather than what to conclude about the internals of frontier models.
+
+\begin{enumerate}[leftmargin=*,itemsep=0.5em]
+  \item \textbf{Construct explicit disagreement sets.} List several plausible rules that could explain reward---for example instruction following, evaluator approval, stylistic conformity, sycophancy, or a reward-model artifact---and create cases where their recommended outputs diverge. Ordinary in-distribution validation cannot identify control when the candidates agree.
+  \item \textbf{Check which rules the post-training examples distinguish.} Report distinct failure contexts, examples where several proxies fail together, and combinations that are absent, rather than only dataset size. Counterfactual preference examples are useful when they isolate which candidate explanation is contradicted \citep{kaushik2020difference}.
+  \item \textbf{Separate availability from use.} Use probes to identify information that may be available to the model, then pair them with behavioral disagreements, causal feature or representation interventions, and negative controls before claiming that the information controls output.
+  \item \textbf{Evaluate trajectories and curricula.} Save checkpoints before, during, and after alignment; permute evidence order where possible; and vary optimization algorithms, entropy or exploration settings, and model capacity. A final reward number can hide an early proxy regime, a later handoff, or persistent order dependence.
+  \item \textbf{Test whether context changes the active rule.} Intervene on oversight cues, system prompts, user identities, task frames, and other contextual variables that may switch the model between strategies. Use several sets of disagreement examples so that a rule that changes with context is not incorrectly described as one globally dominant goal.
+  \item \textbf{Use matched histories for claims about unlearning.} Compare old-history models with scratch and compute-matched controls under identical later data. Test inverse shortcuts and replacement proxies. Report both final behavior and the amount of evidence required to reach it.
+\end{enumerate}
+
+When applied to RLHF or other LLM post-training, these recommendations should be treated as research hypotheses. Reward-correlated linguistic shortcuts may compete with intended behavior; the pattern and order of preference examples may determine which rule takes control; and deployment cues may activate a strategy used only in some contexts. \Forkworld{} does not show that any particular frontier model has these properties. It provides a small setting in which apparently similar claims can be separated experimentally, along with a basis for designing stronger tests.
+
+\section*{Limitations and next steps}
+
+\Forkworld{} uses small ReLU MLPs, binary actions, synthetic Boolean rules, and mostly one-step choices. Parity is a clean way to remove lower-order clues, not a claim that real goals have polynomial degree. Ten optimizer seeds quantify variation inside the tested conditions, not uncertainty over model families, objectives, or deployment environments. The navigation controller is frozen and works mainly on maps like those used to train it; the repeated-fork extension adds walls and multiple decisions but not learned planning, memory, or recovery. Reliance and feature flips identify causal control only among the candidate rules and interventions we constructed.
+
+The way the studies were planned also limits the conclusions. Thirteen experiment families were specified in advance within the project, but they were not publicly preregistered. The six follow-ups were chosen to explain patterns in earlier results, and confidence intervals do not remove the bias introduced by that choice. In particular, the effects of training order, the sequence of control changes among several goals, the addition of previously missing input combinations, the removal of a dominant rule, and edits to features used by a backup rule should all be replicated in new model families before being treated as general mechanisms.
+
+The next step is to scale the framework to LLMs using naturalistic competing objectives, independent sets of disagreement examples, checkpoints throughout training, and matched interventions on candidate representations. Richer game environments should jointly train perception, memory, navigation, and goal selection under partial observability, multiple forks, changes of context, and opportunities to recover from mistakes. These settings would make causal attribution harder, but would test whether the five considerations above still predict which rule controls extended reasoning and action.
+
+\clearpage
+\appendix
+\begin{center}
+  {\LARGE\bfseries Appendix}
+\end{center}
+\vspace{1em}
+\input{lesswrong_appendix}
+
+\clearpage
+\begingroup
+\raggedright
+\bibliography{references}
+\endgroup
+
+\end{document}

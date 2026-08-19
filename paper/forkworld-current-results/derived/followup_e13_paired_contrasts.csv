@@ -1,0 +1,17 @@
+comparison,route_depth,regime,factor,high,low,outcome,estimate,ci_low,ci_high,n_seeds,n_matched_cells
+depth4-depth1,4-1,fixed_total,route_depth,4,1,branch_accuracy,-0.5461864583333333,-0.5747430208333333,-0.5163546354166667,10,120
+depth4-depth1,4-1,fixed_total,route_depth,4,1,full_route_success,-0.6773958333333333,-0.7000548958333335,-0.6540943750000001,10,120
+depth4-depth1,4-1,fixed_total,route_depth,4,1,effective_per_fork_success,-0.5534104373424412,-0.5795424916036391,-0.5263369998766939,10,120
+depth4-depth1,4-1,fixed_total,route_depth,4,1,rule_flip_rate,-0.5699156249999999,-0.5976170312500001,-0.5401065104166667,10,120
+depth4-depth1,4-1,per_fork_matched,route_depth,4,1,branch_accuracy,-0.37430312499999996,-0.3944699739583334,-0.3519840625,10,120
+depth4-depth1,4-1,per_fork_matched,route_depth,4,1,full_route_success,-0.5083541666666667,-0.534265625,-0.48498635416666674,10,120
+depth4-depth1,4-1,per_fork_matched,route_depth,4,1,effective_per_fork_success,-0.3853547477335529,-0.4129121299671844,-0.3580638391742273,10,120
+depth4-depth1,4-1,per_fork_matched,route_depth,4,1,rule_flip_rate,-0.3964968750000001,-0.4171183333333333,-0.37486440104166674,10,120
+per_fork_matched-fixed_total,2,paired,regime,per_fork_matched,fixed_total,branch_accuracy,0.06574583333333334,0.052984635416666676,0.07915505208333333,10,120
+per_fork_matched-fixed_total,2,paired,regime,per_fork_matched,fixed_total,full_route_success,0.06539583333333333,0.05126666666666667,0.08162666666666668,10,120
+per_fork_matched-fixed_total,2,paired,regime,per_fork_matched,fixed_total,effective_per_fork_success,0.05730486837029536,0.04548705832223355,0.07063069583895422,10,120
+per_fork_matched-fixed_total,2,paired,regime,per_fork_matched,fixed_total,rule_flip_rate,0.06632083333333334,0.05352442708333334,0.07970270833333334,10,120
+per_fork_matched-fixed_total,4,paired,regime,per_fork_matched,fixed_total,branch_accuracy,0.17188333333333333,0.15478205729166666,0.18764708333333335,10,120
+per_fork_matched-fixed_total,4,paired,regime,per_fork_matched,fixed_total,full_route_success,0.16904166666666667,0.16146239583333336,0.17692083333333333,10,120
+per_fork_matched-fixed_total,4,paired,regime,per_fork_matched,fixed_total,effective_per_fork_success,0.16805568960888842,0.1547488574513602,0.18216037942971933,10,120
+per_fork_matched-fixed_total,4,paired,regime,per_fork_matched,fixed_total,rule_flip_rate,0.17341874999999998,0.1576450260416667,0.18821895833333335,10,120

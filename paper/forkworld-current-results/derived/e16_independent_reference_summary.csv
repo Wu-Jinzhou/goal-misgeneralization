@@ -1,0 +1,4 @@
+inference_status,comparison,outcome,estimate,ci_low,ci_high,seed_clusters,bootstrap_draws
+adaptive_exploratory_posthoc_paired_support_intervention,"E16 m=450 minus archived E15 independent; count-matched, row allocation differs",stable_gate,0.0,0.0,0.0,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,"E16 m=450 minus archived E15 independent; count-matched, row allocation differs",q_only_diagnostic_accuracy,0.020785000000000005,-0.001445250000000007,0.054776250000000005,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,"E16 m=450 minus archived E15 independent; count-matched, row allocation differs",q_only_target_probability,0.01934028879069743,-0.0025589104900584905,0.047662540272719225,20,4000

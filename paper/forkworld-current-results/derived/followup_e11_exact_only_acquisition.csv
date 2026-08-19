@@ -1,0 +1,5 @@
+rule,threshold,persistence_evaluations,event_time,censor_horizon,unique_controls,events,censored,estimate,ci_low,ci_high,n_seeds,n_cells
+majority,0.95,2,first checkpoint in qualifying adjacent pair,4096,100,100,0,35.16,32.82975,37.239999999999995,10,100
+conjunction,0.95,2,first checkpoint in qualifying adjacent pair,4096,100,100,0,53.3,47.5395,60.6,10,100
+multiplexer,0.95,2,first checkpoint in qualifying adjacent pair,4096,100,100,0,123.17999999999999,118.80874999999999,128.13025,10,100
+parity,0.95,2,first checkpoint in qualifying adjacent pair,4096,100,93,7,490.85,409.86275,559.0972499999999,10,100

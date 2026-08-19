@@ -1,0 +1,1422 @@
+{
+  "artifacts_root": "/Users/wjz/Documents/Projects/goal-misgeneralization/artifacts-e16",
+  "audit": {
+    "base": {
+      "artifact_implementation_fingerprint": "bc46d1df21859cb54540fdd94a59dfb6f7604e5fc97b0dd992c1d5d852cb7158",
+      "artifact_schema_version": 1,
+      "artifacts_root": "/Users/wjz/Documents/Projects/goal-misgeneralization/artifacts-e16",
+      "cells": 7,
+      "complete_runs": 140,
+      "current_source_fingerprint": "a39d3f92fd1acbe83bd43bcb5eded3f04786c67f958e238100946c871d2789af",
+      "current_source_matches_artifact": false,
+      "current_worktree_drift_detected": true,
+      "current_worktree_drift_policy": "report_nonfatal_only_after_exact_current_source_regeneration_metric_and_archived_bridge_audits_pass",
+      "expected_runs": 140,
+      "implementation_fingerprints": [
+        "bc46d1df21859cb54540fdd94a59dfb6f7604e5fc97b0dd992c1d5d852cb7158"
+      ],
+      "materialized_runs": 140,
+      "metric_records": 1850184,
+      "panel": "primary",
+      "seeds": [
+        11,
+        23,
+        37,
+        41,
+        53,
+        67,
+        71,
+        83,
+        97,
+        101,
+        103,
+        107,
+        109,
+        113,
+        127,
+        131,
+        137,
+        139,
+        149,
+        151
+      ],
+      "source_fingerprint_schema_version": 1,
+      "strict_grid_and_measurement_audit_passed": true,
+      "support_counts": [
+        0,
+        2,
+        10,
+        50,
+        100,
+        250,
+        450
+      ]
+    },
+    "regenerated_dataset_and_pairing": {
+      "current_source_regeneration_audit_passed": true,
+      "exact_design_and_panel_metric_checks": 21600,
+      "exact_exposure_metric_checks": 26400,
+      "iid_and_diagnostics_fixed_across_m": true,
+      "m0_legacy_array_replays": 40,
+      "marginals_fixed": true,
+      "possible_q_only_active_codewords": 64,
+      "q_goal_and_final_parity_hamming_equals_2m": true,
+      "q_only_errors_nested_upward": true,
+      "runs_regenerated": 200,
+      "seeds_audited": 20,
+      "shared_errors_nested_downward": true,
+      "support_counts": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        50,
+        100,
+        250,
+        450
+      ],
+      "unchanged_array_and_panel_checks": 4840
+    },
+    "source_fingerprint": {
+      "artifact_fingerprint_uniformity_within_and_across_e16_panels_passed": true,
+      "artifact_implementation_fingerprint": "bc46d1df21859cb54540fdd94a59dfb6f7604e5fc97b0dd992c1d5d852cb7158",
+      "current_source_fingerprint": "a39d3f92fd1acbe83bd43bcb5eded3f04786c67f958e238100946c871d2789af",
+      "current_source_matches_artifact": false,
+      "current_worktree_drift_detected": true,
+      "current_worktree_drift_disposition": "reported_nonfatal_after_exact_relevant_regeneration_metric_and_bridge_audits_passed",
+      "current_worktree_drift_fatal": false,
+      "required_exact_audits": {
+        "archived_e15_exact_metric_and_summary_bridge": true,
+        "current_source_dataset_regeneration_and_metric_replay": true,
+        "primary_grid_and_measurements": true,
+        "refinement_grid_and_measurements": true
+      }
+    },
+    "triggered_refinement": {
+      "artifact_implementation_fingerprint": "bc46d1df21859cb54540fdd94a59dfb6f7604e5fc97b0dd992c1d5d852cb7158",
+      "artifact_schema_version": 1,
+      "artifacts_root": "/Users/wjz/Documents/Projects/goal-misgeneralization/artifacts-e16-refinement",
+      "cells": 3,
+      "complete_runs": 60,
+      "current_source_fingerprint": "a39d3f92fd1acbe83bd43bcb5eded3f04786c67f958e238100946c871d2789af",
+      "current_source_matches_artifact": false,
+      "current_worktree_drift_detected": true,
+      "current_worktree_drift_policy": "report_nonfatal_only_after_exact_current_source_regeneration_metric_and_archived_bridge_audits_pass",
+      "expected_runs": 60,
+      "implementation_fingerprints": [
+        "bc46d1df21859cb54540fdd94a59dfb6f7604e5fc97b0dd992c1d5d852cb7158"
+      ],
+      "materialized_runs": 60,
+      "metric_records": 796500,
+      "panel": "triggered_refinement",
+      "seeds": [
+        11,
+        23,
+        37,
+        41,
+        53,
+        67,
+        71,
+        83,
+        97,
+        101,
+        103,
+        107,
+        109,
+        113,
+        127,
+        131,
+        137,
+        139,
+        149,
+        151
+      ],
+      "source_fingerprint_schema_version": 1,
+      "strict_grid_and_measurement_audit_passed": true,
+      "support_counts": [
+        4,
+        6,
+        8
+      ]
+    }
+  },
+  "design": {
+    "combined_counts": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      50,
+      100,
+      250,
+      450
+    ],
+    "conditionally_run_refinement_counts": [
+      4,
+      6,
+      8
+    ],
+    "frozen_refinement_decision": {
+      "action": "run counts [4, 6, 8] with the same 20 seeds",
+      "adjacent_drops": [
+        {
+          "drop": 0.35,
+          "left": 0,
+          "right": 2
+        },
+        {
+          "drop": 0.55,
+          "left": 2,
+          "right": 10
+        },
+        {
+          "drop": 0.1,
+          "left": 10,
+          "right": 50
+        },
+        {
+          "drop": 0.0,
+          "left": 50,
+          "right": 100
+        },
+        {
+          "drop": 0.0,
+          "left": 100,
+          "right": 250
+        },
+        {
+          "drop": 0.0,
+          "left": 250,
+          "right": 450
+        }
+      ],
+      "earliest_largest_drop_interval": [
+        2,
+        10
+      ],
+      "inference_status": "adaptive_exploratory_posthoc_paired_support_intervention",
+      "isotonic_first_count_at_or_below_half": 10,
+      "isotonic_prevalence": {
+        "0": 1.0,
+        "10": 0.1,
+        "100": 0.0,
+        "2": 0.65,
+        "250": 0.0,
+        "450": 0.0,
+        "50": 0.0
+      },
+      "largest_adjacent_drop": 0.55,
+      "prevalence_by_count": {
+        "0": 1.0,
+        "10": 0.1,
+        "100": 0.0,
+        "2": 0.65,
+        "250": 0.0,
+        "450": 0.0,
+        "50": 0.0
+      },
+      "prevalence_counts": {
+        "0": 20,
+        "10": 2,
+        "100": 0,
+        "2": 13,
+        "250": 0,
+        "450": 0,
+        "50": 0
+      },
+      "required_adjacent_drop": 0.2,
+      "required_total_drop": 0.3,
+      "rounded_quarter_point_candidates": [
+        4,
+        6,
+        8
+      ],
+      "rule_frozen_before_outcome_inspection": true,
+      "stable_gate_definition": "modal Boolean signature 113 and factorial tuple consistency >= 0.90 at step 8192",
+      "total_drop_0_to_450": 1.0,
+      "triggered": true
+    },
+    "registered_primary_counts": [
+      0,
+      2,
+      10,
+      50,
+      100,
+      250,
+      450
+    ],
+    "training_seeds": [
+      11,
+      23,
+      37,
+      41,
+      53,
+      67,
+      71,
+      83,
+      97,
+      101,
+      103,
+      107,
+      109,
+      113,
+      127,
+      131,
+      137,
+      139,
+      149,
+      151
+    ]
+  },
+  "e15_artifacts_root": "/Users/wjz/Documents/Projects/goal-misgeneralization/artifacts-e15",
+  "e15_bridge_audit": {
+    "e15_artifacts_root": "/Users/wjz/Documents/Projects/goal-misgeneralization/artifacts-e15",
+    "e15_reference_implementation_fingerprints": [
+      "c644422d4ba0769f6fd094cb4f56d403674480b2cac943ec5fb5befc33af72f3"
+    ],
+    "m0_exact_metric_bridges": 20,
+    "m0_exact_shared_metric_records": 244760,
+    "m0_matches_archived_e15_nested_exactly": true,
+    "m0_summary_sections_compared_exactly": {
+      "final_dynamics": 20,
+      "initial_dynamics": 20,
+      "model_interface_reports": 20,
+      "standalone_calibrations": 20,
+      "step_2048_dynamics": 20,
+      "training_error_overlap": 20
+    },
+    "m450_independent_comparison_runs": 20,
+    "m450_matches_independent_cell_counts_only": true,
+    "m450_row_allocation_equality_claimed": false,
+    "reference_runs": 40,
+    "state_hash_claimed": false
+  },
+  "experiment": "E16_conditional_support_completion",
+  "findings": {
+    "count_matched_independent_reference": [
+      {
+        "bootstrap_draws": 4000,
+        "ci_high": 0.0,
+        "ci_low": 0.0,
+        "comparison": "E16 m=450 minus archived E15 independent; count-matched, row allocation differs",
+        "estimate": 0.0,
+        "inference_status": "adaptive_exploratory_posthoc_paired_support_intervention",
+        "outcome": "stable_gate",
+        "seed_clusters": 20
+      },
+      {
+        "bootstrap_draws": 4000,
+        "ci_high": 0.054776250000000005,
+        "ci_low": -0.001445250000000007,
+        "comparison": "E16 m=450 minus archived E15 independent; count-matched, row allocation differs",
+        "estimate": 0.020785000000000005,
+        "inference_status": "adaptive_exploratory_posthoc_paired_support_intervention",
+        "outcome": "q_only_diagnostic_accuracy",
+        "seed_clusters": 20
+      },
+      {
+        "bootstrap_draws": 4000,
+        "ci_high": 0.047662540272719225,
+        "ci_low": -0.0025589104900584905,
+        "comparison": "E16 m=450 minus archived E15 independent; count-matched, row allocation differs",
+        "estimate": 0.01934028879069743,
+        "inference_status": "adaptive_exploratory_posthoc_paired_support_intervention",
+        "outcome": "q_only_target_probability",
+        "seed_clusters": 20
+      }
+    ],
+    "dose_response": {
+      "0": {
+        "active_codeword_coverage": {
+          "estimate": 0.0,
+          "seed_cluster_interval": [
+            0.0,
+            0.0
+          ],
+          "seeds": 20
+        },
+        "common_iid_target_accuracy": {
+          "estimate": 0.9999125,
+          "seed_cluster_interval": [
+            0.9997625000000001,
+            1.0
+          ],
+          "seeds": 20
+        },
+        "q_only_diagnostic_accuracy": {
+          "estimate": 0.13448000000000002,
+          "seed_cluster_interval": [
+            0.08925787500000001,
+            0.18071012500000003
+          ],
+          "seeds": 20
+        },
+        "q_only_factorial_accuracy": {
+          "estimate": 0.13203125,
+          "seed_cluster_interval": [
+            0.089697265625,
+            0.17710327148437502
+          ],
+          "seeds": 20
+        },
+        "q_only_target_probability": {
+          "estimate": 0.14272544680527094,
+          "seed_cluster_interval": [
+            0.09949075511800624,
+            0.18985584272563522
+          ],
+          "seeds": 20
+        },
+        "q_only_unseen_target_probability": {
+          "estimate": 0.14272544680527094,
+          "seed_cluster_interval": [
+            0.09849121468582882,
+            0.1898375418074036
+          ],
+          "seeds": 20
+        },
+        "stable_gate": {
+          "estimate": 1.0,
+          "seed_cluster_interval": [
+            1.0,
+            1.0
+          ],
+          "seeds": 20
+        }
+      },
+      "10": {
+        "active_codeword_coverage": {
+          "estimate": 0.146875,
+          "seed_cluster_interval": [
+            0.1421875,
+            0.15078125
+          ],
+          "seeds": 20
+        },
+        "common_iid_target_accuracy": {
+          "estimate": 0.9998374999999999,
+          "seed_cluster_interval": [
+            0.9996625,
+            0.9999625
+          ],
+          "seeds": 20
+        },
+        "q_only_diagnostic_accuracy": {
+          "estimate": 0.7266600000000001,
+          "seed_cluster_interval": [
+            0.6208625,
+            0.819802875
+          ],
+          "seeds": 20
+        },
+        "q_only_factorial_accuracy": {
+          "estimate": 0.728271484375,
+          "seed_cluster_interval": [
+            0.622442626953125,
+            0.8224609375
+          ],
+          "seeds": 20
+        },
+        "q_only_seen_target_probability": {
+          "estimate": 0.875691674362112,
+          "seed_cluster_interval": [
+            0.8070146288728716,
+            0.9352207644208844
+          ],
+          "seeds": 20
+        },
+        "q_only_target_probability": {
+          "estimate": 0.7155231953321858,
+          "seed_cluster_interval": [
+            0.6124146481678907,
+            0.8054617436737642
+          ],
+          "seeds": 20
+        },
+        "q_only_unseen_target_probability": {
+          "estimate": 0.6878660986948889,
+          "seed_cluster_interval": [
+            0.5810648695255757,
+            0.784487990749898
+          ],
+          "seeds": 20
+        },
+        "seen_minus_unseen_probability": {
+          "estimate": 0.18782557566722308,
+          "seed_cluster_interval": [
+            0.13155698361664642,
+            0.24597830304836782
+          ],
+          "seeds": 20
+        },
+        "stable_gate": {
+          "estimate": 0.1,
+          "seed_cluster_interval": [
+            0.0,
+            0.25
+          ],
+          "seeds": 20
+        }
+      },
+      "100": {
+        "active_codeword_coverage": {
+          "estimate": 0.790625,
+          "seed_cluster_interval": [
+            0.76875,
+            0.8109375
+          ],
+          "seeds": 20
+        },
+        "common_iid_target_accuracy": {
+          "estimate": 0.9998250000000001,
+          "seed_cluster_interval": [
+            0.9996,
+            1.0
+          ],
+          "seeds": 20
+        },
+        "q_only_diagnostic_accuracy": {
+          "estimate": 0.996965,
+          "seed_cluster_interval": [
+            0.993579875,
+            0.9995502500000002
+          ],
+          "seeds": 20
+        },
+        "q_only_factorial_accuracy": {
+          "estimate": 0.996875,
+          "seed_cluster_interval": [
+            0.993408203125,
+            0.999755859375
+          ],
+          "seeds": 20
+        },
+        "q_only_seen_target_probability": {
+          "estimate": 0.9974768247883707,
+          "seed_cluster_interval": [
+            0.99534801680671,
+            0.9992561441370793
+          ],
+          "seeds": 20
+        },
+        "q_only_target_probability": {
+          "estimate": 0.9957251953744258,
+          "seed_cluster_interval": [
+            0.9918778186647551,
+            0.998845322217652
+          ],
+          "seeds": 20
+        },
+        "q_only_unseen_target_probability": {
+          "estimate": 0.990814830540194,
+          "seed_cluster_interval": [
+            0.9815135681829108,
+            0.9982550433658162
+          ],
+          "seeds": 20
+        },
+        "seen_minus_unseen_probability": {
+          "estimate": 0.0066619942481766,
+          "seed_cluster_interval": [
+            0.001009540759944428,
+            0.014317209905915614
+          ],
+          "seeds": 20
+        },
+        "stable_gate": {
+          "estimate": 0.0,
+          "seed_cluster_interval": [
+            0.0,
+            0.0
+          ],
+          "seeds": 20
+        }
+      },
+      "2": {
+        "active_codeword_coverage": {
+          "estimate": 0.03125,
+          "seed_cluster_interval": [
+            0.03125,
+            0.03125
+          ],
+          "seeds": 20
+        },
+        "common_iid_target_accuracy": {
+          "estimate": 0.9998374999999999,
+          "seed_cluster_interval": [
+            0.9996374999999998,
+            1.0
+          ],
+          "seeds": 20
+        },
+        "q_only_diagnostic_accuracy": {
+          "estimate": 0.36093499999999995,
+          "seed_cluster_interval": [
+            0.26820687499999996,
+            0.45386687499999984
+          ],
+          "seeds": 20
+        },
+        "q_only_factorial_accuracy": {
+          "estimate": 0.36005859375,
+          "seed_cluster_interval": [
+            0.27006591796875,
+            0.4536779785156251
+          ],
+          "seeds": 20
+        },
+        "q_only_seen_target_probability": {
+          "estimate": 0.7205144288404458,
+          "seed_cluster_interval": [
+            0.6080294755346989,
+            0.8271988587396896
+          ],
+          "seeds": 20
+        },
+        "q_only_target_probability": {
+          "estimate": 0.36088779590026665,
+          "seed_cluster_interval": [
+            0.2696856440664177,
+            0.4478819609925216
+          ],
+          "seeds": 20
+        },
+        "q_only_unseen_target_probability": {
+          "estimate": 0.3492869367731641,
+          "seed_cluster_interval": [
+            0.26152504931976456,
+            0.4395448577447127
+          ],
+          "seeds": 20
+        },
+        "seen_minus_unseen_probability": {
+          "estimate": 0.3712274920672818,
+          "seed_cluster_interval": [
+            0.27046224545826186,
+            0.46968301295809933
+          ],
+          "seeds": 20
+        },
+        "stable_gate": {
+          "estimate": 0.65,
+          "seed_cluster_interval": [
+            0.45,
+            0.85
+          ],
+          "seeds": 20
+        }
+      },
+      "250": {
+        "active_codeword_coverage": {
+          "estimate": 0.98203125,
+          "seed_cluster_interval": [
+            0.97578125,
+            0.98828125
+          ],
+          "seeds": 20
+        },
+        "common_iid_target_accuracy": {
+          "estimate": 0.9974500000000001,
+          "seed_cluster_interval": [
+            0.9932621874999998,
+            0.9997125
+          ],
+          "seeds": 20
+        },
+        "q_only_diagnostic_accuracy": {
+          "estimate": 0.9769450000000001,
+          "seed_cluster_interval": [
+            0.932999875,
+            0.999665
+          ],
+          "seeds": 20
+        },
+        "q_only_factorial_accuracy": {
+          "estimate": 0.97822265625,
+          "seed_cluster_interval": [
+            0.936767578125,
+            0.999658203125
+          ],
+          "seeds": 20
+        },
+        "q_only_seen_target_probability": {
+          "estimate": 0.9771539782742013,
+          "seed_cluster_interval": [
+            0.9346179464317736,
+            0.9991376475704563
+          ],
+          "seeds": 20
+        },
+        "q_only_target_probability": {
+          "estimate": 0.9770144160700152,
+          "seed_cluster_interval": [
+            0.9344881734718198,
+            0.9991452173832212
+          ],
+          "seeds": 20
+        },
+        "q_only_unseen_target_probability": {
+          "estimate": 0.9609639200572497,
+          "seed_cluster_interval": [
+            0.8875874508604558,
+            0.9996336341208466
+          ],
+          "seeds": 15
+        },
+        "seen_minus_unseen_probability": {
+          "estimate": 0.009548380514943349,
+          "seed_cluster_interval": [
+            -0.00023077881393539703,
+            0.025082968985549552
+          ],
+          "seeds": 15
+        },
+        "stable_gate": {
+          "estimate": 0.0,
+          "seed_cluster_interval": [
+            0.0,
+            0.0
+          ],
+          "seeds": 20
+        }
+      },
+      "4": {
+        "active_codeword_coverage": {
+          "estimate": 0.06171875,
+          "seed_cluster_interval": [
+            0.06015625,
+            0.0625
+          ],
+          "seeds": 20
+        },
+        "common_iid_target_accuracy": {
+          "estimate": 0.999875,
+          "seed_cluster_interval": [
+            0.9997499999999999,
+            0.9999750000000001
+          ],
+          "seeds": 20
+        },
+        "q_only_diagnostic_accuracy": {
+          "estimate": 0.4577699999999999,
+          "seed_cluster_interval": [
+            0.3641848749999999,
+            0.5480402500000001
+          ],
+          "seeds": 20
+        },
+        "q_only_factorial_accuracy": {
+          "estimate": 0.455322265625,
+          "seed_cluster_interval": [
+            0.366209716796875,
+            0.54444091796875
+          ],
+          "seeds": 20
+        },
+        "q_only_seen_target_probability": {
+          "estimate": 0.7341926887133692,
+          "seed_cluster_interval": [
+            0.6351903561758132,
+            0.8208463197962343
+          ],
+          "seeds": 20
+        },
+        "q_only_target_probability": {
+          "estimate": 0.45452958443524755,
+          "seed_cluster_interval": [
+            0.3629242686815624,
+            0.54137332671163
+          ],
+          "seeds": 20
+        },
+        "q_only_unseen_target_probability": {
+          "estimate": 0.4361619136100156,
+          "seed_cluster_interval": [
+            0.34621467593499783,
+            0.5259283879270296
+          ],
+          "seeds": 20
+        },
+        "seen_minus_unseen_probability": {
+          "estimate": 0.2980307751033535,
+          "seed_cluster_interval": [
+            0.23498602193072332,
+            0.3639541365492308
+          ],
+          "seeds": 20
+        },
+        "stable_gate": {
+          "estimate": 0.45,
+          "seed_cluster_interval": [
+            0.25,
+            0.65
+          ],
+          "seeds": 20
+        }
+      },
+      "450": {
+        "active_codeword_coverage": {
+          "estimate": 0.99765625,
+          "seed_cluster_interval": [
+            0.9953125,
+            1.0
+          ],
+          "seeds": 20
+        },
+        "common_iid_target_accuracy": {
+          "estimate": 0.9875625000000001,
+          "seed_cluster_interval": [
+            0.9824371875,
+            0.9921750000000001
+          ],
+          "seeds": 20
+        },
+        "q_only_diagnostic_accuracy": {
+          "estimate": 0.9846850000000001,
+          "seed_cluster_interval": [
+            0.9717850000000002,
+            0.9945251250000001
+          ],
+          "seeds": 20
+        },
+        "q_only_factorial_accuracy": {
+          "estimate": 0.98466796875,
+          "seed_cluster_interval": [
+            0.971190185546875,
+            0.9951171875
+          ],
+          "seeds": 20
+        },
+        "q_only_seen_target_probability": {
+          "estimate": 0.9807214853746323,
+          "seed_cluster_interval": [
+            0.9651711037569324,
+            0.9924867949791459
+          ],
+          "seeds": 20
+        },
+        "q_only_target_probability": {
+          "estimate": 0.9807146444069623,
+          "seed_cluster_interval": [
+            0.9651641996748961,
+            0.9922972797651518
+          ],
+          "seeds": 20
+        },
+        "q_only_unseen_target_probability": {
+          "estimate": 0.9887002685725349,
+          "seed_cluster_interval": [
+            0.9678643387430709,
+            0.9998650399683923
+          ],
+          "seeds": 3
+        },
+        "seen_minus_unseen_probability": {
+          "estimate": 0.0029188128725491,
+          "seed_cluster_interval": [
+            -0.0015765117994765987,
+            0.01050563459961118
+          ],
+          "seeds": 3
+        },
+        "stable_gate": {
+          "estimate": 0.0,
+          "seed_cluster_interval": [
+            0.0,
+            0.0
+          ],
+          "seeds": 20
+        }
+      },
+      "50": {
+        "active_codeword_coverage": {
+          "estimate": 0.54375,
+          "seed_cluster_interval": [
+            0.525,
+            0.5609375
+          ],
+          "seeds": 20
+        },
+        "common_iid_target_accuracy": {
+          "estimate": 0.9998000000000001,
+          "seed_cluster_interval": [
+            0.9995,
+            1.0
+          ],
+          "seeds": 20
+        },
+        "q_only_diagnostic_accuracy": {
+          "estimate": 0.983685,
+          "seed_cluster_interval": [
+            0.9632700000000002,
+            0.9965306250000001
+          ],
+          "seeds": 20
+        },
+        "q_only_factorial_accuracy": {
+          "estimate": 0.983349609375,
+          "seed_cluster_interval": [
+            0.9636706542968749,
+            0.99658203125
+          ],
+          "seeds": 20
+        },
+        "q_only_seen_target_probability": {
+          "estimate": 0.9915459808286796,
+          "seed_cluster_interval": [
+            0.9827603586467755,
+            0.9974864070006506
+          ],
+          "seeds": 20
+        },
+        "q_only_target_probability": {
+          "estimate": 0.979332554419081,
+          "seed_cluster_interval": [
+            0.958024690462555,
+            0.9937517621166516
+          ],
+          "seeds": 20
+        },
+        "q_only_unseen_target_probability": {
+          "estimate": 0.9655527814096472,
+          "seed_cluster_interval": [
+            0.9291785312430213,
+            0.9896432825338239
+          ],
+          "seeds": 20
+        },
+        "seen_minus_unseen_probability": {
+          "estimate": 0.025993199419032352,
+          "seed_cluster_interval": [
+            0.007713150464791769,
+            0.053458228604715864
+          ],
+          "seeds": 20
+        },
+        "stable_gate": {
+          "estimate": 0.0,
+          "seed_cluster_interval": [
+            0.0,
+            0.0
+          ],
+          "seeds": 20
+        }
+      },
+      "6": {
+        "active_codeword_coverage": {
+          "estimate": 0.08984375,
+          "seed_cluster_interval": [
+            0.08671875,
+            0.0921875
+          ],
+          "seeds": 20
+        },
+        "common_iid_target_accuracy": {
+          "estimate": 0.9998875,
+          "seed_cluster_interval": [
+            0.9997875,
+            0.9999750000000001
+          ],
+          "seeds": 20
+        },
+        "q_only_diagnostic_accuracy": {
+          "estimate": 0.63678,
+          "seed_cluster_interval": [
+            0.5391040000000001,
+            0.7315602500000001
+          ],
+          "seeds": 20
+        },
+        "q_only_factorial_accuracy": {
+          "estimate": 0.640771484375,
+          "seed_cluster_interval": [
+            0.5420349121093749,
+            0.734375
+          ],
+          "seeds": 20
+        },
+        "q_only_seen_target_probability": {
+          "estimate": 0.8768490672012825,
+          "seed_cluster_interval": [
+            0.8268883523002135,
+            0.9192233456427107
+          ],
+          "seeds": 20
+        },
+        "q_only_target_probability": {
+          "estimate": 0.629925691716575,
+          "seed_cluster_interval": [
+            0.537015428711215,
+            0.7201974509764402
+          ],
+          "seeds": 20
+        },
+        "q_only_unseen_target_probability": {
+          "estimate": 0.6055104629438235,
+          "seed_cluster_interval": [
+            0.5002725445323505,
+            0.7015534094845642
+          ],
+          "seeds": 20
+        },
+        "seen_minus_unseen_probability": {
+          "estimate": 0.2713386042574591,
+          "seed_cluster_interval": [
+            0.21021883104816677,
+            0.3330063591638405
+          ],
+          "seeds": 20
+        },
+        "stable_gate": {
+          "estimate": 0.1,
+          "seed_cluster_interval": [
+            0.0,
+            0.25
+          ],
+          "seeds": 20
+        }
+      },
+      "8": {
+        "active_codeword_coverage": {
+          "estimate": 0.1171875,
+          "seed_cluster_interval": [
+            0.11328125,
+            0.12109375
+          ],
+          "seeds": 20
+        },
+        "common_iid_target_accuracy": {
+          "estimate": 0.999925,
+          "seed_cluster_interval": [
+            0.9998374999999999,
+            0.9999874999999999
+          ],
+          "seeds": 20
+        },
+        "q_only_diagnostic_accuracy": {
+          "estimate": 0.7157899999999999,
+          "seed_cluster_interval": [
+            0.609274125,
+            0.80800625
+          ],
+          "seeds": 20
+        },
+        "q_only_factorial_accuracy": {
+          "estimate": 0.71748046875,
+          "seed_cluster_interval": [
+            0.6108837890625,
+            0.8105102539062501
+          ],
+          "seeds": 20
+        },
+        "q_only_seen_target_probability": {
+          "estimate": 0.8650096392514772,
+          "seed_cluster_interval": [
+            0.7820862028339571,
+            0.9317719140327843
+          ],
+          "seeds": 20
+        },
+        "q_only_target_probability": {
+          "estimate": 0.704458940763612,
+          "seed_cluster_interval": [
+            0.5958195844933425,
+            0.7932345393793763
+          ],
+          "seeds": 20
+        },
+        "q_only_unseen_target_probability": {
+          "estimate": 0.6830845441136093,
+          "seed_cluster_interval": [
+            0.5767017932882634,
+            0.7772440495201166
+          ],
+          "seeds": 20
+        },
+        "seen_minus_unseen_probability": {
+          "estimate": 0.1819250951378678,
+          "seed_cluster_interval": [
+            0.13128929162637895,
+            0.23345964304792508
+          ],
+          "seeds": 20
+        },
+        "stable_gate": {
+          "estimate": 0.1,
+          "seed_cluster_interval": [
+            0.0,
+            0.25
+          ],
+          "seeds": 20
+        }
+      }
+    },
+    "endpoint_taxonomy_counts": {
+      "0": {
+        "stable gate 113": 20
+      },
+      "10": {
+        "modal 113, unstable": 1,
+        "other semantic rule": 1,
+        "pure Y": 16,
+        "stable gate 113": 2
+      },
+      "100": {
+        "pure Y": 20
+      },
+      "2": {
+        "modal 113, unstable": 1,
+        "other semantic rule": 1,
+        "pure Y": 3,
+        "raw-codeword patch": 2,
+        "stable gate 113": 13
+      },
+      "250": {
+        "nuisance/state-sensitive": 1,
+        "pure Y": 19
+      },
+      "4": {
+        "modal 113, unstable": 1,
+        "other semantic rule": 1,
+        "pure Y": 6,
+        "raw-codeword patch": 3,
+        "stable gate 113": 9
+      },
+      "450": {
+        "other semantic rule": 1,
+        "pure Y": 14,
+        "raw-codeword patch": 5
+      },
+      "50": {
+        "pure Y": 20
+      },
+      "6": {
+        "modal 113, unstable": 1,
+        "pure Y": 11,
+        "raw-codeword patch": 6,
+        "stable gate 113": 2
+      },
+      "8": {
+        "other semantic rule": 1,
+        "pure Y": 17,
+        "stable gate 113": 2
+      }
+    },
+    "frozen_refinement_result": {
+      "bracket_counts_including_registered_endpoints": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "conditional_panel_counts": [
+        4,
+        6,
+        8
+      ],
+      "inference_status": "adaptive_exploratory_posthoc_paired_support_intervention",
+      "isotonic_prevalence": {
+        "10": 0.1,
+        "2": 0.65,
+        "4": 0.45,
+        "6": 0.1,
+        "8": 0.1
+      },
+      "linearly_interpolated_isotonic_m50": 3.5,
+      "m50_identified_bootstrap_draws": 4000,
+      "m50_seed_cluster_bootstrap_interval": [
+        2.0,
+        4.666666666666667
+      ],
+      "material_q_only_probability_reversal_seeds_across_combined_counts": 11,
+      "seed_clusters": 20,
+      "stable_gate_counts": {
+        "10": 2,
+        "2": 13,
+        "4": 9,
+        "6": 2,
+        "8": 2
+      },
+      "stable_gate_prevalence": {
+        "10": 0.1,
+        "2": 0.65,
+        "4": 0.45,
+        "6": 0.1,
+        "8": 0.1
+      },
+      "stable_gate_reappearance_seeds_across_combined_counts": 2
+    },
+    "per_seed_monotonicity_diagnostics": {
+      "any_probability_reversal_seeds": 20,
+      "first_stable_gate_loss_count": {
+        "2": 7,
+        "4": 5,
+        "50": 1,
+        "6": 6,
+        "8": 1
+      },
+      "material_probability_reversal_seeds": 11,
+      "stable_gate_reappearance_seeds": 2
+    },
+    "selected_paired_seed_contrasts": [
+      {
+        "bootstrap_draws": 4000,
+        "ci_high": -0.15,
+        "ci_low": -0.55,
+        "comparison": "presence jump: 0 to 2",
+        "contrast_kind": "paired_difference",
+        "estimate": -0.35,
+        "inference_status": "adaptive_exploratory_posthoc_paired_support_intervention",
+        "left_count": 0,
+        "outcome": "stable_gate",
+        "right_count": 2,
+        "seed_clusters": 20
+      },
+      {
+        "bootstrap_draws": 4000,
+        "ci_high": 0.2998904388820891,
+        "ci_low": 0.1406111014238422,
+        "comparison": "presence jump: 0 to 2",
+        "contrast_kind": "paired_difference",
+        "estimate": 0.2181623490949957,
+        "inference_status": "adaptive_exploratory_posthoc_paired_support_intervention",
+        "left_count": 0,
+        "outcome": "q_only_target_probability",
+        "right_count": 2,
+        "seed_clusters": 20
+      },
+      {
+        "bootstrap_draws": 4000,
+        "ci_high": 3.749999999999587e-05,
+        "ci_low": -0.0002625000000000155,
+        "comparison": "presence jump: 0 to 2",
+        "contrast_kind": "paired_difference",
+        "estimate": -7.500000000000284e-05,
+        "inference_status": "adaptive_exploratory_posthoc_paired_support_intervention",
+        "left_count": 0,
+        "outcome": "common_iid_target_accuracy",
+        "right_count": 2,
+        "seed_clusters": 20
+      },
+      {
+        "bootstrap_draws": 4000,
+        "ci_high": 0.0,
+        "ci_low": -0.25,
+        "comparison": "adjacent: 10 to 50",
+        "contrast_kind": "paired_difference",
+        "estimate": -0.1,
+        "inference_status": "adaptive_exploratory_posthoc_paired_support_intervention",
+        "left_count": 10,
+        "outcome": "stable_gate",
+        "right_count": 50,
+        "seed_clusters": 20
+      },
+      {
+        "bootstrap_draws": 4000,
+        "ci_high": 0.3508685851052441,
+        "ci_low": 0.18702196839141724,
+        "comparison": "adjacent: 10 to 50",
+        "contrast_kind": "paired_difference",
+        "estimate": 0.2638093590868952,
+        "inference_status": "adaptive_exploratory_posthoc_paired_support_intervention",
+        "left_count": 10,
+        "outcome": "q_only_target_probability",
+        "right_count": 50,
+        "seed_clusters": 20
+      },
+      {
+        "bootstrap_draws": 4000,
+        "ci_high": 0.00023749999999998496,
+        "ci_low": -0.0003250000000000197,
+        "comparison": "adjacent: 10 to 50",
+        "contrast_kind": "paired_difference",
+        "estimate": -3.7500000000012526e-05,
+        "inference_status": "adaptive_exploratory_posthoc_paired_support_intervention",
+        "left_count": 10,
+        "outcome": "common_iid_target_accuracy",
+        "right_count": 50,
+        "seed_clusters": 20
+      },
+      {
+        "bootstrap_draws": 4000,
+        "ci_high": 0.0,
+        "ci_low": -0.45,
+        "comparison": "triggered refinement: 2 to 4",
+        "contrast_kind": "paired_difference",
+        "estimate": -0.2,
+        "inference_status": "adaptive_exploratory_posthoc_paired_support_intervention",
+        "left_count": 2,
+        "outcome": "stable_gate",
+        "right_count": 4,
+        "seed_clusters": 20
+      },
+      {
+        "bootstrap_draws": 4000,
+        "ci_high": 0.17026842780666443,
+        "ci_low": 0.006835726407693485,
+        "comparison": "triggered refinement: 2 to 4",
+        "contrast_kind": "paired_difference",
+        "estimate": 0.0936417885349809,
+        "inference_status": "adaptive_exploratory_posthoc_paired_support_intervention",
+        "left_count": 2,
+        "outcome": "q_only_target_probability",
+        "right_count": 4,
+        "seed_clusters": 20
+      },
+      {
+        "bootstrap_draws": 4000,
+        "ci_high": 0.00017500000000001404,
+        "ci_low": -4.999999999999449e-05,
+        "comparison": "triggered refinement: 2 to 4",
+        "contrast_kind": "paired_difference",
+        "estimate": 3.750000000000697e-05,
+        "inference_status": "adaptive_exploratory_posthoc_paired_support_intervention",
+        "left_count": 2,
+        "outcome": "common_iid_target_accuracy",
+        "right_count": 4,
+        "seed_clusters": 20
+      },
+      {
+        "bootstrap_draws": 4000,
+        "ci_high": -0.15,
+        "ci_low": -0.55,
+        "comparison": "triggered refinement: 4 to 6",
+        "contrast_kind": "paired_difference",
+        "estimate": -0.35,
+        "inference_status": "adaptive_exploratory_posthoc_paired_support_intervention",
+        "left_count": 4,
+        "outcome": "stable_gate",
+        "right_count": 6,
+        "seed_clusters": 20
+      },
+      {
+        "bootstrap_draws": 4000,
+        "ci_high": 0.26336758059168186,
+        "ci_low": 0.09552389505977438,
+        "comparison": "triggered refinement: 4 to 6",
+        "contrast_kind": "paired_difference",
+        "estimate": 0.17539610728132748,
+        "inference_status": "adaptive_exploratory_posthoc_paired_support_intervention",
+        "left_count": 4,
+        "outcome": "q_only_target_probability",
+        "right_count": 6,
+        "seed_clusters": 20
+      },
+      {
+        "bootstrap_draws": 4000,
+        "ci_high": 8.749999999999036e-05,
+        "ci_low": -4.999999999999449e-05,
+        "comparison": "triggered refinement: 4 to 6",
+        "contrast_kind": "paired_difference",
+        "estimate": 1.2499999999998623e-05,
+        "inference_status": "adaptive_exploratory_posthoc_paired_support_intervention",
+        "left_count": 4,
+        "outcome": "common_iid_target_accuracy",
+        "right_count": 6,
+        "seed_clusters": 20
+      },
+      {
+        "bootstrap_draws": 4000,
+        "ci_high": 0.15,
+        "ci_low": -0.15,
+        "comparison": "triggered refinement: 6 to 8",
+        "contrast_kind": "paired_difference",
+        "estimate": 0.0,
+        "inference_status": "adaptive_exploratory_posthoc_paired_support_intervention",
+        "left_count": 6,
+        "outcome": "stable_gate",
+        "right_count": 8,
+        "seed_clusters": 20
+      },
+      {
+        "bootstrap_draws": 4000,
+        "ci_high": 0.15647582659041936,
+        "ci_low": -0.0073143454832285335,
+        "comparison": "triggered refinement: 6 to 8",
+        "contrast_kind": "paired_difference",
+        "estimate": 0.07453324904703712,
+        "inference_status": "adaptive_exploratory_posthoc_paired_support_intervention",
+        "left_count": 6,
+        "outcome": "q_only_target_probability",
+        "right_count": 8,
+        "seed_clusters": 20
+      },
+      {
+        "bootstrap_draws": 4000,
+        "ci_high": 0.0001249999999999918,
+        "ci_low": -3.750000000000142e-05,
+        "comparison": "triggered refinement: 6 to 8",
+        "contrast_kind": "paired_difference",
+        "estimate": 3.749999999999587e-05,
+        "inference_status": "adaptive_exploratory_posthoc_paired_support_intervention",
+        "left_count": 6,
+        "outcome": "common_iid_target_accuracy",
+        "right_count": 8,
+        "seed_clusters": 20
+      },
+      {
+        "bootstrap_draws": 4000,
+        "ci_high": 0.0,
+        "ci_low": 0.0,
+        "comparison": "triggered refinement: 8 to 10",
+        "contrast_kind": "paired_difference",
+        "estimate": 0.0,
+        "inference_status": "adaptive_exploratory_posthoc_paired_support_intervention",
+        "left_count": 8,
+        "outcome": "stable_gate",
+        "right_count": 10,
+        "seed_clusters": 20
+      },
+      {
+        "bootstrap_draws": 4000,
+        "ci_high": 0.07213397812713539,
+        "ci_low": -0.05805865477462767,
+        "comparison": "triggered refinement: 8 to 10",
+        "contrast_kind": "paired_difference",
+        "estimate": 0.011064254568573578,
+        "inference_status": "adaptive_exploratory_posthoc_paired_support_intervention",
+        "left_count": 8,
+        "outcome": "q_only_target_probability",
+        "right_count": 10,
+        "seed_clusters": 20
+      },
+      {
+        "bootstrap_draws": 4000,
+        "ci_high": -1.2499999999998623e-05,
+        "ci_low": -0.00018749999999997935,
+        "comparison": "triggered refinement: 8 to 10",
+        "contrast_kind": "paired_difference",
+        "estimate": -8.749999999999036e-05,
+        "inference_status": "adaptive_exploratory_posthoc_paired_support_intervention",
+        "left_count": 8,
+        "outcome": "common_iid_target_accuracy",
+        "right_count": 10,
+        "seed_clusters": 20
+      }
+    ],
+    "stable_gate_definition": "Boolean signature 113 and factorial tuple consistency >= 0.90 at step 8192"
+  },
+  "inference_status": "adaptive_exploratory_posthoc_paired_support_intervention",
+  "outputs": {
+    "bridge_audit_json": "/Users/wjz/Documents/Projects/goal-misgeneralization/paper/forkworld-current-results/derived/e16_e15_bridge_audit.json",
+    "checkpoint_csv": "/Users/wjz/Documents/Projects/goal-misgeneralization/paper/forkworld-current-results/derived/e16_checkpoint_dynamics.csv",
+    "dose_summary_csv": "/Users/wjz/Documents/Projects/goal-misgeneralization/paper/forkworld-current-results/derived/e16_dose_summary.csv",
+    "endpoint_csv": "/Users/wjz/Documents/Projects/goal-misgeneralization/paper/forkworld-current-results/derived/e16_run_endpoints.csv",
+    "figure_pdf": "/Users/wjz/Documents/Projects/goal-misgeneralization/paper/forkworld-current-results/figures/fig16_support_completion.pdf",
+    "figure_png": "/Users/wjz/Documents/Projects/goal-misgeneralization/paper/forkworld-current-results/figures/fig16_support_completion.png",
+    "gate_transition_csv": "/Users/wjz/Documents/Projects/goal-misgeneralization/paper/forkworld-current-results/derived/e16_gate_transitions.csv",
+    "grid_audit_json": "/Users/wjz/Documents/Projects/goal-misgeneralization/paper/forkworld-current-results/derived/e16_grid_audit.json",
+    "independent_reference_csv": "/Users/wjz/Documents/Projects/goal-misgeneralization/paper/forkworld-current-results/derived/e16_independent_reference.csv",
+    "independent_reference_summary_csv": "/Users/wjz/Documents/Projects/goal-misgeneralization/paper/forkworld-current-results/derived/e16_independent_reference_summary.csv",
+    "paired_contrast_csv": "/Users/wjz/Documents/Projects/goal-misgeneralization/paper/forkworld-current-results/derived/e16_paired_contrasts.csv",
+    "pairing_audit_csv": "/Users/wjz/Documents/Projects/goal-misgeneralization/paper/forkworld-current-results/derived/e16_pairing_audit.csv",
+    "refinement_decision_json": "/Users/wjz/Documents/Projects/goal-misgeneralization/paper/forkworld-current-results/derived/e16_refinement_decision.json",
+    "refinement_results_json": "/Users/wjz/Documents/Projects/goal-misgeneralization/paper/forkworld-current-results/derived/e16_refinement_results.json"
+  },
+  "refinement_artifacts_root": "/Users/wjz/Documents/Projects/goal-misgeneralization/artifacts-e16-refinement"
+}

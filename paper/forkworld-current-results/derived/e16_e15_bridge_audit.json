@@ -1,0 +1,22 @@
+{
+  "e15_artifacts_root": "/Users/wjz/Documents/Projects/goal-misgeneralization/artifacts-e15",
+  "e15_reference_implementation_fingerprints": [
+    "c644422d4ba0769f6fd094cb4f56d403674480b2cac943ec5fb5befc33af72f3"
+  ],
+  "m0_exact_metric_bridges": 20,
+  "m0_exact_shared_metric_records": 244760,
+  "m0_matches_archived_e15_nested_exactly": true,
+  "m0_summary_sections_compared_exactly": {
+    "final_dynamics": 20,
+    "initial_dynamics": 20,
+    "model_interface_reports": 20,
+    "standalone_calibrations": 20,
+    "step_2048_dynamics": 20,
+    "training_error_overlap": 20
+  },
+  "m450_independent_comparison_runs": 20,
+  "m450_matches_independent_cell_counts_only": true,
+  "m450_row_allocation_equality_claimed": false,
+  "reference_runs": 40,
+  "state_hash_claimed": false
+}

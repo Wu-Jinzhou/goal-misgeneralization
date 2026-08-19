@@ -1,0 +1,373 @@
+inference_status,q,k,cell_label,high_schedule,low_schedule,contrast,outcome,primary_endpoint,estimate,ci_low,ci_high,n_seeds,n_pairs
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,final_rho_y,1,-0.01931,-0.04532,8.00000000000023e-05,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,final_intended_probability,0,-0.01930421991368051,-0.045306228295030095,8.196424268373299e-05,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,phase_b_rho_y_area,0,-32.149235,-66.33605912499999,-7.396951374999999,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,phase_b_mean_rho_y,0,-0.016204251512096774,-0.032198799836189514,-0.0021411699218750017,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,crossing_observed,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,restricted_crossing_phase_b_updates,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,final_iid_accuracy,0,-0.005574999999999997,-0.012149999999999994,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,final_iid_reward,0,-0.005574999999999997,-0.012575000000000003,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,final_policy_entropy,0,-4.747068520000956e-05,-0.00012047832650931703,-4.021833130461782e-06,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,boundary_rho_y,0,0.0020399999999999997,0.0,0.0060799999999999995,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,boundary_policy_entropy,0,0.07592630882782472,0.05992443858677503,0.09312971199524997,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,boundary_proxy_hard_flip,0,-0.003939999999999999,-0.011780000000000002,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,boundary_proxy_probability_ate,0,-0.04019655346937706,-0.055812796547735084,-0.027167728666061118,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,boundary_exact_hard_flip,0,0.0017475000000000001,0.0,0.0052025000000000005,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,boundary_exact_probability_ate,0,-0.0008289590979353969,-0.0014765190307193176,-0.0003895102543819539,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,final_proxy_hard_flip,0,0.019309999999999994,-8.00000000000134e-05,0.045320000000000006,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,final_proxy_probability_ate,0,0.01930282735603255,-8.502381598178537e-05,0.05083565799280912,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,final_exact_hard_flip,0,-0.01931,-0.045955249999999954,8.00000000000023e-05,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,final_exact_probability_ate,0,0.01930561581779275,-7.988935688495676e-05,0.050838934122731196,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,proxy_hard_flip_change,0,0.023249999999999993,1.9999999999986696e-05,0.05140999999999999,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,exact_hard_flip_change,0,-0.0210575,-0.048824937499999985,-1.999999999999886e-05,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,proxy_probability_ate_change,0,0.059499380825409606,0.0380243736118538,0.08468323891190681,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,exact_probability_ate_change,0,0.02013457491572814,0.0006167230116294506,0.046089459567565494,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,actor_l2_from_boundary,0,0.2124649072761232,-0.656942223392634,0.990682685226348,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,actor_relative_l2_from_boundary,0,0.07182379193332425,-0.027492468863237078,0.16500668257425785,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,critic_l2_from_boundary,0,-0.3234460437729382,-0.6983305235702905,-0.003145442504425929,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,critic_relative_l2_from_boundary,0,-0.027211785659289167,-0.05887321219504687,-0.0009770134852863375,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,phase_b_critic_loss_log_grid_mean,0,-0.0012619457304735647,-0.004592876370546222,0.0010920047658891574,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,phase_b_critic_loss_final_logged,0,-5.842689915880328e-06,-1.1271037876667834e-05,-1.3660843751495116e-06,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,final_quantization_abs_residual,0,-0.0006400000000000003,-0.001479999999999998,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,zero_zero,early-only - never,final_within_0_01_of_interaction_plateau,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,final_rho_y,1,0.16802,0.11107275,0.22227500000000003,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,final_intended_probability,0,0.16791456536533889,0.10760820179576769,0.22249751415699734,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,phase_b_rho_y_area,0,303.75944,223.53485200000006,374.24032000000005,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,phase_b_mean_rho_y,0,0.15310455645161292,0.11234456854838708,0.18953024899193552,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,crossing_observed,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,restricted_crossing_phase_b_updates,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,final_iid_accuracy,0,0.040499999999999994,0.02477375000000001,0.05517500000000001,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,final_iid_reward,0,0.040499999999999994,0.025174999999999993,0.05535125000000001,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,final_policy_entropy,0,0.00043790385812682265,-2.843682414428387e-06,0.00123525021143771,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,boundary_rho_y,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,boundary_policy_entropy,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,boundary_proxy_hard_flip,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,boundary_proxy_probability_ate,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,boundary_exact_hard_flip,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,boundary_exact_probability_ate,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,final_proxy_hard_flip,0,-0.16802,-0.22171125000000003,-0.10768775000000001,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,final_proxy_probability_ate,0,-0.16791982805877606,-0.22225399184974534,-0.10920441936873009,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,final_exact_hard_flip,0,0.16802,0.10697975,0.22342075000000003,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,final_exact_probability_ate,0,-0.1679085080876538,-0.223377348832358,-0.11068458475601882,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,proxy_hard_flip_change,0,-0.16802,-0.22247075000000002,-0.10724850000000002,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,exact_hard_flip_change,0,0.16802,0.10868125,0.22169075000000005,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,proxy_probability_ate_change,0,-0.16791982805877606,-0.22231106698219844,-0.10724908682599983,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,exact_probability_ate_change,0,-0.16790850808765384,-0.22336583249001993,-0.11130611103077874,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,actor_l2_from_boundary,0,2.716899964719869,1.3270063363086033,4.070701963310767,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,actor_relative_l2_from_boundary,0,0.30261162126346564,0.14900035460292335,0.4544162320966505,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,critic_l2_from_boundary,0,-1.1629929043085538,-2.093722159725267,-0.4461149742309242,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,critic_relative_l2_from_boundary,0,-0.09862452437737976,-0.17294604146440556,-0.036292340878422764,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,phase_b_critic_loss_log_grid_mean,0,-0.009580059160852934,-0.019925908426409948,-0.002875964392250284,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,phase_b_critic_loss_final_logged,0,-1.1220138276257785e-06,-1.3307290439570352e-05,1.2030343207243278e-05,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,final_quantization_abs_residual,0,0.002170000000000001,0.0005697500000000005,0.003730000000000002,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,zero_zero,delayed - never,final_within_0_01_of_interaction_plateau,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,final_rho_y,1,-0.18733,-0.2477925,-0.12490899999999999,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,final_intended_probability,0,-0.1872187852790194,-0.2473121625412288,-0.12540291899832323,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,phase_b_rho_y_area,0,-335.908675,-404.1776315,-254.32632949999996,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,phase_b_mean_rho_y,0,-0.16930880796370967,-0.20323767886844757,-0.12862271396169356,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,crossing_observed,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,restricted_crossing_phase_b_updates,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,final_iid_accuracy,0,-0.04607499999999999,-0.06092499999999999,-0.029699374999999983,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,final_iid_reward,0,-0.04607499999999999,-0.061124999999999985,-0.029524374999999978,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,final_policy_entropy,0,-0.0004853745433268321,-0.0012778901709492028,-1.811490217169987e-05,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,boundary_rho_y,0,0.0020399999999999997,0.0,0.00608,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,boundary_policy_entropy,0,0.07592630882782472,0.0594140949540436,0.09390034824372,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,boundary_proxy_hard_flip,0,-0.003939999999999999,-0.0118,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,boundary_proxy_probability_ate,0,-0.04019655346937706,-0.05621457917599022,-0.026646453035712576,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,boundary_exact_hard_flip,0,0.0017475000000000001,0.0,0.005203000000000002,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,boundary_exact_probability_ate,0,-0.0008289590979353969,-0.0014516198374658063,-0.0003820436225429842,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,final_proxy_hard_flip,0,0.18733,0.1206885,0.24772150000000004,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,final_proxy_probability_ate,0,0.1872226554148086,0.12077595347502165,0.24737222698826689,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,final_exact_hard_flip,0,-0.18733,-0.24795400000000004,-0.125269,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,final_exact_probability_ate,0,0.18721412390544656,0.12488469499841165,0.24733106372336294,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,proxy_hard_flip_change,0,0.19127,0.12483700000000002,0.24930075000000002,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,exact_hard_flip_change,0,-0.1890775,-0.249845,-0.1261695,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,proxy_probability_ate_change,0,0.22741920888418568,0.1639885844294559,0.2861587723741464,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,exact_probability_ate_change,0,0.18804308300338196,0.12618331493867624,0.24877976226122972,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,actor_l2_from_boundary,0,-2.5044350574437457,-3.5212077266884223,-1.1624078766744674,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,actor_relative_l2_from_boundary,0,-0.2307878293301414,-0.34986509695329104,-0.06914138910746473,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,critic_l2_from_boundary,0,0.8395468605356158,0.24386677975266965,1.5003862592674748,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,critic_relative_l2_from_boundary,0,0.07141273871809059,0.017970956439361224,0.12868645516595814,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,phase_b_critic_loss_log_grid_mean,0,0.008318113430379368,0.002897077791359787,0.015589071771476823,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,phase_b_critic_loss_final_logged,0,-4.7206760882545495e-06,-1.6084730963257246e-05,6.951806898314318e-06,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,final_quantization_abs_residual,0,-0.0028100000000000013,-0.003990000000000002,-0.0016200000000000012,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,delayed_carry,early-only - delayed,final_within_0_01_of_interaction_plateau,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,final_rho_y,1,0.46123000000000003,0.280146,0.66807075,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,final_intended_probability,0,0.46101709178894695,0.2852249962148402,0.6615743426849922,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,phase_b_rho_y_area,0,801.947205,511.270219,1131.1573960000003,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,phase_b_mean_rho_y,0,0.4042072605846774,0.26515516966985886,0.5769302464717742,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,crossing_observed,0,0.3,0.0,0.6,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,restricted_crossing_phase_b_updates,0,-467.2,-934.4,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,final_iid_accuracy,0,0.11564999999999999,0.071148125,0.165975625,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,final_iid_reward,0,0.11564999999999999,0.07241999999999997,0.168101875,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,final_policy_entropy,0,0.001028622453328335,0.0003161222550422824,0.002104095672254895,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,boundary_rho_y,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,boundary_policy_entropy,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,boundary_proxy_hard_flip,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,boundary_proxy_probability_ate,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,boundary_exact_hard_flip,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,boundary_exact_probability_ate,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,final_proxy_hard_flip,0,-0.46123000000000003,-0.6676415000000001,-0.27895925,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,final_proxy_probability_ate,0,-0.461047196996598,-0.6677416621478206,-0.2800104012187792,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,final_exact_hard_flip,0,0.46123000000000003,0.27913725000000006,0.66800125,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,final_exact_probability_ate,0,-0.4609847740096146,-0.667010176795014,-0.286059039274855,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,proxy_hard_flip_change,0,-0.46123000000000003,-0.66843175,-0.279937,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,exact_hard_flip_change,0,0.46123000000000003,0.28623824999999997,0.66800175,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,proxy_probability_ate_change,0,-0.461047196996598,-0.6680882704823796,-0.27893541877827827,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,exact_probability_ate_change,0,-0.46098477400961446,-0.6619710173519099,-0.28518934121370115,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,actor_l2_from_boundary,0,4.331332331067028,2.9008017062105167,5.695921876635814,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,actor_relative_l2_from_boundary,0,0.5208992334286002,0.34533522950048223,0.6882242844235094,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,critic_l2_from_boundary,0,-2.245466667750108,-4.244124007907969,-0.7095528702430983,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,critic_relative_l2_from_boundary,0,-0.19009461818934392,-0.34954153734046084,-0.061838926084098966,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,phase_b_critic_loss_log_grid_mean,0,-0.012128017733135656,-0.020429017483785027,-0.004429563626989433,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,phase_b_critic_loss_final_logged,0,0.0003826774602657679,-1.3654140143444236e-05,0.0011564836528577872,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,final_quantization_abs_residual,0,0.0015900000000000018,0.000690000000000001,0.0025800000000000037,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,early_only,continuous - early-only,final_within_0_01_of_interaction_plateau,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,final_rho_y,1,0.01402,-0.02490025,0.05327,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,final_intended_probability,0,0.014091553197876763,-0.025188644372858508,0.05314470632712399,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,phase_b_rho_y_area,0,21.074914999999983,-39.84938425000003,70.35415562499998,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,phase_b_mean_rho_y,0,0.010622436995967734,-0.020102685042842728,0.03735947360131048,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,crossing_observed,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,restricted_crossing_phase_b_updates,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,final_iid_accuracy,0,0.004075000000000007,-0.006774999999999987,0.015375625000000007,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,final_iid_reward,0,0.004075000000000007,-0.006699999999999984,0.01585062499999996,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,final_policy_entropy,0,-0.00026201537001898034,-0.0011795826391628327,0.00039263296625458195,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,boundary_rho_y,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,boundary_policy_entropy,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,boundary_proxy_hard_flip,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,boundary_proxy_probability_ate,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,boundary_exact_hard_flip,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,boundary_exact_probability_ate,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,final_proxy_hard_flip,0,-0.01402,-0.05318124999999999,0.025070000000000002,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,final_proxy_probability_ate,0,-0.014095501941755384,-0.05333799076471989,0.025195573485493884,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,final_exact_hard_flip,0,0.01402,-0.024880749999999993,0.05333025,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,final_exact_probability_ate,0,-0.014088541591810212,-0.05360654650504396,0.025279289820859942,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,proxy_hard_flip_change,0,-0.01402,-0.05330124999999998,0.02522050000000002,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,exact_hard_flip_change,0,0.01402,-0.02491025,0.05330024999999999,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,proxy_probability_ate_change,0,-0.014095501941755384,-0.053040076062549214,0.024790066344544042,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,exact_probability_ate_change,0,-0.0140885415918102,-0.05322143351132399,0.025393078512786695,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,actor_l2_from_boundary,0,0.5203658202629495,-0.1955663128777734,1.290678389945019,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,actor_relative_l2_from_boundary,0,0.05822453525850583,-0.02104146607621042,0.14289674340552444,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,critic_l2_from_boundary,0,-0.018188661336806255,-0.7551390726935922,0.6582813173827817,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,critic_relative_l2_from_boundary,0,-0.0014927314955739512,-0.06168930644576841,0.057773523678610474,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,phase_b_critic_loss_log_grid_mean,0,-0.002517485676020373,-0.009491545622166944,0.0041173860645445735,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,phase_b_critic_loss_final_logged,0,-1.6396278670072207e-05,-3.0644263057411086e-05,-3.336840998144906e-06,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,final_quantization_abs_residual,0,-0.0007400000000000025,-0.0019499999999999975,0.0005399999999999953,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,final_within_0_01_of_interaction_plateau,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,final_rho_y,1,0.03185,-0.01729824999999997,0.08508149999999998,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,final_intended_probability,0,0.03194058936379367,-0.021857872108266712,0.08572106019563133,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,phase_b_rho_y_area,0,61.78851999999999,-13.406901000000016,137.84876000000003,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,phase_b_mean_rho_y,0,0.03114340725806451,-0.007152118447580652,0.07098894153225806,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,crossing_observed,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,restricted_crossing_phase_b_updates,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,final_iid_accuracy,0,0.008250000000000002,-0.003849999999999987,0.02155125000000003,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,final_iid_reward,0,0.008250000000000002,-0.0037018749999999925,0.020999999999999998,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,final_policy_entropy,0,-0.00036231070675950207,-0.0011859128904745712,0.00017142791595865315,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,boundary_rho_y,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,boundary_policy_entropy,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,boundary_proxy_hard_flip,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,boundary_proxy_probability_ate,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,boundary_exact_hard_flip,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,boundary_exact_probability_ate,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,final_proxy_hard_flip,0,-0.03184999999999999,-0.08137024999999998,0.017034000000000077,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,final_proxy_probability_ate,0,-0.031945962534471906,-0.08543309319038356,0.020741740992278334,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,final_exact_hard_flip,0,0.03185,-0.016713749999999996,0.08581025,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,final_exact_probability_ate,0,-0.03193539319580632,-0.08495049338124017,0.017261391825406317,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,proxy_hard_flip_change,0,-0.03184999999999999,-0.08125674999999999,0.01700350000000005,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,exact_hard_flip_change,0,0.03185,-0.016489999999999998,0.08199925000000026,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,proxy_probability_ate_change,0,-0.031945962534471906,-0.08076146448502902,0.01664064424024524,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,exact_probability_ate_change,0,-0.03193539319580632,-0.08120771639891403,0.017949367547486012,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,actor_l2_from_boundary,0,0.5476050919032797,-0.036010807052691315,1.152071674788478,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,actor_relative_l2_from_boundary,0,0.06098490060651377,-0.0012607799540157796,0.1300794206740242,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,critic_l2_from_boundary,0,-0.8954841920152103,-1.4413381381079475,-0.4016918703205367,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,critic_relative_l2_from_boundary,0,-0.07612944892059369,-0.12034007565433481,-0.033594334592803844,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,phase_b_critic_loss_log_grid_mean,0,0.0012278303859290264,-0.006935115509748368,0.008691768739119612,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,phase_b_critic_loss_final_logged,0,7.296095782294288e-06,-1.7309074701188364e-05,3.587588937193687e-05,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,final_quantization_abs_residual,0,1.999999999999988e-05,-0.001940000000000003,0.001980250000000008,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed_carry,critic reset - delayed,final_within_0_01_of_interaction_plateau,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,final_rho_y,1,0.050170000000000006,0.0,0.1254,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,final_intended_probability,0,0.05016472949497629,-2.5471405325508478e-06,0.12539030648532862,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,phase_b_rho_y_area,0,52.158719999999995,0.08448,144.19392,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,phase_b_mean_rho_y,0,0.026289677419354833,0.0,0.06665806451612902,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,crossing_observed,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,restricted_crossing_phase_b_updates,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,final_iid_accuracy,0,0.004774999999999996,0.0,0.011749999999999993,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,final_iid_reward,0,0.004774999999999996,0.0,0.011749999999999993,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,final_policy_entropy,0,1.6484865612834104e-05,-2.4700038668212282e-05,7.299885031920048e-05,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,boundary_rho_y,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,boundary_policy_entropy,0,0.005382551473802304,0.004170871237701144,0.006719221827822026,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,boundary_proxy_hard_flip,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,boundary_proxy_probability_ate,0,-0.0016732999769882295,-0.00212961269839446,-0.0012626055897572064,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,boundary_exact_hard_flip,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,boundary_exact_probability_ate,0,-7.660408611682941e-05,-0.00018055146681985766,-3.977715440297506e-06,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,final_proxy_hard_flip,0,-0.050170000000000006,-0.1254,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,final_proxy_probability_ate,0,-0.05015686571936715,-0.12539073978792084,2.1653167114322195e-05,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,final_exact_hard_flip,0,0.050170000000000006,0.0,0.12535,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,final_exact_probability_ate,0,-0.050171446574866774,-0.1253964826120991,-6.745745560909152e-06,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,proxy_hard_flip_change,0,-0.050170000000000006,-0.1254,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,exact_hard_flip_change,0,0.050170000000000006,0.0,0.1254,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,proxy_probability_ate_change,0,-0.04848356574237892,-0.12324412215694869,0.0015422622930024333,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,exact_probability_ate_change,0,-0.05009484248874996,-0.12521764759363602,3.968995021101216e-05,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,actor_l2_from_boundary,0,0.4958529955130759,-0.036820022617812,1.147030028110284,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,actor_relative_l2_from_boundary,0,0.06645934816220586,0.0070759161736233984,0.1350512674996238,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,critic_l2_from_boundary,0,0.12300137810063375,-0.05173114331471292,0.40584198437764335,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,critic_relative_l2_from_boundary,0,0.010524782002188437,-0.0043831400241915045,0.03443203673849711,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,phase_b_critic_loss_log_grid_mean,0,0.0004455326647742579,-3.040948924208286e-05,0.0012995922076185448,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,phase_b_critic_loss_final_logged,0,5.953980130470882e-05,-1.1092933307281782e-05,0.00019199769422471036,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,final_quantization_abs_residual,0,0.00016999999999999793,0.0,0.00043999999999999595,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,zero_zero,early-only - never,final_within_0_01_of_interaction_plateau,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,final_rho_y,1,0.17370000000000002,0.09910000000000001,0.24605025000000003,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,final_intended_probability,0,0.17354749182769774,0.09862692715387818,0.24505283976479375,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,phase_b_rho_y_area,0,213.72127999999998,103.39775999999999,325.06656000000004,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,phase_b_mean_rho_y,0,0.1077224193548387,0.05321322580645162,0.16412850806451615,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,crossing_observed,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,restricted_crossing_phase_b_updates,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,final_iid_accuracy,0,0.01892499999999998,0.010724999999999995,0.026750624999999986,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,final_iid_reward,0,0.01892499999999998,0.010749999999999992,0.02674999999999996,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,final_policy_entropy,0,0.0008272203526151888,-6.988841837466033e-06,0.0023635377947621937,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,boundary_rho_y,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,boundary_policy_entropy,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,boundary_proxy_hard_flip,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,boundary_proxy_probability_ate,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,boundary_exact_hard_flip,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,boundary_exact_probability_ate,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,final_proxy_hard_flip,0,-0.17370000000000002,-0.24618025000000002,-0.09889975,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,final_proxy_probability_ate,0,-0.173642770048881,-0.24555869666727545,-0.09859965739344952,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,final_exact_hard_flip,0,0.17370000000000002,0.09898975,0.246011,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,final_exact_probability_ate,0,-0.17346768806304974,-0.24591436673195172,-0.09888696421954705,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,proxy_hard_flip_change,0,-0.17370000000000002,-0.24460225,-0.09911950000000001,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,exact_hard_flip_change,0,0.17370000000000002,0.09884975000000001,0.24539425000000006,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,proxy_probability_ate_change,0,-0.173642770048881,-0.22775749945184132,-0.0988491495990782,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,exact_probability_ate_change,0,-0.17346768806304974,-0.22915464896166066,-0.09863009554215627,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,actor_l2_from_boundary,0,1.723777832828949,0.9612803122321408,2.36595155353761,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,actor_relative_l2_from_boundary,0,0.18663272191271849,0.10453436344410458,0.2559843358300341,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,critic_l2_from_boundary,0,-0.009548264880492763,-0.2994707184982858,0.2273695324028707,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,critic_relative_l2_from_boundary,0,-0.0008653132275528996,-0.025495233326672827,0.01898299438946892,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,phase_b_critic_loss_log_grid_mean,0,4.443607796449679e-05,-0.0003177347038309988,0.00042462966499930756,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,phase_b_critic_loss_final_logged,0,8.507258189638379e-06,-1.1106260803899203e-05,3.98704428448582e-05,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,final_quantization_abs_residual,0,0.0032599999999999964,0.001269999999999999,0.00548025,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,zero_zero,delayed - never,final_within_0_01_of_interaction_plateau,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,final_rho_y,1,-0.12353,-0.19709100000000002,-0.04976925,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,final_intended_probability,0,-0.1233827623327215,-0.196841377585438,-0.04986484509715464,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,phase_b_rho_y_area,0,-161.56256,-276.620624,-47.44639999999999,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,phase_b_mean_rho_y,0,-0.08143274193548386,-0.13955556048387094,-0.026739354838709685,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,crossing_observed,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,restricted_crossing_phase_b_updates,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,final_iid_accuracy,0,-0.014149999999999986,-0.022200624999999988,-0.00615,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,final_iid_reward,0,-0.014149999999999986,-0.02237499999999999,-0.006024999999999991,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,final_policy_entropy,0,-0.0008107354870023547,-0.0023520840056952996,2.6302704110477466e-05,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,boundary_rho_y,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,boundary_policy_entropy,0,0.005382551473802304,0.004173710047995416,0.006697044445442036,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,boundary_proxy_hard_flip,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,boundary_proxy_probability_ate,0,-0.0016732999769882295,-0.002135130970411815,-0.0012759748836731963,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,boundary_exact_hard_flip,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,boundary_exact_probability_ate,0,-7.660408611682941e-05,-0.00017690206874529117,-4.1420147659331105e-06,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,final_proxy_hard_flip,0,0.12353,0.04995000000000001,0.19693050000000004,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,final_proxy_probability_ate,0,0.12348590432951387,0.04995394098926237,0.19719061186653064,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,final_exact_hard_flip,0,-0.12353,-0.19711149999999997,-0.04994624999999999,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,final_exact_probability_ate,0,0.123296241488183,0.05024433706146031,0.1968242319599694,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,proxy_hard_flip_change,0,0.12353,0.04997,0.19704025000000003,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,exact_hard_flip_change,0,-0.12353,-0.19730024999999998,-0.04948,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,proxy_probability_ate_change,0,0.1251592043065021,0.05119608676566394,0.1985445432677446,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,exact_probability_ate_change,0,0.1233728455742998,0.04967253905317553,0.19690834936181636,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,actor_l2_from_boundary,0,-1.227924837315873,-2.017587266209328,-0.3913113007095197,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,actor_relative_l2_from_boundary,0,-0.12017337375051262,-0.20843757465796903,-0.030419248157823497,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,critic_l2_from_boundary,0,0.1325496429811265,-0.22382995764067443,0.6871516776723244,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,critic_relative_l2_from_boundary,0,0.011390095229741336,-0.019289027635995364,0.05891578586881373,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,phase_b_critic_loss_log_grid_mean,0,0.00040109658680976114,-0.0002835608674417774,0.001378872853558583,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,phase_b_critic_loss_final_logged,0,5.1032543115070436e-05,-2.9464868163131457e-05,0.00019320314631272596,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,final_quantization_abs_residual,0,-0.003089999999999998,-0.005359999999999995,-0.0012097499999999962,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,delayed_carry,early-only - delayed,final_within_0_01_of_interaction_plateau,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,final_rho_y,1,0.0006000000000000005,-0.07452,0.0747,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,final_intended_probability,0,0.0006035504485442305,-0.07450829234338388,0.07469976924067062,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,phase_b_rho_y_area,0,19.18528,-100.79168,138.05951999999996,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,phase_b_mean_rho_y,0,0.009669999999999998,-0.050802258064516125,0.06958645161290321,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,crossing_observed,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,restricted_crossing_phase_b_updates,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,final_iid_accuracy,0,0.0005000000000000004,-0.007199999999999984,0.007662500000000036,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,final_iid_reward,0,0.0005000000000000004,-0.007199999999999984,0.008174999999999988,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,final_policy_entropy,0,-2.763807430911053e-05,-7.744042991273828e-05,2.280247844355507e-06,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,boundary_rho_y,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,boundary_policy_entropy,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,boundary_proxy_hard_flip,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,boundary_proxy_probability_ate,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,boundary_exact_hard_flip,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,boundary_exact_probability_ate,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,final_proxy_hard_flip,0,-0.0006000000000000005,-0.07530525,0.07452,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,final_proxy_probability_ate,0,-0.0006032665670582582,-0.07530964753784444,0.07451740653390683,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,final_exact_hard_flip,0,0.0006000000000000005,-0.07452,0.0753,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,final_exact_probability_ate,0,-0.0006039001032946176,-0.07469453716237237,0.07449939161308503,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,proxy_hard_flip_change,0,-0.0006000000000000005,-0.0747,0.07452,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,exact_hard_flip_change,0,0.0006000000000000005,-0.07452,0.0747,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,proxy_probability_ate_change,0,-0.0006032665670582582,-0.07470596704997401,0.07451712870242012,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,exact_probability_ate_change,0,-0.0006039001032946176,-0.07469447074931658,0.07449976784409053,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,actor_l2_from_boundary,0,0.21518980867663276,-0.5184119076322663,0.9593566404053246,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,actor_relative_l2_from_boundary,0,0.02339280353405953,-0.06408132316559284,0.11020040054442311,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,critic_l2_from_boundary,0,-0.1237391206344662,-0.505459641760802,0.09318970186257462,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,critic_relative_l2_from_boundary,0,-0.01048268474831412,-0.042526113765740316,0.007755226571648208,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,phase_b_critic_loss_log_grid_mean,0,-0.0003833095129432012,-0.0012369794549292653,9.347864330565957e-05,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,phase_b_critic_loss_final_logged,0,-2.967899067698454e-05,-0.00019143848632779736,9.242992684335152e-05,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,final_quantization_abs_residual,0,0.0008000000000000007,-0.00022999999999999686,0.002529999999999999,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,early_only,continuous - early-only,final_within_0_01_of_interaction_plateau,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,final_rho_y,1,-0.07343,-0.17195,0.026180750000000006,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,final_intended_probability,0,-0.07328077763282007,-0.171523969413209,0.026040346110779006,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,phase_b_rho_y_area,0,-84.39376,-234.47172099999997,67.04248400000004,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,phase_b_mean_rho_y,0,-0.04253717741935483,-0.12188266229838705,0.034001900201612915,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,crossing_observed,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,restricted_crossing_phase_b_updates,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,final_iid_accuracy,0,-0.008199999999999985,-0.018575624999999964,0.0026249999999999776,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,final_iid_reward,0,-0.008199999999999985,-0.018699999999999974,0.0025749999999999944,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,final_policy_entropy,0,-0.0008315937604973213,-0.002358183425774424,-4.8081437680152704e-06,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,boundary_rho_y,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,boundary_policy_entropy,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,boundary_proxy_hard_flip,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,boundary_proxy_probability_ate,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,boundary_exact_hard_flip,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,boundary_exact_probability_ate,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,final_proxy_hard_flip,0,0.07343000000000001,-0.025989999999999992,0.17192000000000002,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,final_proxy_probability_ate,0,0.07337682666106803,-0.026058047804649546,0.17161542069275726,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,final_exact_hard_flip,0,-0.07343,-0.17188024999999998,0.026180750000000006,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,final_exact_probability_ate,0,0.07320649216290762,-0.026364951478725616,0.1714410822993625,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,proxy_hard_flip_change,0,0.07343000000000001,-0.02617999999999999,0.17175350000000003,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,exact_hard_flip_change,0,-0.07343,-0.17156025,0.026220000000000004,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,proxy_probability_ate_change,0,0.07337682666106803,-0.02653825021905438,0.17213431157241618,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,exact_probability_ate_change,0,0.07320649216290762,-0.026180395393777766,0.17165243013588463,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,actor_l2_from_boundary,0,-0.6150483329296648,-1.673974637383023,0.47054766147528443,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,actor_relative_l2_from_boundary,0,-0.0666158103165023,-0.17663576943396647,0.054449174709330764,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,critic_l2_from_boundary,0,-0.04132422631118153,-0.30947250391279163,0.2825626737587568,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,critic_relative_l2_from_boundary,0,-0.003339816498728343,-0.026408285732422074,0.02491365882100058,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,phase_b_critic_loss_log_grid_mean,0,-0.00013158270907264233,-0.0005471324646398948,0.000240921909482978,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,phase_b_critic_loss_final_logged,0,-1.093720147764543e-05,-4.1526381098719865e-05,6.987430083427172e-06,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,final_quantization_abs_residual,0,-0.001329999999999995,-0.003690249999999996,0.000610000000000005,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed_carry,actor-Adam reset - delayed,final_within_0_01_of_interaction_plateau,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,final_rho_y,1,-0.010460000000000002,-0.10887,0.08958125,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,final_intended_probability,0,-0.010465771969090445,-0.1075229554172402,0.0894264410067414,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,phase_b_rho_y_area,0,-32.74047999999999,-149.546368,79.89040000000004,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,phase_b_mean_rho_y,0,-0.016502258064516127,-0.07687461290322581,0.04345721370967742,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,crossing_observed,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,restricted_crossing_phase_b_updates,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,final_iid_accuracy,0,-0.0015249999999999986,-0.012299999999999988,0.00900312500000001,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,final_iid_reward,0,-0.0015249999999999986,-0.012224999999999996,0.009175624999999991,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,final_policy_entropy,0,-0.0001720961580163494,-0.002139954643931862,0.0013571866002807333,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,boundary_rho_y,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,boundary_policy_entropy,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,boundary_proxy_hard_flip,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,boundary_proxy_probability_ate,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,boundary_exact_hard_flip,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,boundary_exact_probability_ate,0,0.0,0.0,0.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,final_proxy_hard_flip,0,0.010460000000000002,-0.08881124999999998,0.10906075000000001,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,final_proxy_probability_ate,0,0.010509820014474957,-0.08931332185831506,0.10791240687311603,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,final_exact_hard_flip,0,-0.010460000000000002,-0.10799825,0.08886000000000001,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,final_exact_probability_ate,0,0.010455990360946354,-0.08883973007513407,0.1081197000687375,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,proxy_hard_flip_change,0,0.010460000000000002,-0.08886124999999999,0.10732300000000002,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,exact_hard_flip_change,0,-0.010460000000000002,-0.108164,0.08958125000000003,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,proxy_probability_ate_change,0,0.010509820014474957,-0.08894619758336034,0.1091646808058652,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,exact_probability_ate_change,0,0.010455990360946358,-0.0877953393665272,0.10845430081919946,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,actor_l2_from_boundary,0,-0.04631418005636432,-1.0422327141683192,1.0512446633451613,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,actor_relative_l2_from_boundary,0,-0.005781671864049276,-0.11433691832221315,0.11516272555206988,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,critic_l2_from_boundary,0,-0.2816974714051058,-0.8279403637985763,0.24817013945212582,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,critic_relative_l2_from_boundary,0,-0.02372694238247349,-0.06975453428436718,0.0208366738539395,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,phase_b_critic_loss_log_grid_mean,0,0.004826995144451038,0.0029090042372485986,0.007166149179699153,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,phase_b_critic_loss_final_logged,0,0.0009705249326088961,-2.6940470710314913e-05,0.0029178900146871454,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,final_quantization_abs_residual,0,-0.0006199999999999984,-0.0030202499999999947,0.00131,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed_carry,critic reset - delayed,final_within_0_01_of_interaction_plateau,0,0.0,0.0,0.0,10,10

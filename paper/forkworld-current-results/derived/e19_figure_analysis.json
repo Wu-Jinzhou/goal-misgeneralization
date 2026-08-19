@@ -1,0 +1,317 @@
+{
+  "audit": {
+    "all_six_postedit_pure_P_count": 20,
+    "artifacts_root": "/Users/wjz/Documents/Projects/goal-misgeneralization/artifacts-e19",
+    "complete_artifacts": 120,
+    "config_source_sha256": "79e24a5e68b95e76e3bffd61d62abfdd86f6f6c439a45c76c376a2f548b74345",
+    "direct_Q_AUCs_reconstructed": 120,
+    "metric_records_audited": 826680,
+    "paired_intersection_eligible_count": 20,
+    "paired_intersection_eligible_seeds": [
+      409,
+      419,
+      421,
+      431,
+      433,
+      439,
+      443,
+      449,
+      457,
+      461,
+      463,
+      467,
+      479,
+      487,
+      491,
+      499,
+      503,
+      509,
+      521,
+      523
+    ],
+    "pilot_gate_decision": "PASS",
+    "pilot_joint_seed_pass_count": 2,
+    "source_fingerprint": "ab91250cbb8379c1e6afd0f960abe0754b08a745bd2d9fd8922be0f65a1ba7a9",
+    "strict_pairing_and_direct_checkpoint_audit_passed": true
+  },
+  "bootstrap": {
+    "all_20_seeds_used_without_filtering": true,
+    "confidence": 0.95,
+    "draws": 4000,
+    "method": "deterministic paired nonparametric percentile bootstrap of seed means",
+    "seed_derivation": "BLAKE2b-64 of the registered contrast label with person=forke19"
+  },
+  "both_active_AUC_rules_passed": true,
+  "both_sham_equivalence_rules_passed": true,
+  "claim_scope": "The edited active first-layer Q input columns contribute in both registered directions to later Q-control readiness after P knockout; this is not a mediation or whole-representation claim.",
+  "classification": "bidirectional_active_first_layer_Q_input_pathway_contribution",
+  "eligibility_rule_passed": true,
+  "experiment": "E19 active first-layer Q-input-pathway intervention",
+  "full_manipulation_check_passed": true,
+  "independent_unit": "training seed",
+  "inference_status": "adaptive_posthoc_frozen_fresh_seed_panel",
+  "manipulation_checks": {
+    "restore_active": {
+      "all_preservation_rules_passed": true,
+      "preservation": {
+        "P_behavior": {
+          "ci_high": 0.003076477050781251,
+          "ci_low": 0.00133056640625,
+          "equivalent_within_0.05": true,
+          "mean": 0.002197265625,
+          "n_seeds": 20,
+          "negative_seed_count": 0,
+          "positive_seed_count": 16,
+          "zero_seed_count": 4
+        },
+        "P_causal": {
+          "ci_high": 0.00328369140625,
+          "ci_low": 0.0014158630371093755,
+          "equivalent_within_0.05": true,
+          "mean": 0.00230712890625,
+          "n_seeds": 20,
+          "negative_seed_count": 0,
+          "positive_seed_count": 16,
+          "zero_seed_count": 4
+        },
+        "selective_P": {
+          "ci_high": 0.01998291015625,
+          "ci_low": 0.0087890625,
+          "equivalent_within_0.05": true,
+          "mean": 0.0141357421875,
+          "n_seeds": 20,
+          "negative_seed_count": 3,
+          "positive_seed_count": 17,
+          "zero_seed_count": 0
+        },
+        "selective_Y": {
+          "ci_high": 0.029677124023437505,
+          "ci_low": 0.016502990722656253,
+          "equivalent_within_0.05": true,
+          "mean": 0.022900390625,
+          "n_seeds": 20,
+          "negative_seed_count": 2,
+          "positive_seed_count": 18,
+          "zero_seed_count": 0
+        }
+      },
+      "selective_Q": {
+        "ci_high": -0.09158660888671874,
+        "ci_low": -0.12049560546875,
+        "mean": -0.1058349609375,
+        "n_seeds": 20,
+        "negative_seed_count": 20,
+        "positive_seed_count": 0,
+        "registered_rule_passed": true,
+        "zero_seed_count": 0
+      }
+    },
+    "restore_sham": {
+      "all_preservation_rules_passed": true,
+      "preservation": {
+        "P_behavior": {
+          "ci_high": -0.00511474609375,
+          "ci_low": -0.009619140625,
+          "equivalent_within_0.05": true,
+          "mean": -0.00714111328125,
+          "n_seeds": 20,
+          "negative_seed_count": 20,
+          "positive_seed_count": 0,
+          "zero_seed_count": 0
+        },
+        "P_causal": {
+          "ci_high": -0.005255126953125,
+          "ci_low": -0.009356689453125,
+          "equivalent_within_0.05": true,
+          "mean": -0.007110595703125,
+          "n_seeds": 20,
+          "negative_seed_count": 20,
+          "positive_seed_count": 0,
+          "zero_seed_count": 0
+        },
+        "selective_P": {
+          "ci_high": 0.008154296875,
+          "ci_low": 0.0018798828125,
+          "equivalent_within_0.05": true,
+          "mean": 0.00504150390625,
+          "n_seeds": 20,
+          "negative_seed_count": 5,
+          "positive_seed_count": 15,
+          "zero_seed_count": 0
+        },
+        "selective_Y": {
+          "ci_high": 0.0056640625,
+          "ci_low": -0.002075500488281249,
+          "equivalent_within_0.05": true,
+          "mean": 0.0018310546875,
+          "n_seeds": 20,
+          "negative_seed_count": 9,
+          "positive_seed_count": 11,
+          "zero_seed_count": 0
+        }
+      },
+      "selective_Q": {
+        "ci_high": -0.027428588867187496,
+        "ci_low": -0.04206573486328125,
+        "mean": -0.034326171875,
+        "n_seeds": 20,
+        "negative_seed_count": 20,
+        "positive_seed_count": 0,
+        "registered_rule_passed": true,
+        "zero_seed_count": 0
+      }
+    },
+    "transplant_active": {
+      "all_preservation_rules_passed": true,
+      "preservation": {
+        "P_behavior": {
+          "ci_high": -7.32421875e-05,
+          "ci_low": -0.00025634765625,
+          "equivalent_within_0.05": true,
+          "mean": -0.00015869140625,
+          "n_seeds": 20,
+          "negative_seed_count": 9,
+          "positive_seed_count": 0,
+          "zero_seed_count": 11
+        },
+        "P_causal": {
+          "ci_high": -6.7138671875e-05,
+          "ci_low": -0.000250244140625,
+          "equivalent_within_0.05": true,
+          "mean": -0.000152587890625,
+          "n_seeds": 20,
+          "negative_seed_count": 10,
+          "positive_seed_count": 1,
+          "zero_seed_count": 9
+        },
+        "selective_P": {
+          "ci_high": -0.00677490234375,
+          "ci_low": -0.0138427734375,
+          "equivalent_within_0.05": true,
+          "mean": -0.01036376953125,
+          "n_seeds": 20,
+          "negative_seed_count": 17,
+          "positive_seed_count": 3,
+          "zero_seed_count": 0
+        },
+        "selective_Y": {
+          "ci_high": -0.0124755859375,
+          "ci_low": -0.018896484375,
+          "equivalent_within_0.05": true,
+          "mean": -0.01566162109375,
+          "n_seeds": 20,
+          "negative_seed_count": 20,
+          "positive_seed_count": 0,
+          "zero_seed_count": 0
+        }
+      },
+      "selective_Q": {
+        "ci_high": 0.081298828125,
+        "ci_low": 0.06940887451171876,
+        "mean": 0.0751220703125,
+        "n_seeds": 20,
+        "negative_seed_count": 0,
+        "positive_seed_count": 20,
+        "registered_rule_passed": true,
+        "zero_seed_count": 0
+      }
+    },
+    "transplant_sham": {
+      "all_preservation_rules_passed": true,
+      "preservation": {
+        "P_behavior": {
+          "ci_high": 0.00010986328125,
+          "ci_low": -4.8828125e-05,
+          "equivalent_within_0.05": true,
+          "mean": 1.220703125e-05,
+          "n_seeds": 20,
+          "negative_seed_count": 2,
+          "positive_seed_count": 1,
+          "zero_seed_count": 17
+        },
+        "P_causal": {
+          "ci_high": 6.103515625e-05,
+          "ci_low": -0.000103759765625,
+          "equivalent_within_0.05": true,
+          "mean": -1.8310546875e-05,
+          "n_seeds": 20,
+          "negative_seed_count": 4,
+          "positive_seed_count": 3,
+          "zero_seed_count": 13
+        },
+        "selective_P": {
+          "ci_high": 0.003271789550781251,
+          "ci_low": 0.00043914794921875116,
+          "equivalent_within_0.05": true,
+          "mean": 0.00186767578125,
+          "n_seeds": 20,
+          "negative_seed_count": 5,
+          "positive_seed_count": 15,
+          "zero_seed_count": 0
+        },
+        "selective_Y": {
+          "ci_high": 0.00369873046875,
+          "ci_low": -0.0005743408203124977,
+          "equivalent_within_0.05": true,
+          "mean": 0.0014892578125,
+          "n_seeds": 20,
+          "negative_seed_count": 8,
+          "positive_seed_count": 12,
+          "zero_seed_count": 0
+        }
+      },
+      "selective_Q": {
+        "ci_high": -0.006506042480468748,
+        "ci_low": -0.014734497070312498,
+        "mean": -0.01051025390625,
+        "n_seeds": 20,
+        "negative_seed_count": 17,
+        "positive_seed_count": 3,
+        "registered_rule_passed": true,
+        "zero_seed_count": 0
+      }
+    }
+  },
+  "registered_Q_control_AUC_contrasts": {
+    "independent_sham_minus_noop": {
+      "ci_high": -0.0004128493368625638,
+      "ci_low": -0.0033092728257179257,
+      "mean": -0.002051198482513428,
+      "n_seeds": 20,
+      "negative_seed_count": 18,
+      "positive_seed_count": 2,
+      "registered_equivalence_passed": true,
+      "zero_seed_count": 0
+    },
+    "necessity_sham_minus_restore": {
+      "ci_high": 0.04318278402090073,
+      "ci_low": 0.02964118346571922,
+      "mean": 0.03611161708831787,
+      "n_seeds": 20,
+      "negative_seed_count": 0,
+      "positive_seed_count": 20,
+      "registered_rule_passed": true,
+      "zero_seed_count": 0
+    },
+    "nested_sham_minus_noop": {
+      "ci_high": 0.001115723550319672,
+      "ci_low": -0.001775207072496414,
+      "mean": -0.000513380765914917,
+      "n_seeds": 20,
+      "negative_seed_count": 14,
+      "positive_seed_count": 6,
+      "registered_equivalence_passed": true,
+      "zero_seed_count": 0
+    },
+    "sufficiency_transplant_minus_sham": {
+      "ci_high": 0.03386704966425896,
+      "ci_low": 0.0248735885322094,
+      "mean": 0.029268747568130492,
+      "n_seeds": 20,
+      "negative_seed_count": 0,
+      "positive_seed_count": 20,
+      "registered_rule_passed": true,
+      "zero_seed_count": 0
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "e12_artifacts_root": "/Users/wjz/Documents/Projects/goal-misgeneralization/artifacts-followups",
+  "e12_reference_implementation_fingerprints": [
+    "d2122ee7b98b4be99fcf0d7b2b5127f6a9da60de7b4b7814f4abee8acc7352cb"
+  ],
+  "e15_step_2048_matches_archived_e12_exactly": true,
+  "note": "Archived E12 contains no model-state hash; equality covers every shared discrete diagnostic, causal summary, calibration, interface report, and error-overlap field.",
+  "original_seed_bridge_checks": 120,
+  "reference_runs": 120,
+  "sections_compared_exactly": {
+    "competition_diagnostics": 120,
+    "diagnostic_interventions": 120,
+    "model_interface_reports": 120,
+    "standalone_calibrations": 120,
+    "training_error_overlap": 120
+  },
+  "state_hash_claimed": false
+}

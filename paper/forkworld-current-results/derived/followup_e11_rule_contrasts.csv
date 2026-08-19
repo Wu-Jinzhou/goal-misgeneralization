@@ -1,0 +1,13 @@
+comparison,factor,high,low,outcome,estimate,ci_low,ci_high,n_seeds,n_matched_cells
+majority-parity,rule,majority,parity,exact_decoder_accuracy,0.00664,0.0032025000000000005,0.0101325625,10,300
+majority-parity,rule,majority,parity,rho_y,0.34463166666666667,0.3248821250000001,0.3657473916666666,10,300
+majority-parity,rule,majority,parity,single_channel_bayes,0.18603999999999993,0.18311999999999995,0.18888999999999995,10,300
+majority-parity,rule,majority,parity,rule_flip_rate,0.344613,0.32386400000000004,0.36441100833333334,10,300
+conjunction-parity,rule,conjunction,parity,exact_decoder_accuracy,0.00664,0.0032443750000000003,0.0101175625,10,300
+conjunction-parity,rule,conjunction,parity,rho_y,0.3397943333333333,0.3194866666666667,0.3597140833333333,10,300
+conjunction-parity,rule,conjunction,parity,single_channel_bayes,0.25646,0.25402,0.25869024999999995,10,300
+conjunction-parity,rule,conjunction,parity,rule_flip_rate,0.33977566666666664,0.32048545,0.35946646666666665,10,300
+multiplexer-parity,rule,multiplexer,parity,exact_decoder_accuracy,0.00664,0.0031425000000000003,0.0101325625,10,300
+multiplexer-parity,rule,multiplexer,parity,rho_y,0.30620533333333333,0.28622091666666666,0.32592580000000004,10,300
+multiplexer-parity,rule,multiplexer,parity,single_channel_bayes,0.12141000000000002,0.11908,0.12393000000000001,10,300
+multiplexer-parity,rule,multiplexer,parity,rule_flip_rate,0.3061866666666667,0.285584575,0.32537715833333336,10,300

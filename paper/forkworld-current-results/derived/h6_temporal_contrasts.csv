@@ -1,0 +1,8 @@
+contrast,left,right,algorithm,group,estimate,ci_low,ci_high,n_seeds
+All · step − episode,step,episode,all,overall,0.018701614583333335,0.014484285156249999,0.023136173177083337,10
+All · episode − state,episode,state,all,overall,0.09908802083333333,0.08818640234375,0.11123639322916667,10
+All · step − state,step,state,all,overall,0.11778963541666668,0.10697992057291665,0.13004423046875002,10
+Clean SFT · step − state,step,state,clean_sft,algorithm,0.094143125,0.08392519270833332,0.10445892187499999,10
+Trajectory SFT · step − state,step,state,trajectory_sft,algorithm,0.08406041666666667,0.07291416145833335,0.09589940104166667,10
+On-policy imitation · step − state,step,state,on_policy_imitation,algorithm,0.09873833333333332,0.08944879166666667,0.10869111979166665,10
+RL · step − state,step,state,rl,algorithm,0.19421666666666665,0.173832671875,0.21739160416666664,10

@@ -1,0 +1,45 @@
+{
+  "bracket_counts_including_registered_endpoints": [
+    2,
+    4,
+    6,
+    8,
+    10
+  ],
+  "conditional_panel_counts": [
+    4,
+    6,
+    8
+  ],
+  "inference_status": "adaptive_exploratory_posthoc_paired_support_intervention",
+  "isotonic_prevalence": {
+    "10": 0.1,
+    "2": 0.65,
+    "4": 0.45,
+    "6": 0.1,
+    "8": 0.1
+  },
+  "linearly_interpolated_isotonic_m50": 3.5,
+  "m50_identified_bootstrap_draws": 4000,
+  "m50_seed_cluster_bootstrap_interval": [
+    2.0,
+    4.666666666666667
+  ],
+  "material_q_only_probability_reversal_seeds_across_combined_counts": 11,
+  "seed_clusters": 20,
+  "stable_gate_counts": {
+    "10": 2,
+    "2": 13,
+    "4": 9,
+    "6": 2,
+    "8": 2
+  },
+  "stable_gate_prevalence": {
+    "10": 0.1,
+    "2": 0.65,
+    "4": 0.45,
+    "6": 0.1,
+    "8": 0.1
+  },
+  "stable_gate_reappearance_seeds_across_combined_counts": 2
+}

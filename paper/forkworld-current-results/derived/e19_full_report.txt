@@ -1,0 +1,24 @@
+E19 frozen full-panel analysis
+======================================
+
+Integrity
+- Complete artifacts audited: 120/120
+- Frozen source fingerprint: ab91250cbb8379c1e6afd0f960abe0754b08a745bd2d9fd8922be0f65a1ba7a9
+- Frozen config SHA-256: 79e24a5e68b95e76e3bffd61d62abfdd86f6f6c439a45c76c376a2f548b74345
+- Sham displacement norm tolerance: 1e-06
+- Exact config, metadata, replay, edit, hash, data, checkpoint, optimizer, and pairing audits passed.
+
+Registered all-seed Q-control AUC contrasts (0--128 updates)
+- Delta_N: mean=0.036112, 95% bootstrap CI [0.029641, 0.043183], positive seeds=20/20
+- Delta_S: mean=0.029269, 95% bootstrap CI [0.024874, 0.033867], positive seeds=20/20
+- independent_sham_minus_noop: mean=-0.002051, 95% bootstrap CI [-0.003309, -0.000413], positive seeds=2/20
+- nested_sham_minus_noop: mean=-0.000513, 95% bootstrap CI [-0.001775, 0.001116], positive seeds=6/20
+
+Manipulation and decision
+- Full post-edit manipulation contract valid: True
+- Eligibility intersection: 20/20 (minimum 15)
+- Bidirectional registered criteria met: True
+- The registered paired intervention supports a bidirectional contribution of the active first-layer Q input columns to later Q control.
+- Scope: This intervention identifies the active first-layer Q input-pathway contribution only; it is not a mediation analysis and does not identify every representation or circuit that can encode Q.
+
+The fixed primary population is all 20 registered seeds. Eligibility is shown only as a sensitivity analysis.

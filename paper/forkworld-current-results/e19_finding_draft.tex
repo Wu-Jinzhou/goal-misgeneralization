@@ -1,0 +1,83 @@
+% Standalone draft for integration after the winner-knockout finding.
+% Numbering and any figure cross-reference should be adjusted at integration.
+
+\section*{Finding 21: A narrow first-layer input pathway contributes causally to later proxy takeover}
+
+The winner-knockout experiment showed that an independently distributed error history leaves the encoded proxy $Q$ more selectively decodable and lets it take control sooner than a nested-error history. That comparison was informative but broad: changing error overlap changes every gradient in the first phase and can consequently alter every layer of the network. The association between decodability and takeover could therefore reflect a usable $Q$ representation, some other difference between the two trained networks, or both.
+
+A useful causal test should change a small piece of the prepared $Q$ computation without changing the rest of the model. The first affine layer provides such a target. Its two active $Q$ columns are the only direct routes by which the encoded proxy bits enter the network. If learning in those columns contributes to later adaptability, returning them to their initial values should make $Q$ slower to recruit after $P$ is knocked out. Conversely, moving the independently trained columns into a nested-history model should make $Q$ easier to recruit. Neither intervention is expected to delete or install an entire goal: biases and downstream weights remain untouched, and phase-B training can relearn the edited pathway.
+
+\subsection*{Restoring and transplanting the active input columns}
+
+We returned to the same fixed cell: a direct proxy $P$ and degree-two encoded proxy $Q$ are each 90\% accurate, degree-three $Y$ is exact, and width-64, depth-two models train for 45 phase-A updates. Twenty fresh seeds each generate an independent-error history and a maximally nested-error history from the same initialization. Every history is purely $P$-controlled at the two registered pre-edit checkpoints.
+
+For the independent model, we restore the $64\times2$ block carrying $Q_1,Q_2$ to its initialization. For the nested model, we transplant the corresponding block from the paired independent model. Each edit changes exactly 128 first-layer weights. A matched sham applies the exact same signed 128-value displacement to two inactive padding columns, while a no-op branch retains the recipient weights. Thus the six branches are independent no-op, active restore, and padding sham, together with nested no-op, active transplant, and padding sham. The shams control displacement values, norm, parameter count, and layer; they do not assume that perturbing an inactive coordinate has the same feature geometry as perturbing $Q$.
+
+After surgery, every branch receives a fresh empty AdamW optimizer and the same paired phase-B rows, minibatch order, and sampler stream. Phase B makes $P$ exactly uninformative conditional on every other input, retains $Q$ at 90\% accuracy, and keeps $Y$ exact. The primary outcome is the update-weighted area through directly observed update 128 under the mean of $Q$ behavioral agreement and directional causal control. This continuous outcome measures early recruitment without making the conclusion depend on a checkpoint crossing.
+
+The analysis was fixed before the three-seed engineering pilot and the 20-seed full panel. Each active-edit direction required a mean paired area effect of at least .02, a paired seed-bootstrap interval above zero, and at least 15 positive seed differences. Each padding-sham-minus-no-op interval also had to lie wholly inside $[-.01,.01]$. The full-panel manipulation check separately required selective-$Q$ probe shifts of at most $-.05$ for restoration and at least $+.05$ for transplantation, with all sham-$Q$ and registered $P/Y$ intervals inside $[-.05,.05]$.
+
+\subsection*{The active edits move both decodability and subsequent control}
+
+All 20 paired seeds remained eligible, and all 120 post-edit branches remained purely $P$-controlled. Restoring the active columns reduced selective final-hidden $Q$ probe accuracy by .1058, 95\% \CI{} $[-.1205,-.0916]$, relative to the paired independent no-op. Transplanting them increased it by .0751, $[.0694,.0813]$, relative to the paired nested no-op. The corresponding padding-sham shifts were $-.0343$ $([-.0421,-.0274])$ and $-.0105$ $([-.0147,-.0065])$ (\fig{fig:q-input-pathway}a). These sham effects are not literally zero, but both satisfy the registered $\pm.05$ equivalence criterion. For every edit, the intervals for $P$ behavioral agreement, $P$ directional causal control, selective $P$ decoding, and selective $Y$ decoding also lie within that band.
+
+The later control results move in the same two directions (\fig{fig:q-input-pathway}b--d; \tbl{tab:q-input-pathway}). In independent-history models, the padding sham has mean $Q$-control area .9372, compared with .9010 after active restoration. The registered necessity-like contrast is therefore +.0361 $([.0296,.0432])$. In nested-history models, transplantation raises area from .8824 under the padding sham to .9116, giving a sufficiency-like contrast of +.0293 $([.0249,.0339])$. All 20 paired differences are positive in both directions, so both active contrasts clear the fixed .02 effect threshold, interval rule, and 15-of-20 sign rule.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=\linewidth]{fig19_active_q_pathway.pdf}
+  \caption{\textbf{Active first-layer $Q$ inputs contribute to later proxy takeover after winner knockout.} \textbf{a}, Post-edit change in selective final-hidden $Q$ probe accuracy relative to the paired no-op. Pale points are the 20 fixed full-panel seeds; large points and bars show means and paired seed-bootstrap 95\% intervals. Dotted horizontal lines mark the registered $\pm.05$ manipulation and sham-equivalence bounds. \textbf{b}, Mean $Q$ control after restoring the independent-history active columns to initialization. \textbf{c}, The corresponding trajectory after transplanting the independently prepared columns into the nested-history model. $Q$ control is the mean of behavioral agreement and directional causal score; bands resample seeds, and every plotted value is a direct checkpoint. \textbf{d}, The two registered active AUC contrasts and both sham-minus-no-op checks through update 128. The blue dotted line marks the +.02 active-effect threshold and the gray region marks the $[-.01,.01]$ sham-equivalence interval. The intervention identifies a contribution of these active input columns, not mediation by a probe statistic or a complete $Q$ circuit.}
+  \label{fig:q-input-pathway}
+\end{figure}
+
+\begin{table}[!htbp]
+\centering
+\small
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{llrr}
+\toprule
+Recipient history & Branch & Mean $Q$ area, 0--128 & Paired registered effect \\
+\midrule
+Independent & no-op & .9392 & --- \\
+Independent & padding sham & .9372 & --- \\
+Independent & active-$Q$ restore & .9010 & $+.0361\;[.0296,.0432]$ \\
+\addlinespace
+Nested & no-op & .8829 & --- \\
+Nested & padding sham & .8824 & --- \\
+Nested & active-$Q$ transplant & .9116 & $+.0293\;[.0249,.0339]$ \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{\textbf{Editing the first-layer $Q$ columns changes early $Q$ control after winner knockout.} Area is the normalized linear-in-update AUC through phase-B update 128 of the mean of behavioral and directional-causal $Q$ control. The restoration effect is padding sham minus active restore; the transplantation effect is active transplant minus padding sham. Intervals resample the 20 paired training seeds.}
+\label{tab:q-input-pathway}
+\end{table}
+
+The shams make the result difficult to explain as damage from changing a first-layer tensor. Independent padding-sham minus no-op area is $-.00205$ $([-.00331,-.00041])$, and nested padding-sham minus no-op area is $-.00051$ $([-.00178,.00112])$. Both intervals lie inside the registered $\pm.01$ band. The former is detectably negative at this precision, but it is practically equivalent by the rule fixed in advance. Auxiliary activation audits also find nearly matched first-layer perturbation scales: relative preactivation RMS is .199 for both independent active and sham edits and .109 for both nested edits; mean ReLU-state flip rates are .059 versus .060 and .030 versus .033, respectively.
+
+Checkpoint-defined timing gives the same secondary picture. Mean confirmation of persistent $Q$ control occurs at update 44.55 after restoration versus 31.65 after its sham, a delay of 12.90 updates. Transplantation confirms at 42.85 versus 57.50 after its sham, an advance of 14.65 updates. Every branch nevertheless reaches the exact $Y$ rule by update 1,024. Consistent with $Q$ being an intermediate competitor rather than the endpoint, weakening its input pathway is followed by earlier mean $Y$ confirmation (277.95 versus 303.10), whereas strengthening it is followed by later $Y$ confirmation (299.00 versus 277.95). These timing comparisons are secondary and inherit the coarse direct-checkpoint lattice.
+
+\subsection*{The intervention identifies a pathway contribution, not a mediator}
+
+The bidirectional result narrows the earlier history association. Learned weights on the two active first-layer $Q$ inputs contribute causally to how quickly $Q$ gains behavioral and directional-causal control after $P$ loses its information. Returning those weights toward their untrained state delays takeover; placing the prepared weights into the less prepared recipient accelerates it; an equal tensor displacement on inactive coordinates does neither to a material degree.
+
+The result does not show that selective probe accuracy mediates the history effect, and it does not identify a unique or complete $Q$ circuit. Restoration leaves all downstream weights intact, transplantation places donor columns into a recipient with a different internal history, and a matched padding sham cannot reproduce the active coordinates' semantic geometry. The natural no-op independent-minus-nested area gap is .0563, while the two edits are recipient-specific nonlinear interventions rather than terms in an additive decomposition. Reporting their ratio as a ``mediated fraction'' would therefore be unjustified. The persistent takeover after restoration and the universal final transition to $Y$ also show that the active columns are neither necessary forever nor sufficient on their own; they are one usable component of preparation that subsequent training can bypass or rebuild.
+
+\begin{takeaway}
+The active first-layer inputs for a latent proxy are functionally prepared, not merely probe-readable: selectively weakening or strengthening that pathway moves later causal takeover in opposite directions under matched winner knockout. This establishes a contribution of those input weights, while leaving open how the rest of the representation implements and relearns the proxy.
+\end{takeaway}
+
+% ---------------------------------------------------------------------------
+% APPENDIX-ONLY AUDIT NOTE. Do not place this paragraph in the main finding.
+% ---------------------------------------------------------------------------
+\paragraph{Appendix audit note.}
+The pilot's first structural audit stopped before exposing any manipulation
+outcome because a bitwise equality requirement on the \emph{realized} sham
+displacement was incompatible with float32 addition: subtracting the baseline
+from \texttt{baseline + delta} can differ from \texttt{delta} by rounding. The
+constructor had applied the exact registered delta, final edited columns were
+exact, and all norm discrepancies were below $5\times10^{-7}$. Before viewing
+any pilot probe shift, the audit was amended to retain the exact tensor checks
+and allow $10^{-6}$ absolute tolerance only for realized-displacement L1, L2,
+and maximum norms. No model, artifact, seed, scientific threshold, or analysis
+rule changed. The amended gate then audited all 18 pilot artifacts and 22,158
+metric records; seeds 541 and 557 passed the fixed joint two-of-three gate.

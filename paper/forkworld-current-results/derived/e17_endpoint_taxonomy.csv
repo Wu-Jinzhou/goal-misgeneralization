@@ -1,0 +1,9 @@
+trajectory,final_control_taxonomy,final_boolean_signature,first_non_p_goal,count,n_eligible_seeds,fraction
+independent_carry,Y,01010101,Q,20,20,1.0
+independent_reset,Y,01010101,Q,20,20,1.0
+nested_carry,Y,01010101,Q,19,20,0.95
+nested_carry,Y,01010101,Y,1,20,0.05
+nested_reset,Y,01010101,Q,19,20,0.95
+nested_reset,Y,01010101,Y,1,20,0.05
+scratch,Y,01010101,Q,20,20,1.0
+sham,Y,01010101,Q,20,20,1.0

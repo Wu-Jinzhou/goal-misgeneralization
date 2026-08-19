@@ -1,0 +1,142 @@
+{
+  "base": {
+    "artifact_implementation_fingerprint": "bc46d1df21859cb54540fdd94a59dfb6f7604e5fc97b0dd992c1d5d852cb7158",
+    "artifact_schema_version": 1,
+    "artifacts_root": "/Users/wjz/Documents/Projects/goal-misgeneralization/artifacts-e16",
+    "cells": 7,
+    "complete_runs": 140,
+    "current_source_fingerprint": "a39d3f92fd1acbe83bd43bcb5eded3f04786c67f958e238100946c871d2789af",
+    "current_source_matches_artifact": false,
+    "current_worktree_drift_detected": true,
+    "current_worktree_drift_policy": "report_nonfatal_only_after_exact_current_source_regeneration_metric_and_archived_bridge_audits_pass",
+    "expected_runs": 140,
+    "implementation_fingerprints": [
+      "bc46d1df21859cb54540fdd94a59dfb6f7604e5fc97b0dd992c1d5d852cb7158"
+    ],
+    "materialized_runs": 140,
+    "metric_records": 1850184,
+    "panel": "primary",
+    "seeds": [
+      11,
+      23,
+      37,
+      41,
+      53,
+      67,
+      71,
+      83,
+      97,
+      101,
+      103,
+      107,
+      109,
+      113,
+      127,
+      131,
+      137,
+      139,
+      149,
+      151
+    ],
+    "source_fingerprint_schema_version": 1,
+    "strict_grid_and_measurement_audit_passed": true,
+    "support_counts": [
+      0,
+      2,
+      10,
+      50,
+      100,
+      250,
+      450
+    ]
+  },
+  "regenerated_dataset_and_pairing": {
+    "current_source_regeneration_audit_passed": true,
+    "exact_design_and_panel_metric_checks": 21600,
+    "exact_exposure_metric_checks": 26400,
+    "iid_and_diagnostics_fixed_across_m": true,
+    "m0_legacy_array_replays": 40,
+    "marginals_fixed": true,
+    "possible_q_only_active_codewords": 64,
+    "q_goal_and_final_parity_hamming_equals_2m": true,
+    "q_only_errors_nested_upward": true,
+    "runs_regenerated": 200,
+    "seeds_audited": 20,
+    "shared_errors_nested_downward": true,
+    "support_counts": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      50,
+      100,
+      250,
+      450
+    ],
+    "unchanged_array_and_panel_checks": 4840
+  },
+  "source_fingerprint": {
+    "artifact_fingerprint_uniformity_within_and_across_e16_panels_passed": true,
+    "artifact_implementation_fingerprint": "bc46d1df21859cb54540fdd94a59dfb6f7604e5fc97b0dd992c1d5d852cb7158",
+    "current_source_fingerprint": "a39d3f92fd1acbe83bd43bcb5eded3f04786c67f958e238100946c871d2789af",
+    "current_source_matches_artifact": false,
+    "current_worktree_drift_detected": true,
+    "current_worktree_drift_disposition": "reported_nonfatal_after_exact_relevant_regeneration_metric_and_bridge_audits_passed",
+    "current_worktree_drift_fatal": false,
+    "required_exact_audits": {
+      "archived_e15_exact_metric_and_summary_bridge": true,
+      "current_source_dataset_regeneration_and_metric_replay": true,
+      "primary_grid_and_measurements": true,
+      "refinement_grid_and_measurements": true
+    }
+  },
+  "triggered_refinement": {
+    "artifact_implementation_fingerprint": "bc46d1df21859cb54540fdd94a59dfb6f7604e5fc97b0dd992c1d5d852cb7158",
+    "artifact_schema_version": 1,
+    "artifacts_root": "/Users/wjz/Documents/Projects/goal-misgeneralization/artifacts-e16-refinement",
+    "cells": 3,
+    "complete_runs": 60,
+    "current_source_fingerprint": "a39d3f92fd1acbe83bd43bcb5eded3f04786c67f958e238100946c871d2789af",
+    "current_source_matches_artifact": false,
+    "current_worktree_drift_detected": true,
+    "current_worktree_drift_policy": "report_nonfatal_only_after_exact_current_source_regeneration_metric_and_archived_bridge_audits_pass",
+    "expected_runs": 60,
+    "implementation_fingerprints": [
+      "bc46d1df21859cb54540fdd94a59dfb6f7604e5fc97b0dd992c1d5d852cb7158"
+    ],
+    "materialized_runs": 60,
+    "metric_records": 796500,
+    "panel": "triggered_refinement",
+    "seeds": [
+      11,
+      23,
+      37,
+      41,
+      53,
+      67,
+      71,
+      83,
+      97,
+      101,
+      103,
+      107,
+      109,
+      113,
+      127,
+      131,
+      137,
+      139,
+      149,
+      151
+    ],
+    "source_fingerprint_schema_version": 1,
+    "strict_grid_and_measurement_audit_passed": true,
+    "support_counts": [
+      4,
+      6,
+      8
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+inference_status,q,k,cell_label,schedule,schedule_label,events,censored,estimate,ci_low,ci_high,n_seeds,n_rows,restricted_time_estimate,restricted_time_ci_low,restricted_time_ci_high,restricted_time_n_seeds,restricted_time_n_rows
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,zero_zero,never,0,10,0.0,0.0,0.0,10,10,1984.0,1984.0,1984.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,high_high,continuous,3,7,0.3,0.1,0.6,10,10,1516.8,1049.6,1984.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,early_only,early only,0,10,0.0,0.0,0.0,10,10,1984.0,1984.0,1984.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_carry,delayed,0,10,0.0,0.0,0.0,10,10,1984.0,1984.0,1984.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_actor_reset,delayed + actor-Adam reset,0,10,0.0,0.0,0.0,10,10,1984.0,1984.0,1984.0,10,10
+exploratory_post_hoc_boundary_specific,0.75,4,responsive boundary,delayed_critic_reset,delayed + critic reset,0,10,0.0,0.0,0.0,10,10,1984.0,1984.0,1984.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,zero_zero,never,0,10,0.0,0.0,0.0,10,10,1984.0,1984.0,1984.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,high_high,continuous,0,10,0.0,0.0,0.0,10,10,1984.0,1984.0,1984.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,early_only,early only,0,10,0.0,0.0,0.0,10,10,1984.0,1984.0,1984.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_carry,delayed,0,10,0.0,0.0,0.0,10,10,1984.0,1984.0,1984.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_actor_reset,delayed + actor-Adam reset,0,10,0.0,0.0,0.0,10,10,1984.0,1984.0,1984.0,10,10
+exploratory_post_hoc_boundary_specific,0.9,3,preselected comparison,delayed_critic_reset,delayed + critic reset,0,10,0.0,0.0,0.0,10,10,1984.0,1984.0,1984.0,10,10

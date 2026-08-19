@@ -1,0 +1,7 @@
+E20 isolated-component engineering gate
+
+All exact-grid, source, config, artifact, data, metric, hash, and observer-free replay audits passed.
+Decision: PASS
+Same-seed joint passes: 3/3 (minimum 2).
+Only direct offsets 161, 222, and 256 were used by the gate.
+No probe, schedule, washout, pooled-data, or order estimand was evaluated.

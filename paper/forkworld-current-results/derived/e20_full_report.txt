@@ -1,0 +1,11 @@
+E20 counterbalanced identical-evidence order analysis
+
+All exact-grid, source, config, data, metric, hash, replay, and pairing audits passed.
+Primary mean Hamming-dispersion AUC(33--128): 0.398346
+Primary 95% interval: [0.395883, 0.399803]
+Primary decision: material_persistent_order_dependence
+Signed recency AUC mean: 0.994487
+Signed direction decision: material_recency
+Hierarchical interpretation: persistent_order_dependence_with_recency
+Independent unit: seed (n=20); schedules and checkpoints remain paired repeated observations.
+Phase-transition-style endpoints are secondary and do not establish a universal law.

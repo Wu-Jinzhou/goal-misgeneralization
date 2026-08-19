@@ -1,0 +1,183 @@
+{
+  "audit": {
+    "artifacts_root": "/Users/wjz/Documents/Projects/goal-misgeneralization/artifacts-e19-pilot",
+    "complete_artifacts": 18,
+    "config_source_sha256": "79e24a5e68b95e76e3bffd61d62abfdd86f6f6c439a45c76c376a2f548b74345",
+    "exact_grid_pairing_replay_edit_and_no_phase_b_audit_passed": true,
+    "float32_realized_roundoff_tolerance": 1e-06,
+    "metric_records_audited": 22158,
+    "scientific_config_fingerprints_by_branch": {
+      "independent_noop": "90698cc1c01e524a6d0ac85ce7a3b54b32e8761ca7c0ffb5bc6d375430f92449",
+      "independent_padding_sham": "6b203f5f72981e5952d815544735eb932c995c68af41a9e255f00ea04f73ac2e",
+      "independent_q_restore": "53ac98c5417ca12cb09780e6856050726bdfafd33e07940336e35324fa929659",
+      "nested_noop": "4aeb70c7eea879f4aa6e66a7aff78a9821c96ad7df829ce04f348cabfa536f26",
+      "nested_padding_sham": "0c5aa0e5c67ef7cd926dfbd4c21622e827f9ffe0e03ee759bd7f12f00ec97fed",
+      "nested_q_transplant": "91546ca1b2d4c95bc625d50f943ab887f2dc30abd6688bbb107902db9a6ff56d"
+    },
+    "source_file_count": 31,
+    "source_fingerprint": "ab91250cbb8379c1e6afd0f960abe0754b08a745bd2d9fd8922be0f65a1ba7a9"
+  },
+  "decision": "PASS",
+  "experiment": "E19 frozen active first-layer Q-input-pathway engineering pilot",
+  "gate_contract": {
+    "absolute_preservation_delta_at_most": 0.05,
+    "all_six_postedit_pure_P_required": true,
+    "independent_padding_sham_absolute_selective_Q_delta_at_most": 0.05,
+    "independent_q_restore_selective_Q_delta_at_most": -0.05,
+    "nested_padding_sham_absolute_selective_Q_delta_at_most": 0.05,
+    "nested_q_transplant_selective_Q_delta_at_least": 0.05,
+    "preservation_metrics": [
+      "behavior_P",
+      "causal_P",
+      "selective_P",
+      "selective_Y"
+    ],
+    "same_seed_joint_passes_required": 2
+  },
+  "inference_status": "engineering_manipulation_gate_only_no_phase_b_outcomes",
+  "joint_seed_pass_count": 2,
+  "pilot_gate_passed": true,
+  "seeds": [
+    {
+      "Q_probe_shift_rules": {
+        "independent_padding_sham": true,
+        "independent_q_restore": true,
+        "nested_padding_sham": true,
+        "nested_q_transplant": true
+      },
+      "all_six_postedit_pure_P": true,
+      "deltas_vs_same_seed_noop": {
+        "independent_padding_sham": {
+          "behavior_P": -0.0048828125,
+          "causal_P": -0.0064697265625,
+          "selective_P": 0.01220703125,
+          "selective_Q": -0.0302734375,
+          "selective_Y": 0.012451171875
+        },
+        "independent_q_restore": {
+          "behavior_P": 0.000244140625,
+          "causal_P": 0.0001220703125,
+          "selective_P": 0.015625,
+          "selective_Q": -0.129638671875,
+          "selective_Y": 0.022705078125
+        },
+        "nested_padding_sham": {
+          "behavior_P": 0.0,
+          "causal_P": 0.0,
+          "selective_P": 0.007080078125,
+          "selective_Q": 0.001708984375,
+          "selective_Y": 0.002197265625
+        },
+        "nested_q_transplant": {
+          "behavior_P": 0.0,
+          "causal_P": 0.0,
+          "selective_P": -0.013427734375,
+          "selective_Q": 0.064208984375,
+          "selective_Y": -0.02001953125
+        }
+      },
+      "joint_gate_passed": true,
+      "preservation_rules": {
+        "independent_padding_sham": true,
+        "independent_q_restore": true,
+        "nested_padding_sham": true,
+        "nested_q_transplant": true
+      },
+      "seed": 541
+    },
+    {
+      "Q_probe_shift_rules": {
+        "independent_padding_sham": false,
+        "independent_q_restore": true,
+        "nested_padding_sham": true,
+        "nested_q_transplant": true
+      },
+      "all_six_postedit_pure_P": true,
+      "deltas_vs_same_seed_noop": {
+        "independent_padding_sham": {
+          "behavior_P": -0.005615234375,
+          "causal_P": -0.0057373046875,
+          "selective_P": 0.016357421875,
+          "selective_Q": -0.0517578125,
+          "selective_Y": 0.017822265625
+        },
+        "independent_q_restore": {
+          "behavior_P": 0.0,
+          "causal_P": 0.000244140625,
+          "selective_P": 0.0283203125,
+          "selective_Q": -0.10986328125,
+          "selective_Y": 0.049560546875
+        },
+        "nested_padding_sham": {
+          "behavior_P": 0.0,
+          "causal_P": 0.0,
+          "selective_P": -0.00244140625,
+          "selective_Q": -0.010498046875,
+          "selective_Y": -0.00146484375
+        },
+        "nested_q_transplant": {
+          "behavior_P": 0.0,
+          "causal_P": 0.0,
+          "selective_P": 0.0,
+          "selective_Q": 0.092529296875,
+          "selective_Y": -0.00244140625
+        }
+      },
+      "joint_gate_passed": false,
+      "preservation_rules": {
+        "independent_padding_sham": true,
+        "independent_q_restore": true,
+        "nested_padding_sham": true,
+        "nested_q_transplant": true
+      },
+      "seed": 547
+    },
+    {
+      "Q_probe_shift_rules": {
+        "independent_padding_sham": true,
+        "independent_q_restore": true,
+        "nested_padding_sham": true,
+        "nested_q_transplant": true
+      },
+      "all_six_postedit_pure_P": true,
+      "deltas_vs_same_seed_noop": {
+        "independent_padding_sham": {
+          "behavior_P": -0.016357421875,
+          "causal_P": -0.014892578125,
+          "selective_P": 0.02294921875,
+          "selective_Q": -0.017578125,
+          "selective_Y": 0.012939453125
+        },
+        "independent_q_restore": {
+          "behavior_P": 0.01025390625,
+          "causal_P": 0.0108642578125,
+          "selective_P": 0.01025390625,
+          "selective_Q": -0.114013671875,
+          "selective_Y": 0.021240234375
+        },
+        "nested_padding_sham": {
+          "behavior_P": -0.0009765625,
+          "causal_P": -0.001220703125,
+          "selective_P": 0.00048828125,
+          "selective_Q": -0.01416015625,
+          "selective_Y": 0.0
+        },
+        "nested_q_transplant": {
+          "behavior_P": -0.001708984375,
+          "causal_P": -0.00146484375,
+          "selective_P": -0.00244140625,
+          "selective_Q": 0.087158203125,
+          "selective_Y": -0.00927734375
+        }
+      },
+      "joint_gate_passed": true,
+      "preservation_rules": {
+        "independent_padding_sham": true,
+        "independent_q_restore": true,
+        "nested_padding_sham": true,
+        "nested_q_transplant": true
+      },
+      "seed": 557
+    }
+  ]
+}

@@ -22,10 +22,10 @@ artifacts/
 /.mypy_cache/
 /secrets/
 /reproducibility/
-/docs/
+/docs/goalzendo/
 /data/
 /output/
-/paper/
+/paper/goalzendo-current-results/
 /preflight/
 /paper/goalzendo-current-results/main.pdf
 results/

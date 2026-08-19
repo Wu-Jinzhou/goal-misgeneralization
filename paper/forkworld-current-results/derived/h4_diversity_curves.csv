@@ -1,0 +1,31 @@
+condition,n_conflict,mean_unseen_rho_y
+2% unique,0,0.110202
+2% unique,8,0.144528
+2% unique,32,0.148082
+2% unique,128,0.16234
+2% unique,512,0.252624
+2% unique,2048,0.529678
+10% unique,0,0.110202
+10% unique,8,0.144528
+10% unique,32,0.160134
+10% unique,128,0.286094
+10% unique,512,0.646564
+10% unique,2048,0.990102
+50% unique,0,0.110202
+50% unique,8,0.159506
+50% unique,32,0.287302
+50% unique,128,0.667634
+50% unique,512,0.995878
+50% unique,2048,1.0
+100% unique,0,0.110202
+100% unique,8,0.184284
+100% unique,32,0.37381400000000004
+100% unique,128,0.784528
+100% unique,512,0.999562
+100% unique,2048,1.0
+new failure types,0,0.110092
+new failure types,8,0.184092
+new failure types,32,0.379236
+new failure types,128,0.80228
+new failure types,512,0.999662
+new failure types,2048,1.0

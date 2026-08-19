@@ -1,0 +1,5 @@
+rule,q,threshold,persistence_evaluations,event_time,censor_horizon,runs,events,censored,event_fraction_estimate,event_fraction_ci_low,event_fraction_ci_high,event_fraction_n_seeds,event_fraction_n_cells,restricted_time_estimate,restricted_time_ci_low,restricted_time_ci_high,restricted_time_n_seeds,restricted_time_n_cells
+majority,0.99,0.9,2,first checkpoint in qualifying adjacent pair,4096,100,100,0,1.0,1.0,1.0,10,100,354.65999999999997,338.64700000000005,371.9607500000001,10,100
+conjunction,0.99,0.9,2,first checkpoint in qualifying adjacent pair,4096,100,100,0,1.0,1.0,1.0,10,100,349.02,310.35875,391.51075,10,100
+multiplexer,0.99,0.9,2,first checkpoint in qualifying adjacent pair,4096,100,26,74,0.26,0.14975000000000008,0.37,10,100,3752.56,3589.12,3907.5199999999995,10,100
+parity,0.99,0.9,2,first checkpoint in qualifying adjacent pair,4096,100,0,100,0.0,0.0,0.0,10,100,4096.0,4096.0,4096.0,10,100

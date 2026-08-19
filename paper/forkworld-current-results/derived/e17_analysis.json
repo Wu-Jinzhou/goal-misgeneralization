@@ -1,0 +1,453 @@
+{
+  "eligibility_design_minimum": 15,
+  "eligible_intersection_seeds": [
+    157,
+    163,
+    167,
+    173,
+    179,
+    181,
+    191,
+    193,
+    197,
+    199,
+    211,
+    223,
+    227,
+    229,
+    233,
+    239,
+    241,
+    251,
+    257,
+    263
+  ],
+  "eligible_intersection_size": 20,
+  "endpoint_taxonomy": [
+    {
+      "count": 20,
+      "final_boolean_signature": "01010101",
+      "final_control_taxonomy": "Y",
+      "first_non_p_goal": "Q",
+      "fraction": 1.0,
+      "n_eligible_seeds": 20,
+      "trajectory": "independent_carry"
+    },
+    {
+      "count": 20,
+      "final_boolean_signature": "01010101",
+      "final_control_taxonomy": "Y",
+      "first_non_p_goal": "Q",
+      "fraction": 1.0,
+      "n_eligible_seeds": 20,
+      "trajectory": "independent_reset"
+    },
+    {
+      "count": 19,
+      "final_boolean_signature": "01010101",
+      "final_control_taxonomy": "Y",
+      "first_non_p_goal": "Q",
+      "fraction": 0.95,
+      "n_eligible_seeds": 20,
+      "trajectory": "nested_carry"
+    },
+    {
+      "count": 1,
+      "final_boolean_signature": "01010101",
+      "final_control_taxonomy": "Y",
+      "first_non_p_goal": "Y",
+      "fraction": 0.05,
+      "n_eligible_seeds": 20,
+      "trajectory": "nested_carry"
+    },
+    {
+      "count": 19,
+      "final_boolean_signature": "01010101",
+      "final_control_taxonomy": "Y",
+      "first_non_p_goal": "Q",
+      "fraction": 0.95,
+      "n_eligible_seeds": 20,
+      "trajectory": "nested_reset"
+    },
+    {
+      "count": 1,
+      "final_boolean_signature": "01010101",
+      "final_control_taxonomy": "Y",
+      "first_non_p_goal": "Y",
+      "fraction": 0.05,
+      "n_eligible_seeds": 20,
+      "trajectory": "nested_reset"
+    },
+    {
+      "count": 20,
+      "final_boolean_signature": "01010101",
+      "final_control_taxonomy": "Y",
+      "first_non_p_goal": "Q",
+      "fraction": 1.0,
+      "n_eligible_seeds": 20,
+      "trajectory": "scratch"
+    },
+    {
+      "count": 20,
+      "final_boolean_signature": "01010101",
+      "final_control_taxonomy": "Y",
+      "first_non_p_goal": "Q",
+      "fraction": 1.0,
+      "n_eligible_seeds": 20,
+      "trajectory": "sham"
+    }
+  ],
+  "experiment": "E17 adaptive winner-knockout handoff",
+  "figure": "figures/fig17_winner_knockout.pdf",
+  "hard_audit": {
+    "artifact_schema_version": 1,
+    "artifacts_root": "/Users/wjz/Documents/Projects/goal-misgeneralization/artifacts-e17",
+    "complete_runs": 120,
+    "current_source_regeneration_passed": true,
+    "expected_runs": 120,
+    "implementation_fingerprint": "5e3715d818834005b028aaa45c2dfed3c92e4c2bf7820e6790d02b4cc14c3a2c",
+    "materialized_runs": 120,
+    "metric_line_counts_by_trajectory": {
+      "independent_carry": [
+        6397
+      ],
+      "independent_reset": [
+        6397
+      ],
+      "nested_carry": [
+        6397
+      ],
+      "nested_reset": [
+        6397
+      ],
+      "scratch": [
+        5905
+      ],
+      "sham": [
+        5913
+      ]
+    },
+    "metric_records": 748120,
+    "mode": "full",
+    "phase_b_common_within_seed": true,
+    "prefix_carry_reset_equality": true,
+    "reconstructed_artifacts": 120,
+    "seed_blocks": 20,
+    "seeds": [
+      157,
+      163,
+      167,
+      173,
+      179,
+      181,
+      191,
+      193,
+      197,
+      199,
+      211,
+      223,
+      227,
+      229,
+      233,
+      239,
+      241,
+      251,
+      257,
+      263
+    ],
+    "source_fingerprint_schema_version": 1,
+    "strict_grid_config_metric_digest_and_reconstruction_audit_passed": true,
+    "trajectories": [
+      "independent_carry",
+      "independent_reset",
+      "nested_carry",
+      "nested_reset",
+      "scratch",
+      "sham"
+    ],
+    "trajectories_per_seed": 6
+  },
+  "independent_unit": "training seed",
+  "inference_status": "adaptive_exploratory_posthoc_seed_paired",
+  "interpretation_decisions": {
+    "frozen_line_stops": true,
+    "history_specific_readiness_criterion_met": true,
+    "optimizer_history": {
+      "independent_carry_minus_independent_reset": {
+        "ci_high": 0.0029037049412727364,
+        "ci_low": -0.0072762261331081384,
+        "estimate": -0.001764535903930664,
+        "material": false
+      },
+      "nested_carry_minus_nested_reset": {
+        "ci_high": -0.003623092621564864,
+        "ci_low": -0.017153263688087464,
+        "estimate": -0.009997689723968506,
+        "material": false
+      }
+    },
+    "primary_comparisons": {
+      "independent_reset_minus_nested_reset": {
+        "auc_ci_above_zero": true,
+        "auc_practically_equivalent": false,
+        "restricted_time_direction_matches": true,
+        "restricted_time_practically_equivalent": false
+      },
+      "independent_reset_minus_scratch": {
+        "auc_ci_above_zero": true,
+        "auc_practically_equivalent": false,
+        "restricted_time_direction_matches": true,
+        "restricted_time_practically_equivalent": false
+      },
+      "independent_reset_minus_sham": {
+        "auc_ci_above_zero": true,
+        "auc_practically_equivalent": false,
+        "restricted_time_direction_matches": true,
+        "restricted_time_practically_equivalent": false
+      }
+    },
+    "q_specific_readiness_criterion_met": true,
+    "stop_reason": "readiness is carried by weights/representations, not optimizer moments"
+  },
+  "manipulation_check": {
+    "manipulation_threshold": 0.1,
+    "q_accessibility_manipulation_passed": true,
+    "q_specific_readiness_language_allowed": true,
+    "q_specificity_intervals_inside_plus_minus_0_05": true,
+    "specificity_equivalence_margin": 0.05,
+    "uses_all_registered_seeds_without_eligibility_selection": true
+  },
+  "outputs": {
+    "checkpoint_dynamics": "e17_checkpoint_dynamics.csv",
+    "eligibility": "e17_eligibility.csv",
+    "endpoint_taxonomy": "e17_endpoint_taxonomy.csv",
+    "manipulation_checks": "e17_manipulation_checks.csv",
+    "paired_contrasts": "e17_paired_contrasts.csv",
+    "reconstruction": "e17_reconstruction_audit.csv",
+    "run_endpoints": "e17_run_endpoints.csv",
+    "starting_state_balance": "e17_starting_state_balance.csv"
+  },
+  "paired_contrasts": [
+    {
+      "bootstrap_draws": 4000,
+      "ci_high": 0.0720513153076172,
+      "ci_low": 0.04946492195129394,
+      "contrast": "independent_reset_minus_nested_reset",
+      "estimate": 0.059575212001800534,
+      "left": "independent_reset",
+      "n_seeds": 20,
+      "outcome": "Q_control_auc_0_128",
+      "right": "nested_reset"
+    },
+    {
+      "bootstrap_draws": 4000,
+      "ci_high": -22.85,
+      "ci_low": -171.55,
+      "contrast": "independent_reset_minus_nested_reset",
+      "estimate": -73.35,
+      "left": "independent_reset",
+      "n_seeds": 20,
+      "outcome": "Q_restricted_handoff_time_0_1024",
+      "right": "nested_reset"
+    },
+    {
+      "bootstrap_draws": 4000,
+      "ci_high": 84.25500000000002,
+      "ci_low": 44.75,
+      "contrast": "independent_reset_minus_nested_reset",
+      "estimate": 64.95,
+      "left": "independent_reset",
+      "n_seeds": 20,
+      "outcome": "Y_restricted_handoff_time_0_1024",
+      "right": "nested_reset"
+    },
+    {
+      "bootstrap_draws": 4000,
+      "ci_high": 0.0,
+      "ci_low": 0.0,
+      "contrast": "independent_reset_minus_nested_reset",
+      "estimate": 0.0,
+      "left": "independent_reset",
+      "n_seeds": 20,
+      "outcome": "final_target_accuracy",
+      "right": "nested_reset"
+    },
+    {
+      "bootstrap_draws": 4000,
+      "ci_high": 0.06959430813789368,
+      "ci_low": 0.04070692539215088,
+      "contrast": "independent_reset_minus_scratch",
+      "estimate": 0.05504254102706909,
+      "left": "independent_reset",
+      "n_seeds": 20,
+      "outcome": "Q_control_auc_0_128",
+      "right": "scratch"
+    },
+    {
+      "bootstrap_draws": 4000,
+      "ci_high": -14.1,
+      "ci_low": -18.8,
+      "contrast": "independent_reset_minus_scratch",
+      "estimate": -16.35,
+      "left": "independent_reset",
+      "n_seeds": 20,
+      "outcome": "Q_restricted_handoff_time_0_1024",
+      "right": "scratch"
+    },
+    {
+      "bootstrap_draws": 4000,
+      "ci_high": 134.25375000000003,
+      "ci_low": 78.54875,
+      "contrast": "independent_reset_minus_scratch",
+      "estimate": 105.85,
+      "left": "independent_reset",
+      "n_seeds": 20,
+      "outcome": "Y_restricted_handoff_time_0_1024",
+      "right": "scratch"
+    },
+    {
+      "bootstrap_draws": 4000,
+      "ci_high": 0.0,
+      "ci_low": 0.0,
+      "contrast": "independent_reset_minus_scratch",
+      "estimate": 0.0,
+      "left": "independent_reset",
+      "n_seeds": 20,
+      "outcome": "final_target_accuracy",
+      "right": "scratch"
+    },
+    {
+      "bootstrap_draws": 4000,
+      "ci_high": 0.08431806668639186,
+      "ci_low": 0.048259290456771846,
+      "contrast": "independent_reset_minus_sham",
+      "estimate": 0.06595655083656311,
+      "left": "independent_reset",
+      "n_seeds": 20,
+      "outcome": "Q_control_auc_0_128",
+      "right": "sham"
+    },
+    {
+      "bootstrap_draws": 4000,
+      "ci_high": -14.0,
+      "ci_low": -20.35,
+      "contrast": "independent_reset_minus_sham",
+      "estimate": -16.95,
+      "left": "independent_reset",
+      "n_seeds": 20,
+      "outcome": "Q_restricted_handoff_time_0_1024",
+      "right": "sham"
+    },
+    {
+      "bootstrap_draws": 4000,
+      "ci_high": 143.45,
+      "ci_low": 79.24875,
+      "contrast": "independent_reset_minus_sham",
+      "estimate": 112.2,
+      "left": "independent_reset",
+      "n_seeds": 20,
+      "outcome": "Y_restricted_handoff_time_0_1024",
+      "right": "sham"
+    },
+    {
+      "bootstrap_draws": 4000,
+      "ci_high": 0.0,
+      "ci_low": 0.0,
+      "contrast": "independent_reset_minus_sham",
+      "estimate": 0.0,
+      "left": "independent_reset",
+      "n_seeds": 20,
+      "outcome": "final_target_accuracy",
+      "right": "sham"
+    },
+    {
+      "bootstrap_draws": 4000,
+      "ci_high": 0.0029037049412727364,
+      "ci_low": -0.0072762261331081384,
+      "contrast": "independent_carry_minus_independent_reset",
+      "estimate": -0.001764535903930664,
+      "left": "independent_carry",
+      "n_seeds": 20,
+      "outcome": "Q_control_auc_0_128",
+      "right": "independent_reset"
+    },
+    {
+      "bootstrap_draws": 4000,
+      "ci_high": -3.45,
+      "ci_low": -6.95,
+      "contrast": "independent_carry_minus_independent_reset",
+      "estimate": -5.25,
+      "left": "independent_carry",
+      "n_seeds": 20,
+      "outcome": "Q_restricted_handoff_time_0_1024",
+      "right": "independent_reset"
+    },
+    {
+      "bootstrap_draws": 4000,
+      "ci_high": -6.1,
+      "ci_low": -39.75,
+      "contrast": "independent_carry_minus_independent_reset",
+      "estimate": -21.6,
+      "left": "independent_carry",
+      "n_seeds": 20,
+      "outcome": "Y_restricted_handoff_time_0_1024",
+      "right": "independent_reset"
+    },
+    {
+      "bootstrap_draws": 4000,
+      "ci_high": 0.0,
+      "ci_low": 0.0,
+      "contrast": "independent_carry_minus_independent_reset",
+      "estimate": 0.0,
+      "left": "independent_carry",
+      "n_seeds": 20,
+      "outcome": "final_target_accuracy",
+      "right": "independent_reset"
+    },
+    {
+      "bootstrap_draws": 4000,
+      "ci_high": -0.003623092621564864,
+      "ci_low": -0.017153263688087464,
+      "contrast": "nested_carry_minus_nested_reset",
+      "estimate": -0.009997689723968506,
+      "left": "nested_carry",
+      "n_seeds": 20,
+      "outcome": "Q_control_auc_0_128",
+      "right": "nested_reset"
+    },
+    {
+      "bootstrap_draws": 4000,
+      "ci_high": 2.3,
+      "ci_low": -4.7,
+      "contrast": "nested_carry_minus_nested_reset",
+      "estimate": -1.2,
+      "left": "nested_carry",
+      "n_seeds": 20,
+      "outcome": "Q_restricted_handoff_time_0_1024",
+      "right": "nested_reset"
+    },
+    {
+      "bootstrap_draws": 4000,
+      "ci_high": 9.95,
+      "ci_low": -23.55125,
+      "contrast": "nested_carry_minus_nested_reset",
+      "estimate": -7.2,
+      "left": "nested_carry",
+      "n_seeds": 20,
+      "outcome": "Y_restricted_handoff_time_0_1024",
+      "right": "nested_reset"
+    },
+    {
+      "bootstrap_draws": 4000,
+      "ci_high": 0.0,
+      "ci_low": 0.0,
+      "contrast": "nested_carry_minus_nested_reset",
+      "estimate": 0.0,
+      "left": "nested_carry",
+      "n_seeds": 20,
+      "outcome": "final_target_accuracy",
+      "right": "nested_reset"
+    }
+  ],
+  "registered_runs": 120
+}

@@ -1,0 +1,78 @@
+inference_status,contrast_kind,comparison,left_count,right_count,outcome,estimate,ci_low,ci_high,seed_clusters,bootstrap_draws
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,presence jump: 0 to 2,0,2,stable_gate,-0.35,-0.55,-0.15,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,presence jump: 0 to 2,0,2,q_only_diagnostic_accuracy,0.22645500000000002,0.14689237500000002,0.31634212500000003,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,presence jump: 0 to 2,0,2,q_only_factorial_accuracy,0.22802734375,0.144775390625,0.31772827148437505,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,presence jump: 0 to 2,0,2,q_only_target_probability,0.2181623490949957,0.1406111014238422,0.2998904388820891,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,presence jump: 0 to 2,0,2,q_only_unseen_target_probability,0.2065614899678932,0.12610532696873544,0.290993880865483,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,presence jump: 0 to 2,0,2,common_iid_target_accuracy,-7.500000000000284e-05,-0.0002625000000000155,3.749999999999587e-05,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,presence jump: 0 to 2,0,2,pure_Y,0.15,0.0,0.3,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 2 to 10,2,10,stable_gate,-0.55,-0.75,-0.35,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 2 to 10,2,10,q_only_diagnostic_accuracy,0.365725,0.30788337500000007,0.424097375,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 2 to 10,2,10,q_only_factorial_accuracy,0.368212890625,0.309375,0.42431640625,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 2 to 10,2,10,q_only_target_probability,0.354635399431919,0.3016281489487298,0.4087899863962363,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 2 to 10,2,10,q_only_unseen_target_probability,0.3385791619217248,0.2823482027826681,0.39565061225595366,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 2 to 10,2,10,common_iid_target_accuracy,1.1102230246251566e-17,-8.749999999999036e-05,0.00011250000000000981,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 2 to 10,2,10,pure_Y,0.65,0.45,0.85,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 10 to 50,10,50,stable_gate,-0.1,-0.25,0.0,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 10 to 50,10,50,q_only_diagnostic_accuracy,0.257025,0.17085,0.347872125,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 10 to 50,10,50,q_only_factorial_accuracy,0.255078125,0.17074951171875,0.3487353515625,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 10 to 50,10,50,q_only_target_probability,0.2638093590868952,0.18702196839141724,0.3508685851052441,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 10 to 50,10,50,q_only_unseen_target_probability,0.2776866827147583,0.19672209232858473,0.3620205713268064,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 10 to 50,10,50,common_iid_target_accuracy,-3.7500000000012526e-05,-0.0003250000000000197,0.00023749999999998496,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 10 to 50,10,50,pure_Y,0.2,0.05,0.4,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 50 to 100,50,100,stable_gate,0.0,0.0,0.0,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 50 to 100,50,100,q_only_diagnostic_accuracy,0.013279999999999991,0.0023148749999999897,0.030679500000000012,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 50 to 100,50,100,q_only_factorial_accuracy,0.013525390625,0.0025390625,0.03130249023437501,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 50 to 100,50,100,q_only_target_probability,0.016392640955344893,0.004488073403025952,0.03444852217503806,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 50 to 100,50,100,q_only_unseen_target_probability,0.025262049130546915,0.006191562765465194,0.05655790996568806,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 50 to 100,50,100,common_iid_target_accuracy,2.4999999999997247e-05,-0.00010000000000000564,0.00016249999999999875,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 50 to 100,50,100,pure_Y,0.0,0.0,0.0,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 100 to 250,100,250,stable_gate,0.0,0.0,0.0,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 100 to 250,100,250,q_only_diagnostic_accuracy,-0.020019999999999993,-0.06175037499999999,0.0014349999999999977,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 100 to 250,100,250,q_only_factorial_accuracy,-0.01865234375,-0.058154296875,0.00205078125,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 100 to 250,100,250,q_only_target_probability,-0.018710779304410334,-0.058795732155056055,0.0023750435440655932,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 100 to 250,100,250,q_only_unseen_target_probability,-0.02786916054812878,-0.09390961312392423,0.007319237460516025,15,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 100 to 250,100,250,common_iid_target_accuracy,-0.0023749999999999995,-0.006500000000000001,-0.00016249999999999875,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 100 to 250,100,250,pure_Y,-0.05,-0.15,0.0,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 250 to 450,250,450,stable_gate,0.0,0.0,0.0,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 250 to 450,250,450,q_only_diagnostic_accuracy,0.007739999999999997,-0.015322875000000005,0.04566099999999999,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 250 to 450,250,450,q_only_factorial_accuracy,0.0064453125,-0.016456298828125,0.041650390625,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 250 to 450,250,450,q_only_target_probability,0.003700228336946959,-0.019552924494225424,0.03956430133927438,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 250 to 450,250,450,q_only_unseen_target_probability,0.0061539776930574774,-0.0013319591163996058,0.019924984542464275,3,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 250 to 450,250,450,common_iid_target_accuracy,-0.009887499999999994,-0.014375312499999997,-0.006049687499999987,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,adjacent: 250 to 450,250,450,pure_Y,-0.25,-0.45,-0.05,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 2 to 4,2,4,stable_gate,-0.2,-0.45,0.0,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 2 to 4,2,4,q_only_diagnostic_accuracy,0.09683499999999999,0.008829375,0.180910625,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 2 to 4,2,4,q_only_factorial_accuracy,0.095263671875,0.00795654296875,0.17832519531250002,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 2 to 4,2,4,q_only_target_probability,0.0936417885349809,0.006835726407693485,0.17026842780666443,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 2 to 4,2,4,q_only_unseen_target_probability,0.08687497683685148,0.001142038693460323,0.16665897884736194,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 2 to 4,2,4,common_iid_target_accuracy,3.750000000000697e-05,-4.999999999999449e-05,0.00017500000000001404,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 2 to 4,2,4,pure_Y,0.15,-0.05,0.35,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 4 to 6,4,6,stable_gate,-0.35,-0.55,-0.15,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 4 to 6,4,6,q_only_diagnostic_accuracy,0.17900999999999997,0.09441374999999999,0.2704056249999999,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 4 to 6,4,6,q_only_factorial_accuracy,0.18544921875,0.098192138671875,0.27818603515625007,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 4 to 6,4,6,q_only_target_probability,0.17539610728132748,0.09552389505977438,0.26336758059168186,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 4 to 6,4,6,q_only_unseen_target_probability,0.169348549333808,0.08418235060778546,0.2625648732170707,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 4 to 6,4,6,common_iid_target_accuracy,1.2499999999998623e-05,-4.999999999999449e-05,8.749999999999036e-05,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 4 to 6,4,6,pure_Y,0.25,0.1,0.45,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 6 to 8,6,8,stable_gate,0.0,-0.15,0.15,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 6 to 8,6,8,q_only_diagnostic_accuracy,0.07901,-0.006430750000000014,0.163416125,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 6 to 8,6,8,q_only_factorial_accuracy,0.076708984375,-0.012506103515624999,0.15957519531250003,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 6 to 8,6,8,q_only_target_probability,0.07453324904703712,-0.0073143454832285335,0.15647582659041936,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 6 to 8,6,8,q_only_unseen_target_probability,0.07757408116978573,-0.008118535133020592,0.16274616593712526,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 6 to 8,6,8,common_iid_target_accuracy,3.749999999999587e-05,-3.750000000000142e-05,0.0001249999999999918,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 6 to 8,6,8,pure_Y,0.3,0.05,0.55,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 8 to 10,8,10,stable_gate,0.0,0.0,0.0,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 8 to 10,8,10,q_only_diagnostic_accuracy,0.010870000000000015,-0.062302375,0.07627800000000004,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 8 to 10,8,10,q_only_factorial_accuracy,0.010791015625,-0.0644580078125,0.07705078125,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 8 to 10,8,10,q_only_target_probability,0.011064254568573578,-0.05805865477462767,0.07213397812713539,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 8 to 10,8,10,q_only_unseen_target_probability,0.004781554581279654,-0.06915634132413075,0.0707310424581778,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 8 to 10,8,10,common_iid_target_accuracy,-8.749999999999036e-05,-0.00018749999999997935,-1.2499999999998623e-05,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,paired_difference,triggered refinement: 8 to 10,8,10,pure_Y,-0.05,-0.2,0.1,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,positive_dose_seed_slope,m>0 slope per doubling from log2(m/2),,,stable_gate,-0.07360527965662968,-0.09724785410464436,-0.0498716187355638,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,positive_dose_seed_slope,m>0 slope per doubling from log2(m/2),,,q_only_diagnostic_accuracy,0.0788913833366653,0.0658507061030541,0.09217590147643726,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,positive_dose_seed_slope,m>0 slope per doubling from log2(m/2),,,q_only_factorial_accuracy,0.07896691141141557,0.06609365359703277,0.09176574194902469,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,positive_dose_seed_slope,m>0 slope per doubling from log2(m/2),,,q_only_target_probability,0.07914001522051785,0.06702221879850821,0.09150253499888664,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,positive_dose_seed_slope,m>0 slope per doubling from log2(m/2),,,q_only_unseen_target_probability,0.09745348340932816,0.08332676508983483,0.11155004421948561,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,positive_dose_seed_slope,m>0 slope per doubling from log2(m/2),,,common_iid_target_accuracy,-0.0010523526126079473,-0.0015685123777762296,-0.0006198504588478675,20,4000
+adaptive_exploratory_posthoc_paired_support_intervention,positive_dose_seed_slope,m>0 slope per doubling from log2(m/2),,,pure_Y,0.07458656401956276,0.05343937293803132,0.09680271831167178,20,4000

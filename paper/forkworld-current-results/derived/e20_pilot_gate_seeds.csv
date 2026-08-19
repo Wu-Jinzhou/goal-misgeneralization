@@ -1,0 +1,4 @@
+seed,stable_pure_by_isolated_goal,same_seed_all_three_goal_manipulations_passed
+563,"{""P"":true,""Q"":true,""Y"":true}",True
+569,"{""P"":true,""Q"":true,""Y"":true}",True
+571,"{""P"":true,""Q"":true,""Y"":true}",True

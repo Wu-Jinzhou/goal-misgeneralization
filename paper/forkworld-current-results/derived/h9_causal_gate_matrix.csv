@@ -1,0 +1,5 @@
+context,flipped_proxy,hard_flip_rate
+0,0,1.0
+0,1,0.0
+1,0,0.0
+1,1,1.0

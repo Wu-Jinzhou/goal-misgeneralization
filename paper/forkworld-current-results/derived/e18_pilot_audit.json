@@ -1,0 +1,124 @@
+{
+  "all_complete": true,
+  "artifact_root": "/Users/wjz/Documents/Projects/goal-misgeneralization/artifacts-e18-pilot",
+  "artifact_schema_version": 1,
+  "atomic_plans_reconstructed": true,
+  "completed_runs": 9,
+  "cross_schedule_atomic_multisets_equal": true,
+  "cross_schedule_prefix_hashes_equal": true,
+  "data_reconstructed": true,
+  "empty_optimizers_reconstructed": true,
+  "exact_grid": true,
+  "expected_runs": 9,
+  "implementation_fingerprint": "905d7ec6a7a2003de15ebe7ad0b0bdd0028573e71fcef52b579bc22932a24720",
+  "initial_models_reconstructed": true,
+  "metric_line_count": 91152,
+  "mode": "pilot",
+  "ordered_streams_distinct": true,
+  "outcome_blinded": true,
+  "reconstruction_rows": [
+    {
+      "atomic_batch_multiset_digest": "b51415aa3b17437cd15568cf8f473f6f44fc12e2c78ee7842a758405b834699d",
+      "empty_optimizer_hash": "6f51b5a383ca5d6f0d4124045629d3265784cabf812eb52cad9297177c71bea5",
+      "initial_model_hash": "c13a4cbd49e4fd31a2e57ee85962a63073fe36668a8d0f6228120435baceb28b",
+      "ordered_digest": "b476913f5b9683dbe1a35ef836848cb8bcef45c9bc5c138137f5de7fd5fb74cb",
+      "row_exposure_digest": "4f636474d21c639e500309d64c664e28d138c26fe0aa1f7e3d29d000d65eb081",
+      "schedule": "b_then_d",
+      "seed": 389,
+      "training_batch_digest": "2ee014ab49077def6370f7a008e8210a1db0ca4c17bcd35ae0d9e22bf7bf7df2"
+    },
+    {
+      "atomic_batch_multiset_digest": "b51415aa3b17437cd15568cf8f473f6f44fc12e2c78ee7842a758405b834699d",
+      "empty_optimizer_hash": "6f51b5a383ca5d6f0d4124045629d3265784cabf812eb52cad9297177c71bea5",
+      "initial_model_hash": "c13a4cbd49e4fd31a2e57ee85962a63073fe36668a8d0f6228120435baceb28b",
+      "ordered_digest": "0799827f83525b2c22d5f5ab05eb9a7b517906233ed204f31c61e53dd43bf2d9",
+      "row_exposure_digest": "4f636474d21c639e500309d64c664e28d138c26fe0aa1f7e3d29d000d65eb081",
+      "schedule": "d_then_b",
+      "seed": 389,
+      "training_batch_digest": "2ee014ab49077def6370f7a008e8210a1db0ca4c17bcd35ae0d9e22bf7bf7df2"
+    },
+    {
+      "atomic_batch_multiset_digest": "b51415aa3b17437cd15568cf8f473f6f44fc12e2c78ee7842a758405b834699d",
+      "empty_optimizer_hash": "6f51b5a383ca5d6f0d4124045629d3265784cabf812eb52cad9297177c71bea5",
+      "initial_model_hash": "c13a4cbd49e4fd31a2e57ee85962a63073fe36668a8d0f6228120435baceb28b",
+      "ordered_digest": "eb9beef1b8d3794de2d6cd519ff211251563da3056db2b8942f9410cdab18a79",
+      "row_exposure_digest": "4f636474d21c639e500309d64c664e28d138c26fe0aa1f7e3d29d000d65eb081",
+      "schedule": "interleave",
+      "seed": 389,
+      "training_batch_digest": "2ee014ab49077def6370f7a008e8210a1db0ca4c17bcd35ae0d9e22bf7bf7df2"
+    },
+    {
+      "atomic_batch_multiset_digest": "d0cbc6c1079ee8a89c7894d22580de1e064775205c224dd2c810b09fa737f143",
+      "empty_optimizer_hash": "6f51b5a383ca5d6f0d4124045629d3265784cabf812eb52cad9297177c71bea5",
+      "initial_model_hash": "30f3a2f1682a9eb7e30d11740d4f4debbe00e8325e1b94ede27f5d0450fc0c09",
+      "ordered_digest": "6589d0c43091da38120720a51acb642e65e749eac2b7396c0bc685c29c393c58",
+      "row_exposure_digest": "4f636474d21c639e500309d64c664e28d138c26fe0aa1f7e3d29d000d65eb081",
+      "schedule": "d_then_b",
+      "seed": 397,
+      "training_batch_digest": "28f39da3724540db6bae5e0f18ecd619f35d8b2e4a571d41fddc0789515f3850"
+    },
+    {
+      "atomic_batch_multiset_digest": "d0cbc6c1079ee8a89c7894d22580de1e064775205c224dd2c810b09fa737f143",
+      "empty_optimizer_hash": "6f51b5a383ca5d6f0d4124045629d3265784cabf812eb52cad9297177c71bea5",
+      "initial_model_hash": "30f3a2f1682a9eb7e30d11740d4f4debbe00e8325e1b94ede27f5d0450fc0c09",
+      "ordered_digest": "c2f11e416c9694ad08d10434a1ea31d6502cc301bd7974a10091f64602bf4e69",
+      "row_exposure_digest": "4f636474d21c639e500309d64c664e28d138c26fe0aa1f7e3d29d000d65eb081",
+      "schedule": "b_then_d",
+      "seed": 397,
+      "training_batch_digest": "28f39da3724540db6bae5e0f18ecd619f35d8b2e4a571d41fddc0789515f3850"
+    },
+    {
+      "atomic_batch_multiset_digest": "d0cbc6c1079ee8a89c7894d22580de1e064775205c224dd2c810b09fa737f143",
+      "empty_optimizer_hash": "6f51b5a383ca5d6f0d4124045629d3265784cabf812eb52cad9297177c71bea5",
+      "initial_model_hash": "30f3a2f1682a9eb7e30d11740d4f4debbe00e8325e1b94ede27f5d0450fc0c09",
+      "ordered_digest": "28aa8040f4180a48ab0b588557e8318fc854670d8ca3b8e7ec3fab4254684ac9",
+      "row_exposure_digest": "4f636474d21c639e500309d64c664e28d138c26fe0aa1f7e3d29d000d65eb081",
+      "schedule": "interleave",
+      "seed": 397,
+      "training_batch_digest": "28f39da3724540db6bae5e0f18ecd619f35d8b2e4a571d41fddc0789515f3850"
+    },
+    {
+      "atomic_batch_multiset_digest": "077596a6d74ee2ac88ed03dc1ffdfd2ff9366799abbab2e61e78256c6b713422",
+      "empty_optimizer_hash": "6f51b5a383ca5d6f0d4124045629d3265784cabf812eb52cad9297177c71bea5",
+      "initial_model_hash": "7e5cec6792f24a8ec17909afd910392c5c2e94aca1d918dc3f9521cfb9ae6664",
+      "ordered_digest": "cfaebd4ddb7172401ce74db072b3808a0ef0cb4e494e83034cb0a5b5b13b500b",
+      "row_exposure_digest": "4f636474d21c639e500309d64c664e28d138c26fe0aa1f7e3d29d000d65eb081",
+      "schedule": "d_then_b",
+      "seed": 401,
+      "training_batch_digest": "4801385e96d1d1a1272b7a3c9a535a61f521d7e3668a4bb1ef5a6dec4e79c0af"
+    },
+    {
+      "atomic_batch_multiset_digest": "077596a6d74ee2ac88ed03dc1ffdfd2ff9366799abbab2e61e78256c6b713422",
+      "empty_optimizer_hash": "6f51b5a383ca5d6f0d4124045629d3265784cabf812eb52cad9297177c71bea5",
+      "initial_model_hash": "7e5cec6792f24a8ec17909afd910392c5c2e94aca1d918dc3f9521cfb9ae6664",
+      "ordered_digest": "0d64a7411a5aff0d36503aa63f20935079a0a329e0ce5b11d39ebdb5bc02810c",
+      "row_exposure_digest": "4f636474d21c639e500309d64c664e28d138c26fe0aa1f7e3d29d000d65eb081",
+      "schedule": "interleave",
+      "seed": 401,
+      "training_batch_digest": "4801385e96d1d1a1272b7a3c9a535a61f521d7e3668a4bb1ef5a6dec4e79c0af"
+    },
+    {
+      "atomic_batch_multiset_digest": "077596a6d74ee2ac88ed03dc1ffdfd2ff9366799abbab2e61e78256c6b713422",
+      "empty_optimizer_hash": "6f51b5a383ca5d6f0d4124045629d3265784cabf812eb52cad9297177c71bea5",
+      "initial_model_hash": "7e5cec6792f24a8ec17909afd910392c5c2e94aca1d918dc3f9521cfb9ae6664",
+      "ordered_digest": "9eea08ccedb754022e3cb034bd29b709d0755e16463c8aa15674c6d476e4743b",
+      "row_exposure_digest": "4f636474d21c639e500309d64c664e28d138c26fe0aa1f7e3d29d000d65eb081",
+      "schedule": "b_then_d",
+      "seed": 401,
+      "training_batch_digest": "4801385e96d1d1a1272b7a3c9a535a61f521d7e3668a4bb1ef5a6dec4e79c0af"
+    }
+  ],
+  "schedules": [
+    "b_then_d",
+    "d_then_b",
+    "interleave"
+  ],
+  "seed_blocks": 3,
+  "seeds": [
+    389,
+    397,
+    401
+  ],
+  "source_file_count": 29,
+  "source_fingerprint_schema_version": 1
+}

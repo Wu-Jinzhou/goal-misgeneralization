@@ -1,0 +1,13 @@
+seed,branch,selective_Q,behavior_P,causal_P,selective_P,selective_Y,Q_probe_shift_rule_passed,preservation_rule_passed,all_six_postedit_pure_P,same_seed_joint_gate_passed
+541,independent_q_restore,-0.129638671875,0.000244140625,0.0001220703125,0.015625,0.022705078125,True,True,True,True
+541,independent_padding_sham,-0.0302734375,-0.0048828125,-0.0064697265625,0.01220703125,0.012451171875,True,True,True,True
+541,nested_q_transplant,0.064208984375,0.0,0.0,-0.013427734375,-0.02001953125,True,True,True,True
+541,nested_padding_sham,0.001708984375,0.0,0.0,0.007080078125,0.002197265625,True,True,True,True
+547,independent_q_restore,-0.10986328125,0.0,0.000244140625,0.0283203125,0.049560546875,True,True,True,False
+547,independent_padding_sham,-0.0517578125,-0.005615234375,-0.0057373046875,0.016357421875,0.017822265625,False,True,True,False
+547,nested_q_transplant,0.092529296875,0.0,0.0,0.0,-0.00244140625,True,True,True,False
+547,nested_padding_sham,-0.010498046875,0.0,0.0,-0.00244140625,-0.00146484375,True,True,True,False
+557,independent_q_restore,-0.114013671875,0.01025390625,0.0108642578125,0.01025390625,0.021240234375,True,True,True,True
+557,independent_padding_sham,-0.017578125,-0.016357421875,-0.014892578125,0.02294921875,0.012939453125,True,True,True,True
+557,nested_q_transplant,0.087158203125,-0.001708984375,-0.00146484375,-0.00244140625,-0.00927734375,True,True,True,True
+557,nested_padding_sham,-0.01416015625,-0.0009765625,-0.001220703125,0.00048828125,0.0,True,True,True,True

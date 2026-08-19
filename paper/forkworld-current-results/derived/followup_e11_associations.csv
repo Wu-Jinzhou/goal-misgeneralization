@@ -1,0 +1,5 @@
+x,y,method,estimate,ci_low,ci_high,n_seeds,scope
+exact_decoder_accuracy,rho_y,within-seed Spearman; bootstrap across seeds,0.2648775684793715,0.21656880948375207,0.3168693747579528,7,
+decoder_advantage,rho_y,within-seed Spearman; bootstrap across seeds,0.2648775684793715,0.21390392166650962,0.31362297932767585,7,
+single_channel_bayes,rho_y,within-seed Spearman; bootstrap across seeds,0.30601502576959144,0.2628489441490952,0.348346100074703,10,
+single_channel_bayes,rho_y,within-seed Spearman; bootstrap across seeds,0.7879814528749651,0.7358093444760253,0.8315680988738772,10,q=.99 competition grid

@@ -1,0 +1,68 @@
+{
+  "artifact_schema_version": 1,
+  "artifacts_root": "/Users/wjz/Documents/Projects/goal-misgeneralization/artifacts-e17",
+  "complete_runs": 120,
+  "current_source_regeneration_passed": true,
+  "expected_runs": 120,
+  "implementation_fingerprint": "5e3715d818834005b028aaa45c2dfed3c92e4c2bf7820e6790d02b4cc14c3a2c",
+  "materialized_runs": 120,
+  "metric_line_counts_by_trajectory": {
+    "independent_carry": [
+      6397
+    ],
+    "independent_reset": [
+      6397
+    ],
+    "nested_carry": [
+      6397
+    ],
+    "nested_reset": [
+      6397
+    ],
+    "scratch": [
+      5905
+    ],
+    "sham": [
+      5913
+    ]
+  },
+  "metric_records": 748120,
+  "mode": "full",
+  "phase_b_common_within_seed": true,
+  "prefix_carry_reset_equality": true,
+  "reconstructed_artifacts": 120,
+  "seed_blocks": 20,
+  "seeds": [
+    157,
+    163,
+    167,
+    173,
+    179,
+    181,
+    191,
+    193,
+    197,
+    199,
+    211,
+    223,
+    227,
+    229,
+    233,
+    239,
+    241,
+    251,
+    257,
+    263
+  ],
+  "source_fingerprint_schema_version": 1,
+  "strict_grid_config_metric_digest_and_reconstruction_audit_passed": true,
+  "trajectories": [
+    "independent_carry",
+    "independent_reset",
+    "nested_carry",
+    "nested_reset",
+    "scratch",
+    "sham"
+  ],
+  "trajectories_per_seed": 6
+}

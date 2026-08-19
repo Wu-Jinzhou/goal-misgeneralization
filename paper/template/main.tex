@@ -1,0 +1,225 @@
+\documentclass[11pt,a4paper]{article}
+
+% -----------------------------------------------------------------------------
+% Page layout and typography used by the manuscript
+% -----------------------------------------------------------------------------
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{palatino}
+\usepackage{microtype}
+\usepackage[all]{nowidow}
+\global\hyphenpenalty=1000
+
+% -----------------------------------------------------------------------------
+% Authors, references, and links
+% -----------------------------------------------------------------------------
+\usepackage{authblk}
+\renewcommand\Affilfont{\small}
+
+\usepackage[numbers,round]{natbib}
+\bibliographystyle{naturemag}
+
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor={red!50!black},
+  citecolor={blue!50!black},
+  urlcolor={blue!80!black}
+}
+
+% Keep footnote links black, as in the source manuscript.
+\let\oldfootnote\footnote
+\renewcommand{\footnote}[1]{%
+  {\hypersetup{linkcolor=black}\oldfootnote{#1}}%
+}
+
+% -----------------------------------------------------------------------------
+% Figures, tables, and algorithms
+% -----------------------------------------------------------------------------
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{xltabular}
+\usepackage{adjustbox}
+\usepackage{wrapfig}
+\usepackage{placeins}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes.multipart}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{subcaption}
+\usepackage[font=small,labelfont=bf]{caption}
+
+% -----------------------------------------------------------------------------
+% Mathematics and structured text
+% -----------------------------------------------------------------------------
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{nicefrac}
+\usepackage{enumitem}
+\usepackage{tocloft}
+\setcounter{tocdepth}{3}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+% Reusable cross-reference helpers from the manuscript.
+\newcommand{\sect}[1]{Section~\ref{#1}}
+\newcommand{\sectapp}[1]{Appendix~\ref{#1}}
+\newcommand{\eqn}[1]{Equation~\ref{#1}}
+\newcommand{\fig}[1]{Fig.~\ref{#1}}
+\newcommand{\tbl}[1]{Table~\ref{#1}}
+\newcommand{\alg}[1]{Algorithm~\ref{#1}}
+\newcommand{\ie}{\emph{i.e.}}
+\newcommand{\eg}{\emph{e.g.}}
+
+% -----------------------------------------------------------------------------
+% Manuscript-specific presentation conventions, retained as template features
+% -----------------------------------------------------------------------------
+\makeatletter
+\renewenvironment{abstract}{%
+  \vspace{-15pt}%
+  \centerline{\large\bfseries Abstract}%
+  \setlength{\leftmargini}{30pt}%
+  \begin{quote}%
+  \small
+}{%
+  \par
+  \end{quote}%
+  \vskip 1ex
+}
+\makeatother
+
+% Extended-data floats have their own numbering sequence.
+\newcounter{extfigure}
+\newcounter{exttable}
+
+\newenvironment{extfigure}[1][h!]{%
+  \stepcounter{extfigure}%
+  \begin{figure}[#1]%
+  \renewcommand{\figurename}{Extended Data Figure}%
+  \renewcommand{\thefigure}{\arabic{extfigure}}%
+}{%
+  \end{figure}%
+}
+
+\newenvironment{exttable}[1][h!]{%
+  \stepcounter{exttable}%
+  \begin{table}[#1]%
+  \renewcommand{\tablename}{Extended Data Table}%
+  \renewcommand{\thetable}{\arabic{exttable}}%
+}{%
+  \end{table}%
+}
+
+% Set \naturefinaltrue to suppress embedded figure artwork while retaining
+% captions and layout, matching the source manuscript's submission switch.
+\newif\ifnaturefinal
+\naturefinalfalse
+\newcommand{\figimage}[2][width=1.0\linewidth]{%
+  \ifnaturefinal\else\includegraphics[#1]{#2}\fi
+}
+
+% -----------------------------------------------------------------------------
+% Title and author block
+% -----------------------------------------------------------------------------
+\title{\textbf{Paper Title}}
+
+\author[1]{First Author\footnote{Corresponding author: author@example.com}}
+\author[1,2]{Second Author}
+\affil[1]{First institution, City, Country}
+\affil[2]{Second institution, City, Country}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+% Write the abstract here.
+\end{abstract}
+
+% The source manuscript uses unnumbered sections in the main text.
+\section*{Introduction}
+% Introduce the problem and summarize the contribution.
+
+\section*{Results}
+% Present the principal results.
+
+\section*{Discussion}
+% Interpret the results, limitations, and implications.
+
+\clearpage
+\section*{Methods}
+% Describe materials, procedures, models, and analyses.
+
+\section*{Data Availability}
+% State where the data can be accessed.
+
+\section*{Code Availability}
+% State where the code can be accessed.
+
+\section*{Acknowledgments}
+% Add acknowledgments and funding information.
+
+\section*{Author Contributions}
+% Describe each author's contributions.
+
+\section*{Correspondence}
+% Give the corresponding author's contact information.
+
+\section*{Competing Interests}
+% Declare any competing interests.
+
+% Add references to references.bib, cite them in the text, and uncomment:
+% \bibliography{references}
+
+\clearpage
+\appendix
+\renewcommand{\contentsname}{Supplementary Information}
+\tableofcontents
+
+\section{Supplementary Methods}
+% Add supplementary material here. Numbered sections mirror the source.
+
+% Example skeletons for the source manuscript's common float types:
+%
+% \begin{figure}[t]
+%   \centering
+%   \figimage[width=0.8\linewidth]{figures/example.pdf}
+%   \caption{Figure caption.}
+%   \label{fig:example}
+% \end{figure}
+%
+% \begin{extfigure}[t]
+%   \centering
+%   \figimage[width=0.8\linewidth]{figures/example.pdf}
+%   \caption{Extended-data figure caption.}
+%   \label{fig:extended-example}
+% \end{extfigure}
+%
+% \begin{table}[t]
+%   \centering
+%   \begin{tabular}{lc}
+%     \toprule
+%     Column & Value \\
+%     \midrule
+%     Item & 0 \\
+%     \bottomrule
+%   \end{tabular}
+%   \caption{Table caption.}
+%   \label{tab:example}
+% \end{table}
+
+\end{document}

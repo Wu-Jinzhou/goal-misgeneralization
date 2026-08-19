@@ -1,0 +1,13 @@
+history,perturbation,n_runs,estimate,ci_low,ci_high,n_seeds
+old_goal,neutral,81,1.0,1.0,1.0,10
+old_goal,intended_removal,81,1.0,1.0,1.0,10
+old_goal,partial_reversal,81,0.9677405321067821,0.9595856723214287,0.9757148659812409,10
+old_goal,weak_conflict,81,0.6619948575036075,0.6513361845869409,0.6737398225198412,10
+compute_matched_sham,neutral,102,1.0,1.0,1.0,10
+compute_matched_sham,intended_removal,102,1.0,1.0,1.0,10
+compute_matched_sham,partial_reversal,102,0.9617596666666668,0.9542536541666667,0.9695386395833333,10
+compute_matched_sham,weak_conflict,102,0.6511377929292929,0.6427560113005051,0.6607690641414141,10
+control,neutral,26,1.0,1.0,1.0,10
+control,intended_removal,26,1.0,1.0,1.0,10
+control,partial_reversal,26,0.9668600000000002,0.9587246250000001,0.9757586250000002,10
+control,weak_conflict,26,0.65563,0.6472832500000001,0.6648184166666669,10

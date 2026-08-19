@@ -1,0 +1,13 @@
+inference_status,cohort,sequence,count,n_runs,fraction,estimate,ci_low,ci_high,n_seeds
+adaptive_exploratory_posthoc_with_fresh_seed_replication,original,P -> Q,44,120,0.36666666666666664,0.36666666666666664,0.3166666666666667,0.41666666666666663,10
+adaptive_exploratory_posthoc_with_fresh_seed_replication,original,P -> Y,41,120,0.3416666666666667,0.3416666666666667,0.33333333333333337,0.35833333333333334,10
+adaptive_exploratory_posthoc_with_fresh_seed_replication,original,P -> Q -> Y,35,120,0.2916666666666667,0.29166666666666663,0.24166666666666664,0.3416666666666667,10
+adaptive_exploratory_posthoc_with_fresh_seed_replication,original,P,0,120,0.0,0.0,0.0,0.0,10
+adaptive_exploratory_posthoc_with_fresh_seed_replication,fresh,P -> Q,42,120,0.35,0.35,0.3,0.4083333333333333,10
+adaptive_exploratory_posthoc_with_fresh_seed_replication,fresh,P -> Y,40,120,0.3333333333333333,0.33333333333333337,0.30833333333333335,0.3583333333333333,10
+adaptive_exploratory_posthoc_with_fresh_seed_replication,fresh,P -> Q -> Y,37,120,0.30833333333333335,0.30833333333333335,0.25,0.36666666666666664,10
+adaptive_exploratory_posthoc_with_fresh_seed_replication,fresh,P,1,120,0.008333333333333333,0.008333333333333333,0.0,0.025,10
+adaptive_exploratory_posthoc_with_fresh_seed_replication,pooled,P -> Q,86,240,0.35833333333333334,0.3583333333333333,0.3208333333333333,0.39583333333333337,20
+adaptive_exploratory_posthoc_with_fresh_seed_replication,pooled,P -> Y,81,240,0.3375,0.33749999999999997,0.3249999999999999,0.35,20
+adaptive_exploratory_posthoc_with_fresh_seed_replication,pooled,P -> Q -> Y,72,240,0.3,0.3,0.2625,0.3375,20
+adaptive_exploratory_posthoc_with_fresh_seed_replication,pooled,P,1,240,0.004166666666666667,0.004166666666666667,0.0,0.0125,20

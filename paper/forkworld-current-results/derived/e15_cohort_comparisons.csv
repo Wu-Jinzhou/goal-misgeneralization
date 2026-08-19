@@ -1,0 +1,18 @@
+inference_status,comparison,outcome,original_mean,fresh_mean,estimate,ci_low,ci_high,original_seeds,fresh_seeds
+adaptive_exploratory_posthoc_with_fresh_seed_replication,fresh - original,final_behavior_P,0.4813761393229167,0.4860412597656249,0.004665120442708226,-0.0024536641438801994,0.011711934407552202,10,10
+adaptive_exploratory_posthoc_with_fresh_seed_replication,fresh - original,final_behavior_Q,0.6192708333333334,0.6168192545572917,-0.0024515787760417407,-0.012787628173828128,0.008388570149739639,10,10
+adaptive_exploratory_posthoc_with_fresh_seed_replication,fresh - original,final_behavior_Y,0.8780517578125,0.8781026204427084,5.086263020837034e-05,-0.01250208536783858,0.012510172526041585,10,10
+adaptive_exploratory_posthoc_with_fresh_seed_replication,fresh - original,final_causal_P,0.4813527425130209,0.48602294921875,0.004670206705729096,-0.0027908833821614324,0.01142255147298168,10,10
+adaptive_exploratory_posthoc_with_fresh_seed_replication,fresh - original,final_causal_Q,0.6191925048828125,0.6166061401367188,-0.00258636474609375,-0.013181241353352899,0.008264249165852841,10,10
+adaptive_exploratory_posthoc_with_fresh_seed_replication,fresh - original,final_causal_Y,0.8780629475911459,0.8780798339843751,1.6886393229165186e-05,-0.012755435519748335,0.012470445421006929,10,10
+adaptive_exploratory_posthoc_with_fresh_seed_replication,fresh - original,final_pure_P,0.0,0.0,0.0,0.0,0.0,10,10
+adaptive_exploratory_posthoc_with_fresh_seed_replication,fresh - original,final_pure_Q,0.16666666666666669,0.16666666666666669,0.0,0.0,0.0,10,10
+adaptive_exploratory_posthoc_with_fresh_seed_replication,fresh - original,final_pure_Y,0.6333333333333333,0.6583333333333333,0.025000000000000022,-0.04166666666666685,0.09166666666666679,10,10
+adaptive_exploratory_posthoc_with_fresh_seed_replication,fresh - original,Q_behavior_observed,0.6583333333333334,0.6583333333333334,0.0,-0.025000000000000022,0.02499999999999991,10,10
+adaptive_exploratory_posthoc_with_fresh_seed_replication,fresh - original,Y_behavior_observed,0.6333333333333333,0.6416666666666666,0.008333333333333304,-0.06666666666666676,0.08333333333333337,10,10
+adaptive_exploratory_posthoc_with_fresh_seed_replication,fresh - original,Q_causal_observed,0.6666666666666667,0.6583333333333334,-0.008333333333333304,-0.025000000000000133,0.0,10,10
+adaptive_exploratory_posthoc_with_fresh_seed_replication,fresh - original,Y_causal_observed,0.6333333333333333,0.6416666666666666,0.008333333333333304,-0.06666666666666676,0.08333333333333337,10,10
+adaptive_exploratory_posthoc_with_fresh_seed_replication,fresh - original,time_share_D,0.25164947509765623,0.2392557779947917,-0.012393697102864532,-0.0645819854736328,0.037396456400553384,10,10
+adaptive_exploratory_posthoc_with_fresh_seed_replication,fresh - original,goal_cycle,0.0,0.0,0.0,0.0,0.0,10,10
+adaptive_exploratory_posthoc_with_fresh_seed_replication,fresh - original,final_tuple_composite,0.12499999999999997,0.11666666666666665,-0.008333333333333318,-0.04166666666666667,0.02500000000000001,10,10
+adaptive_exploratory_posthoc_with_fresh_seed_replication,fresh - original,final_codeword_patch,0.075,0.049999999999999996,-0.025,-0.09166666666666666,0.03333333333333335,10,10

@@ -1,0 +1,5 @@
+inference_status,diagnostic_status,q,k,schedule,seed,artifact_rho_y,replayed_rho_y,artifact_rho_p,replayed_rho_p,codeword_weighted_rho_y,strict_intended_codewords,strict_proxy_codewords,mixed_codewords,predominantly_intended_codewords,total_codewords,endpoint_equality_exact
+exploratory_post_hoc_boundary_specific,fixed_post_hoc_retraining_replay,0.75,4,delayed_carry,11,0.2488,0.2488,0.7512,0.7512,0.24880000000000002,3,12,1,4,16,True
+exploratory_post_hoc_boundary_specific,fixed_post_hoc_retraining_replay,0.75,4,delayed_carry,37,0.0613,0.0613,0.9387,0.9387,0.0613,1,15,0,1,16,True
+exploratory_post_hoc_boundary_specific,fixed_post_hoc_retraining_replay,0.75,4,high_high,71,1.0,1.0,0.0,0.0,1.0000000000000002,16,0,0,16,16,True
+exploratory_post_hoc_boundary_specific,fixed_post_hoc_retraining_replay,0.9,3,delayed_carry,23,0.249,0.249,0.751,0.751,0.249,2,6,0,2,8,True
